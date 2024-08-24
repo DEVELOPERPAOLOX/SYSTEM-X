@@ -170,7 +170,8 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
     // Enviar mensaje y lista de opciones
-    const gifSourceUrl = 'https://drive.google.com/uc?export=download&id=117vbKcMSlxTuPCLk3i6FOcMjB1d4dm1i'; // URL de descarga directa del archivo
+    // Reemplaza esta URL con la de tu video
+    const videoSourceUrl = 'https://drive.google.com/uc?id=1YNeEYLlLPXuGwolH8jLbQNEUaWGw9n8_';
     const optionsListMessage = [
       {
         title: '',
@@ -178,27 +179,22 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
           { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚` },
           { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀` },
           { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: `.estado`, description: `𝐔𝐏𝐓𝐈𝐌𝐄⏰` },
-          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: `.creador`, description: `𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅` }
+          { header: "𝐄𝐓𝐈𝐐𝐔𝐄𝐓𝐀📑", title: "", id: `.sticker`, description: `𝐄𝐓𝐈𝐐𝐔𝐄𝐓𝐀📑` },
+          { header: "𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐈𝐎📂", title: "", id: `.menu`, description: `𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐈𝐎📂` },
+          { header: "𝐇𝐄𝐋𝐏🎓", title: "", id: `.help`, description: `𝐇𝐄𝐋𝐏🎓` }
         ]
       }
     ];
 
-    await conn.sendMessage(message.chat, { video: { url: gifSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
-    await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, optionsListMessage, { mentions: [message.sender] });
+    await conn.sendMessage(message.chat, { video: { url: videoSourceUrl } }, { quoted: message });
+    await conn.sendMessage(message.chat, { text: formattedMenuText }, { quoted: message });
+    await conn.sendMessage(message.chat, { text: `Aquí están tus opciones:` }, { quoted: message });
+    await conn.sendMessage(message.chat, { buttonMessage: { text: 'Haz clic aquí', footer: '', buttons: optionsListMessage } }, { quoted: message });
 
   } catch (error) {
-    console.error('Error en el handler:', error.message); // Mensaje de error más claro
-    conn.reply(message.chat, '❎ Lo sentimos, el menú tiene un error.', message);
+    console.error('Error al crear o enviar el menú:', error);
+    await conn.sendMessage(message.chat, { text: 'Ocurrió un error al generar el menú. Por favor, inténtalo de nuevo más tarde.' }, { quoted: message });
   }
 };
 
-// Configuración del comando
-createAndSendMenu.help = ['menu'];
-createAndSendMenu.tags = ['main'];
-createAndSendMenu.command = ['menu', 'help', 'menú'];
-createAndSendMenu.register = true;
-
 export default createAndSendMenu;
-
-// Placeholder para leer más
-const readMorePlaceholder = String.fromCharCode(8206).repeat(4001);
