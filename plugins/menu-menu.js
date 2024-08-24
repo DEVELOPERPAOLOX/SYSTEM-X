@@ -171,20 +171,20 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
 
     // Enviar mensaje y lista de opciones
     const videoSourceUrl = 'https://drive.google.com/uc?export=download&id=1KcElFJ7yk70clcYnTbkdTjTusOlM-hnV';
-    const optionsListMessage = [
-      {
-        title: '',
-        rows: [
-          { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚` },
-          { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀` },
-          { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: `.estado`, description: `𝐔𝐏𝐓𝐈𝐌𝐄⏰` },
-          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: `.creador`, description: `𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅` }
-        ]
-      }
-    ];
+    const optionsListMessage = {
+      text: 'Selecciona una opción:',
+      footer: 'Elige una opción del menú',
+      buttons: [
+        { buttonId: '.allmenu', buttonText: { displayText: '𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚' }, type: 1 },
+        { buttonId: '.ping', buttonText: { displayText: '𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀' }, type: 1 },
+        { buttonId: '.estado', buttonText: { displayText: '𝐔𝐏𝐓𝐈𝐌𝐄⏰' }, type: 1 },
+        { buttonId: '.creador', buttonText: { displayText: '𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅' }, type: 1 }
+      ],
+      headerType: 1
+    };
 
     await conn.sendMessage(message.chat, { video: { url: videoSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
-    await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, optionsListMessage, { mentions: [message.sender] });
+    await conn.sendMessage(message.chat, optionsListMessage);
 
   } catch (error) {
     console.error('Error en el handler:', error.message); // Mensaje de error más claro
