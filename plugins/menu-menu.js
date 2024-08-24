@@ -1,2 +1,199 @@
 // C O D I G O   C R E A D O   P O R   P A O L O   X
-import { promises as _0x5c4d5c } from 'fs'; import { join as _0x2b7f9b } from 'path'; import _0x5a0fb3 from 'node-fetch'; import { xpRange as _0x5e6fa2 } from '../lib/levelling.js'; let _0x234bf6 = { 'main': 'INFO', 'game': 'JUEGOS', 'serbot': 'SUB BOTS', 'rpg': 'ECONOMÍA', 'rg': 'REGISTRO', 'downloader': 'DESCARGAS', 'marker': 'LOGO - MAKER', 'nable': 'ACTIVADORES', 'group': 'GRUPOS', 'search': 'BUSCADOR', 'img': 'IMÁGENES', 'tools': 'HERRAMIENTAS', 'fun': 'DIVERCIÓN', 'audio': 'EFECTO DE AUDIOS', 'sticker': 'STICKERS', 'nsfw': 'NSFW', 'owner': 'CREADOR', 'advanced': 'AVANZADO' }; const _0x374de3 = { before: ``.trimStart(), header: '', body: '', footer: '', after: '' }; let _0x2e0f95 = async (_0x1e1b56, { conn: _0x50cf29, usedPrefix: _0x5e4eaf, __dirname: _0x5f61c5 }) => { try { let _0x26407c = JSON.parse(await _0x5c4d5c.readFile(_0x2b7f9b(_0x5f61c5, '../package.json')).catch(_ => ({}))) || {}; let { exp: _0x4d8c34, star: _0x4f0d34, level: _0x3b273a } = global.db.data.users[_0x1e1b56.sender]; let { min: _0x3f2e3e, xp: _0x3c6b99, max: _0x4b9e3d } = _0x5e6fa2(_0x3b273a, global.multiplier); let _0x1b07e7 = await _0x50cf29.getName(_0x1e1b56.sender); let _0x24f01a = new Date(new Date + 3600000); let _0x2d1b3e = 'es'; let _0x45a4f3 = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(_0x24f01a / 84600000) % 5]; let _0x4b0cf5 = _0x24f01a.toLocaleDateString(_0x2d1b3e, { weekday: 'long' }); let _0x1f49b2 = _0x24f01a.toLocaleDateString(_0x2d1b3e, { day: 'numeric', month: 'long', year: 'numeric' }); let _0x1c02c1 = Intl.DateTimeFormat(_0x2d1b3e + '-TN-u-ca-islamic', { day: 'numeric', month: 'long', year: 'numeric' }).format(_0x24f01a); let _0x334d4f = _0x24f01a.toLocaleTimeString(_0x2d1b3e, { hour: 'numeric', minute: 'numeric', second: 'numeric' }); let _0x283ef5 = process.uptime() * 1000; let _0x2b15b8; if (process.send) { process.send('uptime'); _0x2b15b8 = await new Promise(_0x1d92f4 => { process.once('message', _0x1d92f4); setTimeout(_0x1d92f4, 1000); }) * 1000; } let _0x2e2d4e = _0x5c8c84(_0x2b15b8); let _0x2b045b = _0x5c8c84(_0x283ef5); let _0x245b1d = Object.keys(global.db.data.users).length; let _0x4e9b25 = Object.values(global.db.data.users).filter(_0x49b3c8 => _0x49b3c8.registered == true).length; let _0x3c8c89 = Object.values(global.plugins).filter(_0x3bcd52 => !_0x3bcd52.disabled).map(_0x1e3c9d => { return { help: Array.isArray(_0x1e3c9d.tags) ? _0x1e3c9d.help : [_0x1e3c9d.help], tags: Array.isArray(_0x1e3c9d.tags) ? _0x1e3c9d.tags : [_0x1e3c9d.tags], prefix: 'customPrefix' in _0x1e3c9d, star: _0x1e3c9d.star, premium: _0x1e3c9d.premium, enabled: !_0x1e3c9d.disabled, }; }); for (let _0x8cb5f7 of _0x3c8c89) if (_0x8cb5f7 && 'tags' in _0x8cb5f7) for (let _0x4d5f9a of _0x8cb5f7.tags) if (!(_0x4d5f9a in _0x234bf6) && _0x4d5f9a) _0x234bf6[_0x4d5f9a] = _0x4d5f9a; _0x50cf29.menu = _0x50cf29.menu ? _0x50cf29.menu : {}; let _0x4b8cde = _0x50cf29.menu.before || _0x374de3.before; let _0x3c84d7 = _0x50cf29.menu.header || _0x374de3.header; let _0x4a2d8f = _0x50cf29.menu.body || _0x374de3.body; let _0x281d3a = _0x50cf29.menu.footer || _0x374de3.footer; let _0x3a2d2a = _0x50cf29.menu.after || (_0x50cf29.user.jid == global.conn.user.jid ? '' : ``) + _0x374de3.after; let _0x3b2a7c = [_0x4b8cde, ...Object.keys(_0x234bf6).map(_0x32e9f8 => { return _0x3c84d7.replace(/%category/g, _0x234bf6[_0x32e9f8]) + '\n' + [ ..._0x3c8c89.filter(_0x4d6a6d => _0x4d6a6d.tags && _0x4d6a6d.tags.includes(_0x32e9f8) && _0x4d6a6d.help).map(_0x3f4cf3 => { return _0x3f4cf3.help.map(_0x1b5bda => { return _0x4a2d8f.replace(/%cmd/g, _0x3f4cf3.prefix ? _0x1b5bda : '%p' + _0x1b5bda).replace(/%isstar/g, _0x3f4cf3.star ? '˄' : '').replace(/%isPremium/g, _0x3f4cf3.premium ? '˄' : '').trim(); }).join('\n'); }), _0x281d3a ].join('\n'); }), _0x3a2d2a ].join('\n'); let _0x3c1d89 = typeof _0x50cf29.menu == 'string' ? _0x50cf29.menu : typeof _0x50cf29.menu == 'object' ? _0x3b2a7c : ''; let _0x23e6a0 = { '%': '%', p: _0x5e4eaf, uptime: _0x2b045b, muptime: _0x2e2d4e, taguser: '@' + _0x1e1b56.sender.split("@s.whatsapp.net")[0], wasp: '@0', me: _0x50cf29.getName(_0x50cf29.user.jid), npmname: _0x26407c.name, version: _0x26407c.version, npmdesc: _0x26407c.description, npmmain: _0x26407c.main, author: _0x26407c.author.name, license: _0x26407c.license, exp: _0x4d8c34 - _0x3f2e3e, maxexp: _0x3c6b99, totalexp: _0x4d8c34, xp4levelup: _0x4b9e3d - _0x4d8c34, github: _0x26407c.homepage ? _0x26407c.homepage.url || _0x26407c.homepage : '[unknown github url]', level: _0x3b273a, star: _0x4f0d34, name: _0x1b07e7, weton: _0x45a4f3, week: _0x4b0cf5, date: _0x1f49b2, dateIslamic: _0x1c02c1, time: _0x334d4f, totalreg: _0x245b1d, rtotalreg: _0x4e9b25, readmore: _0x40d18a }; _0x3c1d89 = _0x3c1d89.replace(new RegExp(`%(${Object.keys(_0x23e6a0).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, _0x347839) => '' + _0x23e6a0[_0x347839]); let _0x4b7a3c = 'https://drive.google.com/uc?export=download&id=1QaxZig8Bk0LrKwU76d66PujcVpIakoai'; let _0x3b1d5a = []; _0x3b1d5a.push({ title: '', rows: [ { header: "📚ＭＥＮＵ ＣＯＭＰＬＥＴＯ", title: "", id: `.allmenu`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚎𝚖𝚎 𝚝𝚘𝚍𝚘𝚜 𝚕𝚘𝚜 𝚌𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` }, { header: "SudBot", title: "", id: `.serbot --code`, description: `𝚀𝚞𝚒𝚎𝚛𝚘 𝚌𝚘𝚗𝚟𝚎𝚛𝚝𝚒𝚛𝚜𝚎 𝚎𝚗 𝚂𝚞𝚍𝙱𝚘𝚝 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` }, { header: "🚀ＶＥＬＯＣＩＤＡＤ", title: "", id: `.ping`, description: `𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚨𝚍 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` }, { header: "⏰ＵＰＴＩＭＥ", title: "", id: `.estado`, description: `𝚃𝚒𝚎𝚖𝚙𝚘 𝚊𝚌𝚝𝚒𝚟𝚘 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` }, { header: "🌐ＩＤＩＯＭＡ", title: "", id: `.idioma`, description: `𝙴𝚕𝚎𝚐𝚎𝚗 𝚒𝚍𝚒𝚘𝚖𝚎\n` }, { header: "✅ＳＴＡＦＦ ＭＩＺＵＫＩ | ＢＯＴ", title: "", id: `.creador`, description: `𝚂𝚝𝚊𝚏𝚏 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` } ] }); await _0x50cf29.sendMessage(_0x1e1b56.chat, { video: { url: _0x4b7a3c }, caption: _0x3c1d89.trim(), mentions: [_0x1e1b56.sender] }); await _0x50cf29.sendList(_0x1e1b56.chat, '', null, `𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, _0x3b1d5a, { mentions: [_0x1e1b56.sender] }); } catch (_0x23c5b1) { console.error('Error en el handler:', _0x23c5b1); _0x50cf29.reply(_0x1e1b56.chat, '❎ Lo sentimos, el menú tiene un error.', _0x1e1b56); } }; _0x2e0f95.help = ['menu']; _0x2e0f95.tags = ['main']; _0x2e0f95.command = ['menu', 'help', 'menú']; _0x2e0f95.register = true; export default _0x2e0f95; const _0x40d18a = String.fromCharCode(8206).repeat(4001); function _0x5c8c84(_0x3b813a) { let _0x5c0d6b = isNaN(_0x3b813a) ? '--' : Math.floor(_0x3b813a / 3600000); let _0x285de4 = isNaN(_0x3b813a) ? '--' : Math.floor(_0x3b813a / 60000) % 60; let _0x289b74 = isNaN(_0x3b813a) ? '--' : Math.floor(_0x3b813a / 1000) % 60; return [_0x5c0d6b, _0x285de4, _0x289b74].map(_0x4d46fc => _0x4d46fc.toString().padStart(2, 0)).join(':'); }
+import { promises as fs } from 'fs';
+import { join as pathJoin } from 'path';
+import fetch from 'node-fetch';
+import { xpRange } from '../lib/levelling.js';
+
+// Diccionario de categorías
+let categories = {
+  'main': 'INFO',
+  'game': 'JUEGOS',
+  'serbot': 'SUB BOTS',
+  'rpg': 'ECONOMÍA',
+  'rg': 'REGISTRO',
+  'downloader': 'DESCARGAS',
+  'marker': 'LOGO - MAKER',
+  'nable': 'ACTIVADORES',
+  'group': 'GRUPOS',
+  'search': 'BUSCADOR',
+  'img': 'IMÁGENES',
+  'tools': 'HERRAMIENTAS',
+  'fun': 'DIVERCIÓN',
+  'audio': 'EFECTO DE AUDIOS',
+  'sticker': 'STICKERS',
+  'nsfw': 'NSFW',
+  'owner': 'CREADOR',
+  'advanced': 'AVANZADO'
+};
+
+// Estructura básica del menú
+const defaultMenu = {
+  before: ``.trimStart(),
+  header: '',
+  body: '',
+  footer: '',
+  after: ''
+};
+
+// Función principal para generar y enviar el menú
+let generateMenu = async (message, { conn, usedPrefix, __dirname }) => {
+  try {
+    // Leer datos del archivo package.json
+    let packageData = JSON.parse(await fs.readFile(pathJoin(__dirname, '../package.json')).catch(() => ({}))) || {};
+    
+    // Obtener datos del usuario
+    let { exp, star, level } = global.db.data.users[message.sender];
+    let { min, xp, max } = xpRange(level, global.multiplier);
+    
+    // Obtener nombre del usuario
+    let userName = await conn.getName(message.sender);
+
+    // Calcular tiempos y fechas
+    let currentDate = new Date(new Date + 3600000);
+    let locale = 'es';
+    let dayName = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(currentDate / 84600000) % 5];
+    let weekDay = currentDate.toLocaleDateString(locale, { weekday: 'long' });
+    let fullDate = currentDate.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+    let islamicDate = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', { day: 'numeric', month: 'long', year: 'numeric' }).format(currentDate);
+    let time = currentDate.toLocaleTimeString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric' });
+
+    // Obtener tiempos de actividad
+    let uptime = process.uptime() * 1000;
+    let processUptime;
+    if (process.send) {
+      process.send('uptime');
+      processUptime = await new Promise(resolve => {
+        process.once('message', resolve);
+        setTimeout(resolve, 1000);
+      }) * 1000;
+    }
+
+    // Formatear tiempos
+    let formattedUptime = formatTime(processUptime);
+    let formattedProcessUptime = formatTime(uptime);
+
+    // Obtener información del sistema
+    let totalUsers = Object.keys(global.db.data.users).length;
+    let registeredUsers = Object.values(global.db.data.users).filter(user => user.registered).length;
+    let enabledPlugins = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => ({
+      help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
+      tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
+      prefix: 'customPrefix' in plugin,
+      star: plugin.star,
+      premium: plugin.premium,
+      enabled: !plugin.disabled
+    }));
+
+    // Actualizar categorías
+    for (let plugin of enabledPlugins) {
+      if (plugin && 'tags' in plugin) {
+        for (let tag of plugin.tags) {
+          if (!(tag in categories) && tag) categories[tag] = tag;
+        }
+      }
+    }
+
+    // Crear el menú
+    conn.menu = conn.menu || {};
+    let menuBefore = conn.menu.before || defaultMenu.before;
+    let menuHeader = conn.menu.header || defaultMenu.header;
+    let menuBody = conn.menu.body || defaultMenu.body;
+    let menuFooter = conn.menu.footer || defaultMenu.footer;
+    let menuAfter = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : ``) + defaultMenu.after;
+    
+    let menuText = [
+      menuBefore,
+      ...Object.keys(categories).map(categoryKey => {
+        return menuHeader.replace(/%category/g, categories[categoryKey]) + '\n' + 
+        [
+          ...enabledPlugins.filter(plugin => plugin.tags && plugin.tags.includes(categoryKey) && plugin.help).map(plugin => {
+            return plugin.help.map(command => {
+              return menuBody.replace(/%cmd/g, plugin.prefix ? command : '%p' + command)
+                .replace(/%isstar/g, plugin.star ? '˄' : '')
+                .replace(/%isPremium/g, plugin.premium ? '˄' : '')
+                .trim();
+            }).join('\n');
+          }),
+          menuFooter
+        ].join('\n');
+      }),
+      menuAfter
+    ].join('\n');
+
+    let menuTextFormatted = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? menuText : '';
+    let replacements = {
+      '%': '%',
+      p: usedPrefix,
+      uptime: formattedProcessUptime,
+      muptime: formattedUptime,
+      taguser: '@' + message.sender.split("@s.whatsapp.net")[0],
+      wasp: '@0',
+      me: await conn.getName(conn.user.jid),
+      npmname: packageData.name,
+      version: packageData.version,
+      npmdesc: packageData.description,
+      npmmain: packageData.main,
+      author: packageData.author.name,
+      license: packageData.license,
+      exp: exp - min,
+      maxexp: xp,
+      totalexp: exp,
+      xp4levelup: max - exp,
+      github: packageData.homepage ? packageData.homepage.url || packageData.homepage : '[unknown github url]',
+      level: level,
+      star: star,
+      name: userName,
+      weton: dayName,
+      week: weekDay,
+      date: fullDate,
+      dateIslamic: islamicDate,
+      time: time,
+      totalreg: totalUsers,
+      rtotalreg: registeredUsers,
+      readmore: readMorePlaceholder
+    };
+
+    menuTextFormatted = menuTextFormatted.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
+
+    // Enviar mensaje y lista de opciones
+    let videoUrl = 'https://drive.google.com/uc?export=download&id=1QaxZig8Bk0LrKwU76d66PujcVpIakoai';
+    let listMessage = [
+      {
+        title: '',
+        rows: [
+          { header: "📚ＭＥＮＵ ＣＯＭＰＬＥＴＯ", title: "", id: `.allmenu`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚎𝚖𝚎 𝚝𝚘𝚍𝑜𝚜 𝚕𝚘𝚜 𝚌𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "SudBot", title: "", id: `.serbot --code`, description: `𝚀𝚞𝚒𝚎𝚛𝚘 𝚌𝚘𝚗𝚟𝚎𝚛𝚝𝚒𝚛𝚜𝚎 𝚎𝚗 𝚂𝚞𝚍𝙱𝚘𝚝 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "🚀ＶＥＬＯＣＩＤＡＤ", title: "", id: `.ping`, description: `𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚨𝚍 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "⏰ＵＰＴＩＭＥ", title: "", id: `.estado`, description: `𝚃𝚒𝚎𝚖𝚙𝚘 𝚊𝚌𝚝𝚒𝚟𝚘 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "🌐ＩＤＩＯＭＡ", title: "", id: `.idioma`, description: `𝙴𝚕𝚎𝚐𝚎𝚗 𝚒𝚍𝚒𝚘𝚖𝚎\n` },
+          { header: "✅ＳＴＡＦＦ ＭＩＺＵＫＩ | ＢＯＴ", title: "", id: `.creador`, description: `𝚂𝚝𝚊𝚏𝚏 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` }
+        ]
+      }
+    ];
+
+    await conn.sendMessage(message.chat, { video: { url: videoUrl }, caption: menuTextFormatted.trim(), mentions: [message.sender] });
+    await conn.sendList(message.chat, '', null, `𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, listMessage, { mentions: [message.sender] });
+
+  } catch (error) {
+    console.error('Error en el handler:', error);
+    conn.reply(message.chat, '❎ Lo sentimos, el menú tiene un error.', message);
+  }
+};
+
+// Configuración del comando
+generateMenu.help = ['menu'];
+generateMenu.tags = ['main'];
+generateMenu.command = ['menu', 'help', 'menú'];
+generateMenu.register = true;
+
+export default generateMenu;
+
+// Función para formatear tiempo en formato HH:MM:SS
+const readMorePlaceholder = String.fromCharCode(8206).repeat(4001);
+
+function formatTime(ms) {
+  let hours = isNaN(ms) ? '--' : Math.floor(ms / 3600000);
+  let minutes = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
+  let seconds = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
+  return [hours, minutes, seconds].map(unit => unit.toString().padStart(2, '0')).join(':');
+}
