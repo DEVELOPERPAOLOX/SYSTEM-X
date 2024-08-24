@@ -1,9 +1,10 @@
-import { promises } from 'fs'
-import { join } from 'path'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
+import { promises as fileSystem } from 'fs';
+import { join as joinPath } from 'path';
+import fetch from 'node-fetch';
+import { xpRange as calculateXpRange } from '../lib/levelling.js';
 
-let tags = {
+// Mapeo de categorías
+const categoryLabels = {
   'main': 'INFO',
   'game': 'JUEGOS',
   'serbot': 'SUB BOTS',
@@ -17,177 +18,186 @@ let tags = {
   'img': 'IMÁGENES',
   'tools': 'HERRAMIENTAS',
   'fun': 'DIVERCIÓN',
-  'audio': 'EFECTO DE AUDIOS', 
+  'audio': 'EFECTO DE AUDIOS',
   'sticker': 'STICKERS',
   'nsfw': 'NSFW',
   'owner': 'CREADOR',
-  'advanced': 'AVANZADO',
-}
+  'advanced': 'AVANZADO'
+};
 
-const defaultMenu = {
-  before: `
- > IGNA BOT FUTURE
+// Configuración predeterminada del menú
+const defaultMenuConfig = {
+  before: ``.trimStart(),
+  header: '',
+  body: '',
+  footer: '',
+  after: ''
+};
 
-╭━━━━━━━∙⋆⋅⋆∙━━━━━━━━╮
-➤📝 *Nombre* : %name
-➤🪙 *Euros* : %limit
-➤🤖 *User* : %taguser
-➤📈 *Nivel* : %level
-➤⭐ *XP* : %totalexp
-╰━━━━━━━∙⋆⋅⋆∙━━━━━━━━╯
+// Función para formatear tiempos
+const formatDuration = (milliseconds) => {
+  if (isNaN(milliseconds)) return '--:--:--';
+  const hours = Math.floor(milliseconds / 3600000);
+  const minutes = Math.floor(milliseconds / 60000) % 60;
+  const seconds = Math.floor(milliseconds / 1000) % 60;
+  return [hours, minutes, seconds].map(unit => unit.toString().padStart(2, '0')).join(':');
+};
 
-╭━━━━━━━∙⋆⋅⋆∙━━━━━━━━╮
-➤🗣️ *Creador* : Daniel 🇦🇱
-➤📲 *Número* : Wa.me/51955918117
-➤⌛ *Tiempo* : %uptime
-╰━━━━━━━∙⋆⋅⋆∙━━━━━━━━╯
-
-%readmore
-`.trimStart(),
-  header: '`MENU X %category`\n\n╭━━━━━━━∙⋆⋅⋆∙━━━━━━━━╮',
-  body: '➤ *%cmd*\n',
-  footer: '╰━━━━━━━∙⋆⋅⋆∙━━━━━━━━╯\n',
-  after: '',
-}
-
-let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
+// Función para generar y enviar el menú
+const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
   try {
-    let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, star, level } = global.db.data.users[m.sender]
-    let { min, xp, max } = xpRange(level, global.multiplier)
-    let name = await conn.getName(m.sender)
-    let d = new Date(new Date + 3600000)
-    let locale = 'es'
-    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
-    let date = d.toLocaleDateString(locale, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    })
-    let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    }).format(d)
-    let time = d.toLocaleTimeString(locale, {
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric'
-    })
-    let _uptime = process.uptime() * 1000
-    let _muptime
+    // Leer archivo package.json de forma segura
+    const packageInfo = JSON.parse(await fileSystem.readFile(joinPath(__dirname, '../package.json')).catch(() => ({}))) || {};
+    
+    // Obtener datos del usuario
+    const userStats = global.db.data.users[message.sender];
+    if (!userStats) throw new Error('Datos del usuario no encontrados');
+    const { exp, star, level } = userStats;
+    const { min, xp, max } = calculateXpRange(level, global.multiplier);
+    
+    // Obtener nombre del usuario
+    const userName = await conn.getName(message.sender);
+
+    // Obtener fecha y hora actuales
+    const currentTime = new Date(Date.now() + 3600000);
+    const locale = 'es';
+    const weekDays = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'];
+    const dayName = weekDays[Math.floor(currentTime / 84600000) % 5];
+    const weekDay = currentTime.toLocaleDateString(locale, { weekday: 'long' });
+    const fullDate = currentTime.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+    const islamicDate = Intl.DateTimeFormat(`${locale}-TN-u-ca-islamic`, { day: 'numeric', month: 'long', year: 'numeric' }).format(currentTime);
+    const time = currentTime.toLocaleTimeString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric' });
+
+    // Obtener tiempos de actividad
+    const systemUptime = process.uptime() * 1000;
+    let runtimeUptime;
     if (process.send) {
-      process.send('uptime')
-      _muptime = await new Promise(resolve => {
-        process.once('message', resolve)
-        setTimeout(resolve, 1000)
-      }) * 1000
+      process.send('uptime');
+      runtimeUptime = await new Promise((resolve) => {
+        process.once('message', resolve);
+        setTimeout(resolve, 1000);
+      }) * 1000;
+    } else {
+      runtimeUptime = systemUptime;
     }
-    let muptime = clockString(_muptime)
-    let uptime = clockString(_uptime)
-    let totalreg = Object.keys(global.db.data.users).length
-    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
-    let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
-      return {
-        help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
-        tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
-        prefix: 'customPrefix' in plugin,
-        star: plugin.star,
-        premium: plugin.premium,
-        enabled: !plugin.disabled,
-      }
-    })
-    for (let plugin of help) {
+
+    // Formatear tiempos
+    const formattedRuntimeUptime = formatDuration(runtimeUptime);
+    const formattedSystemUptime = formatDuration(systemUptime);
+
+    // Información del sistema
+    const totalUsersCount = Object.keys(global.db.data.users).length;
+    const registeredUsersCount = Object.values(global.db.data.users).filter(user => user.registered).length;
+    const activePlugins = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => ({
+      help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
+      tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
+      prefix: 'customPrefix' in plugin,
+      star: plugin.star,
+      premium: plugin.premium,
+      enabled: !plugin.disabled
+    }));
+
+    // Actualizar categorías
+    for (const plugin of activePlugins) {
       if (plugin && 'tags' in plugin) {
-        for (let tag of plugin.tags) {
-          if (!(tag in tags) && tag) tags[tag] = tag
+        for (const tag of plugin.tags) {
+          if (!(tag in categoryLabels) && tag) categoryLabels[tag] = tag;
         }
       }
     }
-    conn.menu = conn.menu ? conn.menu : {}
-    let before = conn.menu.before || defaultMenu.before
-    let header = conn.menu.header || defaultMenu.header
-    let body = conn.menu.body || defaultMenu.body
-    let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : ``) + defaultMenu.after
-    let _text = [
-      before,
-      ...Object.keys(tags).map(tag => {
-        return header.replace(/%category/g, tags[tag]) + '\n' + [
-          ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
-            return menu.help.map(help => {
-              return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%isstar/g, menu.star ? '˄' : '')
-                .replace(/%isPremium/g, menu.premium ? '˄' : '')
-                .trim()
-            }).join('\n')
+
+    // Crear menú
+    conn.menu = conn.menu || {};
+    const menuBefore = conn.menu.before || defaultMenuConfig.before;
+    const menuHeader = conn.menu.header || defaultMenuConfig.header;
+    const menuBody = conn.menu.body || defaultMenuConfig.body;
+    const menuFooter = conn.menu.footer || defaultMenuConfig.footer;
+    const menuAfter = conn.menu.after || (conn.user.jid === global.conn.user.jid ? '' : ``) + defaultMenuConfig.after;
+    
+    const menuText = [
+      menuBefore,
+      ...Object.keys(categoryLabels).map(categoryKey => {
+        return menuHeader.replace(/%category/g, categoryLabels[categoryKey]) + '\n' + 
+        [
+          ...activePlugins.filter(plugin => plugin.tags && plugin.tags.includes(categoryKey) && plugin.help).map(plugin => {
+            return plugin.help.map(command => {
+              return menuBody.replace(/%cmd/g, plugin.prefix ? command : '%p' + command)
+                .replace(/%isstar/g, plugin.star ? '˄' : '')
+                .replace(/%isPremium/g, plugin.premium ? '˄' : '')
+                .trim();
+            }).join('\n');
           }),
-          footer
-        ].join('\n')
+          menuFooter
+        ].join('\n');
       }),
-      after
-    ].join('\n')
-    let text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
-    let replace = {
+      menuAfter
+    ].join('\n');
+
+    let formattedMenuText = typeof conn.menu === 'string' ? conn.menu : typeof conn.menu === 'object' ? menuText : '';
+    const replacements = {
       '%': '%',
-      p: _p, uptime, muptime,
-      taguser: '@' + m.sender.split("@s.whatsapp.net")[0],
+      p: usedPrefix,
+      uptime: formattedSystemUptime,
+      muptime: formattedRuntimeUptime,
+      taguser: '@' + message.sender.split("@s.whatsapp.net")[0],
       wasp: '@0',
-      me: conn.getName(conn.user.jid),
-      npmname: _package.name,
-      version: _package.version,
-      npmdesc: _package.description,
-      npmmain: _package.main,
-      author: _package.author.name,
-      license: _package.license,
+      me: await conn.getName(conn.user.jid),
+      npmname: packageInfo.name,
+      version: packageInfo.version,
+      npmdesc: packageInfo.description,
+      npmmain: packageInfo.main,
+      author: packageInfo.author.name,
+      license: packageInfo.license,
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
       xp4levelup: max - exp,
-      github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
-      level, star, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg,
-      readmore: readMore
-    }
-    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    
-    let pp = 'https://telegra.ph/file/4c3e4b782c82511b3874d.mp4'
-    let pp2 = 'https://telegra.ph/file/d8c5e18ab0cfc10511f63.mp4'
-    let pp3 = 'https://telegra.ph/file/96e471a87971e2fb4955f.mp4'
-    let pp4 = 'https://telegra.ph/file/09b920486c3c291f5a9e6.mp4'
-    m.react('💻')
-   
-    let listSections = []    
-    listSections.push({
-      title: '',
-      rows: [
-        { header: "Menu Completo", title: "", id: `.allmenu`, description: `Para ver todos los comandos\n` }, 
-        { header: "SudBot", title: "", id: `.serbot --code`, description: `Para volverte sudbot con código de 8 dígitos 🤖\n` },
-        { header: "Velocidad", title: "", id: `.ping`, description: `Ver velocidad del bot 🎌\n` },
-        { header: "Idioma", title: "", id: `.idioma`, description: `elije tu idioma favorito 🌍\n` },
-        { header: "creador", title: "", id: `.creador`, description: `comunicate con mi creador ⚙️` }
-      ]
-    })
+      github: packageInfo.homepage ? packageInfo.homepage.url || packageInfo.homepage : '[unknown github url]',
+      level: level,
+      star: star,
+      name: userName,
+      weton: dayName,
+      week: weekDay,
+      date: fullDate,
+      dateIslamic: islamicDate,
+      time: time,
+      totalreg: totalUsersCount,
+      rtotalreg: registeredUsersCount,
+      readmore: readMorePlaceholder
+    };
 
-    await conn.sendList(m.chat, '👋🏻 Hola¡! Bienvenido A Mi Sub Menú\n\n*Creador:* Daniel\n*Versión:* 1.0.0\n\n💮 si hay algún error puedes contactarme, usa el comando: #owner\n\nGracias¡! 🔴', null, `Clik`, listSections, { mentions: [m.sender] }, { quoted: m })
-  } catch (e) {
-    console.error('Error en el handler:', e)
-    await conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
+    formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
+
+    // Enviar mensaje y lista de opciones
+    const gifSourceUrl = 'https://drive.google.com/uc?export=download&id=117vbKcMSlxTuPCLk3i6FOcMjB1d4dm1i'; // URL de descarga directa del archivo
+    const optionsListMessage = [
+      {
+        title: '',
+        rows: [
+          { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚` },
+          { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀` },
+          { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: `.estado`, description: `𝐔𝐏𝐓𝐈𝐌𝐄⏰` },
+          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: `.creador`, description: `𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅` }
+        ]
+      }
+    ];
+
+    await conn.sendMessage(message.chat, { video: { url: gifSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
+    await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, optionsListMessage, { mentions: [message.sender] });
+
+  } catch (error) {
+    console.error('Error en el handler:', error.message); // Mensaje de error más claro
+    conn.reply(message.chat, '❎ Lo sentimos, el menú tiene un error.', message);
   }
-}
+};
 
-handler.help = ['menu']
-handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú'] 
-handler.register = true 
-export default handler
+// Configuración del comando
+createAndSendMenu.help = ['menu'];
+createAndSendMenu.tags = ['main'];
+createAndSendMenu.command = ['menu', 'help', 'menú'];
+createAndSendMenu.register = true;
 
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
+export default createAndSendMenu;
 
-function clockString(ms) {
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
-}
+// Placeholder para leer más
+const readMorePlaceholder = String.fromCharCode(8206).repeat(4001);
