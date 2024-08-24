@@ -169,27 +169,30 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
 
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
-    // Enviar mensaje y lista de opciones
-    const videoSourceUrl = 'https://drive.google.com/uc?export=download&id=1QaxZig8Bk0LrKwU76d66PujcVpIakoai';
-    const optionsListMessage = [
+    // Enviar mensaje de texto primero
+    await conn.sendMessage(message.chat, { caption: formattedMenuText.trim(), mentions: [message.sender] });
+    
+    // Enviar video en paralelo
+    const videoUrl = 'https://drive.google.com/uc?export=download&id=1QaxZig8Bk0LrKwU76d66PujcVpIakoai';
+    const listMessage = [
       {
         title: '',
         rows: [
-          { header: "📚 MENU COMPLETO", title: "", id: `.allmenu`, description: `Muestra todos los comandos de Mizuki | Bot\n` },
-          { header: "SudBot", title: "", id: `.serbot --code`, description: `Convierte en SudBot de Mizuki | Bot\n` },
-          { header: "🚀 VELOCIDAD", title: "", id: `.ping`, description: `Velocidad de Mizuki | Bot\n` },
-          { header: "⏰ UPTIME", title: "", id: `.estado`, description: `Tiempo activo de Mizuki | Bot\n` },
-          { header: "🌐 IDIOMA", title: "", id: `.idioma`, description: `Selecciona el idioma\n` },
-          { header: "✅ STAFF MIZUKI | BOT", title: "", id: `.creador`, description: `Staff Mizuki | Bot` }
+          { header: "📚ＭＥＮＵ ＣＯＭＰＬＥＴＯ", title: "", id: `.allmenu`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚎𝚖𝚎 𝚝𝚘𝚍𝑜𝚜 𝚕𝚘𝚜 𝚌𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "SudBot", title: "", id: `.serbot --code`, description: `𝚀𝚞𝚒𝚎𝚛𝚘 𝚌𝚘𝚗𝚟𝚎𝚛𝚝𝚒𝚛𝚜𝚎 𝚎𝚗 𝚂𝚞𝚍𝙱𝚘𝚝 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "🚀ＶＥＬＯＣＩＤＡＤ", title: "", id: `.ping`, description: `𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚨𝚍 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "⏰ＵＰＴＩＭＥ", title: "", id: `.estado`, description: `𝚃𝚒𝚎𝚖𝚙𝚘 𝚊𝚌𝚝𝚒𝚟𝚘 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
+          { header: "🌐ＩＤＩＯＭＡ", title: "", id: `.idioma`, description: `𝙴𝚕𝚎𝚐𝚎𝚗 𝚒𝚍𝚒𝚘𝚖𝚎\n` },
+          { header: "✅ＳＴＡＦＦ ＭＩＺＵＫＩ | ＢＯＴ", title: "", id: `.creador`, description: `𝚂𝚝𝚊𝚏𝚏 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` }
         ]
       }
     ];
 
-    await conn.sendMessage(message.chat, { video: { url: videoSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
-    await conn.sendList(message.chat, '', null, `OPCIONES SISTEMA X`, optionsListMessage, { mentions: [message.sender] });
+    await conn.sendList(message.chat, '', null, `𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, listMessage, { mentions: [message.sender] });
+    await conn.sendMessage(message.chat, { video: { url: videoUrl }, caption: '', mentions: [message.sender] });
 
   } catch (error) {
-    console.error('Error en el handler:', error.message); // Mensaje de error más claro
+    console.error('Error al generar o enviar el menú:', error);
     conn.reply(message.chat, '❎ Lo sentimos, el menú tiene un error.', message);
   }
 };
