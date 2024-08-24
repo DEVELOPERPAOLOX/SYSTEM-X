@@ -169,28 +169,27 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
 
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
-    // Enviar mensaje de texto primero
-    await conn.sendMessage(message.chat, { caption: formattedMenuText.trim(), mentions: [message.sender] });
-    
-    // Enviar video en paralelo
-    const videoUrl = 'https://drive.google.com/uc?export=download&id=1QaxZig8Bk0LrKwU76d66PujcVpIakoai';
-    const listMessage = [
+    // Enviar mensaje y lista de opciones
+    const videoSourceUrl = 'https://drive.google.com/uc?export=download&id=1QaxZig8Bk0LrKwU76d66PujcVpIakoai';
+    const optionsListMessage = [
       {
         title: '',
         rows: [
-          { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚\n` },
-          { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀\n` },
-          { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: `.estado`, description: `𝐔𝐏𝐓𝐈𝐌𝐄⏰\n` },
-          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: `.creador`, description: `𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅` }
+          { header: "📚 MENU COMPLETO", title: "", id: `.allmenu`, description: `Muestra todos los comandos de Mizuki | Bot\n` },
+          { header: "SudBot", title: "", id: `.serbot --code`, description: `Convierte en SudBot de Mizuki | Bot\n` },
+          { header: "🚀 VELOCIDAD", title: "", id: `.ping`, description: `Velocidad de Mizuki | Bot\n` },
+          { header: "⏰ UPTIME", title: "", id: `.estado`, description: `Tiempo activo de Mizuki | Bot\n` },
+          { header: "🌐 IDIOMA", title: "", id: `.idioma`, description: `Selecciona el idioma\n` },
+          { header: "✅ STAFF MIZUKI | BOT", title: "", id: `.creador`, description: `Staff Mizuki | Bot` }
         ]
       }
     ];
 
-    await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, listMessage, { mentions: [message.sender] });
-    await conn.sendMessage(message.chat, { video: { url: videoUrl }, caption: '', mentions: [message.sender] });
+    await conn.sendMessage(message.chat, { video: { url: videoSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
+    await conn.sendList(message.chat, '', null, `OPCIONES SISTEMA X`, optionsListMessage, { mentions: [message.sender] });
 
   } catch (error) {
-    console.error('Error al generar o enviar el menú:', error);
+    console.error('Error en el handler:', error.message); // Mensaje de error más claro
     conn.reply(message.chat, '❎ Lo sentimos, el menú tiene un error.', message);
   }
 };
