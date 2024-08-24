@@ -170,7 +170,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
     // Enviar mensaje y lista de opciones
-    const videoSourceUrl = 'https://drive.google.com/uc?id=1YNeEYLlLPXuGwolH8jLbQNEUaWGw9n8_';
+    const videoSourceUrl = 'https://drive.google.com/uc?export=download&id=1KcElFJ7yk70clcYnTbkdTjTusOlM-hnV';
     const optionsListMessage = [
       {
         title: '',
