@@ -178,17 +178,15 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
       {
         title: '',
         rows: [
-          { header: "📚ＭＥＮＵ ＣＯＭＰＬＥＴＯ", title: "", id: `.allmenu`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚎𝚖𝚎 𝚝𝚘𝚍𝑜𝚜 𝚕𝚘𝚜 𝚌𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
-          { header: "SudBot", title: "", id: `.serbot --code`, description: `𝚀𝚞𝚒𝚎𝚛𝚘 𝚌𝚘𝚗𝚟𝚎𝚛𝚝𝚒𝚛𝚜𝚎 𝚎𝚗 𝚂𝚞𝚍𝙱𝚘𝚝 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
-          { header: "🚀ＶＥＬＯＣＩＤＡＤ", title: "", id: `.ping`, description: `𝚅𝚎𝚕𝚘𝚌𝚒𝚍𝚨𝚍 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
-          { header: "⏰ＵＰＴＩＭＥ", title: "", id: `.estado`, description: `𝚃𝚒𝚎𝚖𝚙𝚘 𝚊𝚌𝚝𝚒𝚟𝚘 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝\n` },
-          { header: "🌐ＩＤＩＯＭＡ", title: "", id: `.idioma`, description: `𝙴𝚕𝚎𝚐𝚎𝚗 𝚒𝚍𝚒𝚘𝚖𝚎\n` },
-          { header: "✅ＳＴＡＦＦ ＭＩＺＵＫＩ | ＢＯＴ", title: "", id: `.creador`, description: `𝚂𝚝𝚊𝚏𝚏 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` }
+          { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚\n` },
+          { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀\n` },
+          { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: `.estado`, description: `𝐔𝐏𝐓𝐈𝐌𝐄⏰\n` },
+          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: `.creador`, description: `𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅` }
         ]
       }
     ];
 
-    await conn.sendList(message.chat, '', null, `𝙊𝙋𝘾𝙄𝙊𝙉𝙀𝙎 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, listMessage, { mentions: [message.sender] });
+    await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, listMessage, { mentions: [message.sender] });
     await conn.sendMessage(message.chat, { video: { url: videoUrl }, caption: '', mentions: [message.sender] });
 
   } catch (error) {
