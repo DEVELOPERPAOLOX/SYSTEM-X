@@ -10,15 +10,15 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let mime = (q.msg || q).mimetype || q.mediaType || '';
     if (/webp|image|video/g.test(mime)) {
       if (/video/g.test(mime) && (q.msg || q).seconds > 8) {
-        return m.reply(`*EL VIDEO NO PUEDE DURAR MÁS DE 7 SEGUNDOS*`);
+        return m.reply(`❎𝐒𝐢 𝐪𝐮𝐢𝐞𝐫𝐞𝐬 𝐜𝐨𝐧𝐯𝐞𝐫𝐭𝐢𝐫 𝐞𝐧 𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨, 𝐞𝐧𝐭𝐨𝐧𝐜𝐞𝐬 𝐧𝐨 𝐩𝐮𝐞𝐝𝐞 𝐝𝐮𝐫𝐚𝐫 +𝟕 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.`);
       }
       let img = await q.download?.();
-      if (!img) throw `> 🏴𝘙𝘦𝘴𝘱𝘰𝘯𝘥𝘦 𝘢 𝘶𝘯𝘢 𝘪𝘮𝘢𝘨𝘦𝘯 𝘤𝘰𝘯 𝘦𝘭 𝘤𝘰𝘮𝘢𝘯𝘥𝘰 [.𝘴𝘵𝘪𝘤𝘬𝘦𝘳]`;
+      if (!img) throw `⚒️𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐫𝐞𝐬𝐩𝐨𝐧𝐝𝐢𝐞𝐧𝐝𝐨 𝐚 𝐮𝐧𝐚 𝐢𝐦𝐚𝐠𝐞𝐧 𝐨 𝐯𝐢𝐝𝐞𝐨.`;
 
       let out;
       try {
         stiker = await sticker(img, false, global.packname, global.author);
-        await conn.reply(m.chat, `> 🏴𝘔𝘪𝘻𝘶𝘬𝘪 | 𝘉𝘰𝘵 𝘦𝘴𝘵á 𝘤𝘳𝘦𝘢𝘯𝘥𝘰 𝘵𝘶 𝘴𝘵𝘪𝘤𝘬𝘦𝘳, 𝘦𝘴𝘱𝘦𝘳𝘢 𝘶𝘯 𝘮𝘰𝘮𝘦𝘯𝘵𝘰.`, m);
+        await conn.reply(m.chat, `✅𝐄𝐬𝐭𝐨𝐲 𝐜𝐫𝐞𝐚𝐧𝐝𝐨 𝐭𝐮 𝐬𝐭𝐢𝐜𝐤𝐞𝐫, 𝐮𝐧 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫.`, m);
       } catch (e) {
         console.error(e);
       } finally {
@@ -34,7 +34,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       if (isUrl(args[0])) {
         stiker = await sticker(false, args[0], global.packname, global.author);
       } else {
-        return m.reply(`URL inválido`);
+        return m.reply(`❎𝐄𝐥 𝐔𝐑𝐋 𝐞𝐬 𝐢𝐧𝐯𝐚𝐥𝐢𝐝𝐨, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐝𝐞 𝐧𝐮𝐞𝐯𝐨.`);
       }
     }
   } catch (e) {
@@ -48,16 +48,16 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           'isForwarded': false,
           externalAdReply: {
             showAdAttribution: false,
-            title: 'ＭＩＺＵＫＩ | ＢＯＴ',
-            body: `ᴅᴇᴠᴇʟᴏᴘᴇʀ: ʙᴇɴᴊᴀᴍɪɴ`,
+            title: 'ＳＴＩＣＫＥＲ',
+            body: `ＳＹＳＴＥＭ Ｘ`,
             mediaType: 2,
-            sourceUrl: 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u', // Enlace actualizado
+            sourceUrl: 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u',
             thumbnail: imagen1
           }
         }
       }, { quoted: m });
     } else {
-      throw `> 🏴𝘙𝘦𝘴𝘱𝘰𝘯𝘥𝘦 𝘢 𝘶𝘯𝘢 𝘪𝘮𝘢𝘨𝘦𝘯 𝘤𝘰𝘯 𝘦𝘭 𝘤𝘰𝘮𝘢𝘯𝘥𝘰 [.𝘴𝘵𝘪𝘤𝘬𝘦𝘳]`;
+      throw `⚒️𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐫𝐞𝐬𝐩𝐨𝐧𝐝𝐢𝐞𝐧𝐝𝐨 𝐚 𝐮𝐧𝐚 𝐢𝐦𝐚𝐠𝐞𝐧 𝐨 𝐯𝐢𝐝𝐞𝐨.`;
     }
   }
 };
