@@ -168,10 +168,10 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
 
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
-    // Enviar mensaje y lista de opciones sin gif
+    // Enviar mensaje y lista de opciones
     const optionsListMessage = [
       {
-        title: 'hola',
+        title: '',
         rows: [
           { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚` },
           { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀` },
@@ -181,6 +181,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
       }
     ];
 
+    // Enviar el menú como texto y lista de opciones sin gif
     await conn.sendMessage(message.chat, { caption: formattedMenuText.trim(), mentions: [message.sender] });
     await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, optionsListMessage, { mentions: [message.sender] });
 
