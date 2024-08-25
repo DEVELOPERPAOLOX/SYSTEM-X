@@ -1,4 +1,3 @@
-// Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
 import { promises as fileSystem } from 'fs';
 import { join as joinPath } from 'path';
 import fetch from 'node-fetch';
@@ -169,7 +168,8 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
 
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
-    // Enviar mensaje y lista de opciones
+    // Enviar mensaje y lista de opciones con una imagen en lugar de GIF
+    const imageUrl = 'https://example.com/your-image.jpg'; // URL de la imagen
     const optionsListMessage = [
       {
         title: '',
@@ -182,7 +182,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
       }
     ];
 
-    await conn.sendMessage(message.chat, { video: { url: gifSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
+    await conn.sendMessage(message.chat, { image: { url: imageUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
     await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, optionsListMessage, { mentions: [message.sender] });
 
   } catch (error) {
