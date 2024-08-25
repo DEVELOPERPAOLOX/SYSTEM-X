@@ -25,31 +25,7 @@ let tags = {
 }
 
 const defaultMenu = {
-  before: `
-\`꧁•⊹٭ＡＮＹＡ ＢＯＴ٭⊹•꧂\`
-
-> ᴄᴀɴᴀʟ ᴏꜰᴄ|ᴀɴʏᴀ ʙᴏᴛ
-https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u
-
-╭━━━━━━━∙⋆⋅⋆∙━━━━━━━━╮
-➤📝 *Nombre* : %name
-➤🪙 *Euros* : %limit
-➤🤖 *User* : %taguser
-➤📈 *Nivel* : %level
-➤⭐ *XP* : %totalexp
-╰━━━━━━━∙⋆⋅⋆∙━━━━━━━━╯
-
-╭━━━━━━━∙⋆⋅⋆∙━━━━━━━━╮
-➤🗣️ *Creador* : 𝘽𝙀𝙉𝙅𝘼𝙈𝙄𝙉
-➤📲 *Número* : Wa.me/51936732723
-➤⌛ *Tiempo* : %uptime
-╰━━━━━━━∙⋆⋅⋆∙━━━━━━━━╯
-
-%readmore
-`.trimStart(),
-  header: '`MENU X %category`\n\n╭━━━━━━━∙⋆⋅⋆∙━━━━━━━━╮',
-  body: '➤ *%cmd*\n',
-  footer: '╰━━━━━━━∙⋆⋅⋆∙━━━━━━━━╯\n',
+  before: '',
   after: '',
 }
 
@@ -155,10 +131,10 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    let pp = 'https://th.bing.com/th/id/OIG3.cLOJAQj8neUVXa2OXGEU?w=270&h=270&c=6&r=0&o=5&pid=ImgGn'
-    let pp2 = 'https://th.bing.com/th/id/OIG3.cLOJAQj8neUVXa2OXGEU?w=270&h=270&c=6&r=0&o=5&pid=ImgGn'
-    let pp3 = 'https://th.bing.com/th/id/OIG3.cLOJAQj8neUVXa2OXGEU?w=270&h=270&c=6&r=0&o=5&pid=ImgGn'
-    let pp4 = 'https://th.bing.com/th/id/OIG3.cLOJAQj8neUVXa2OXGEU?w=270&h=270&c=6&r=0&o=5&pid=ImgGn'
+    let pp = ''
+    let pp2 = ''
+    let pp3 = ''
+    let pp4 = ''
     m.react('✅')
    
   //  conn.sendMessage(m.chat, { video: { url: [pp, pp2, pp3, pp4].getRandom() }, gifPlayback: true, caption: text.trim(), mentions: [m.sender] }, { quoted: m })
