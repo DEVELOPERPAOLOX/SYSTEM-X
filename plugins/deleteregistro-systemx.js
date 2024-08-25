@@ -10,7 +10,7 @@ global.db.data.users[m.sender].limit -= 4
 global.db.data.users[m.sender].exp -= 150
 global.db.data.users[m.sender].joincount -= 2
 user.registered = false
-m.reply(`✉ ${eg} 𝐭𝐞 𝐛𝐨𝐫𝐫𝐞 𝐝𝐞 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬 𝐜𝐨𝐧 𝐞𝐱𝐢𝐭𝐨, 𝐲𝐚 𝐧𝐨 𝐩𝐨𝐝𝐫𝐚𝐬 𝐮𝐬𝐚𝐫 𝐦𝐢𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬 𝐡𝐚𝐬𝐭𝐚 𝐪𝐮𝐞 𝐭𝐞 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐞𝐬 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞.`)
+m.reply(`✉ ${eg} 𝐓𝐞 𝐛𝐨𝐫𝐫𝐞 𝐝𝐞 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬 𝐜𝐨𝐧 𝐞𝐱𝐢𝐭𝐨, 𝐲𝐚 𝐧𝐨 𝐩𝐨𝐝𝐫𝐚𝐬 𝐮𝐬𝐚𝐫 𝐦𝐢𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬 𝐡𝐚𝐬𝐭𝐚 𝐪𝐮𝐞 𝐭𝐞 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐞𝐬 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞.`)
 }
 handler.help = ['', 'ister'].map(v => 'unreg' + v + ' <numero de serie>')
 handler.tags = ['xp']
