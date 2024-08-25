@@ -410,7 +410,7 @@ if (!/[01]/.test(command)) return await conn.reply(m.chat, `> PORFAVOR USA EL CO
 //conn.sendMessage(m.chat, texto, {quoted: fkontak})	
 throw false
 }
-await conn.reply(m.chat, `${isEnable ? '✅' : '❌'} 𝐋𝐀 𝐅𝐔𝐍𝐂𝐈𝐎𝐍 ${type} 𝐒𝐄 𝐀 ${isEnable ? '𝐀𝐂𝐓𝐈𝐕𝐀𝐃𝐎' : '𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐃𝐎'} 𝐄𝐍 ${isAll ? '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗' : isUser ? '' : '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'}`, fkontak, m, fake,)}
+await conn.reply(m.chat, `${isEnable ? '✅' : '❌'} 𝐋𝐀 𝐅𝐔𝐍𝐂𝐈𝐎𝐍 ${type} 𝐒𝐄 𝐇𝐀 ${isEnable ? '𝐀𝐂𝐓𝐈𝐕𝐀𝐃𝐎' : '𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐃𝐎'} 𝐂𝐎𝐍 𝐄𝐗𝐈𝐓𝐎 𝐄𝐍 ${isAll ? '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗' : isUser ? '' : '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗.'}`, fkontak, m, fake,)}
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
