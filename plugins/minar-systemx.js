@@ -21,21 +21,21 @@ let handler = async (m, { conn, isPrems }) => {
 
     // Mensaje de minería
     let miningMessage = pickRandom([
-        '🚀 ¡Impresionante! Has logrado minar con éxito y obtienes',
-        '✨ ¡Fantástico! Has extraído con éxito y ahora tienes',
-        '🌟 ¡Enhorabuena, minero(a)! Has conseguido',
-        '🎉 ¡Gran trabajo! Tus esfuerzos mineros han sido recompensados con',
-        '💎 ¡Excelente hallazgo! Has minado y ahora cuentas con',
-        '🤑 ¡Increíble! Has aumentado tus recursos con',
-        '🏆 ¡Felicidades! La minería te ha dado',
-        '🎊 ¡Súper! Gracias a tu habilidad minera obtienes',
-        '💰 ¡Estás en racha! Has minado y ganado',
-        '🔥 ¡Gran minería! Tu recompensa ahora es',
-        '🚀 ¡Fantástico hallazgo minero! Has recibido',
-        '🎯 ¡Objetivo alcanzado! Has minado y recibido',
-        '🎉 ¡Felicidades! La minería te premia con',
-        '🔍 ¡Descubrimiento exitoso! Ahora obtienes',
-        '💥 ¡Qué éxito! Tus esfuerzos mineros te han dado'
+        '🚀 ¡𝐈𝐧𝐜𝐫𝐞𝐢𝐛𝐥𝐞! 𝐇𝐚𝐬 𝐥𝐨𝐠𝐫𝐚𝐝𝐨 𝐦𝐢𝐧𝐚𝐫 𝐜𝐨𝐧 𝐞𝐱𝐢𝐭𝐨 𝐲 𝐨𝐛𝐭𝐢𝐞𝐧𝐞𝐬',
+        '✨ ¡𝐈𝐦𝐩𝐫𝐞𝐬𝐢𝐨𝐧𝐚𝐧𝐭𝐞! 𝐇𝐚𝐬 𝐞𝐱𝐭𝐫𝐚𝐢𝐝𝐨 𝐜𝐨𝐧 𝐞𝐱𝐢𝐭𝐨 𝐲 𝐚𝐡𝐨𝐫𝐚 𝐭𝐢𝐞𝐧𝐞𝐬',
+        '🌟 ¡𝐅𝐞𝐥𝐢𝐜𝐢𝐝𝐚𝐝𝐞𝐬, 𝐦𝐢𝐧𝐞𝐫𝐨(𝐚)! 𝐇𝐚𝐬 𝐜𝐨𝐧𝐬𝐞𝐠𝐮𝐢𝐝𝐨',
+        '🎉 ¡𝐄𝐱𝐜𝐞𝐥𝐞𝐧𝐭𝐞 𝐭𝐫𝐚𝐛𝐚𝐣𝐨! 𝐓𝐮𝐬 𝐞𝐬𝐟𝐮𝐞𝐫𝐳𝐨𝐬 𝐝𝐞 𝐦𝐢𝐧𝐞𝐫𝐢𝐚 𝐭𝐞 𝐡𝐚𝐧 𝐫𝐞𝐜𝐨𝐦𝐩𝐞𝐧𝐬𝐚𝐝𝐨 𝐜𝐨𝐧',
+        '💎 ¡𝐆𝐫𝐚𝐧 𝐡𝐚𝐥𝐥𝐚𝐳𝐠𝐨! 𝐇𝐚𝐬 𝐦𝐢𝐧𝐚𝐝𝐨 𝐲 𝐚𝐡𝐨𝐫𝐚 𝐭𝐢𝐞𝐧𝐞𝐬',
+        '🤑 ¡𝐀𝐬𝐨𝐦𝐛𝐫𝐨𝐬𝐨! 𝐇𝐚𝐬 𝐚𝐮𝐦𝐞𝐧𝐭𝐚𝐝𝐨 𝐭𝐮𝐬 𝐫𝐞𝐜𝐮𝐫𝐬𝐨𝐬 𝐜𝐨𝐧',
+        '🏆 ¡𝐄𝐧𝐡𝐨𝐫𝐚𝐛𝐮𝐞𝐧𝐚! 𝐋𝐚 𝐦𝐢𝐧𝐞𝐫𝐢𝐚 𝐭𝐞 𝐡𝐚 𝐝𝐚𝐝𝐨',
+        '🎊 ¡𝐅𝐚𝐧𝐭𝐚𝐬𝐭𝐢𝐜𝐨! 𝐆𝐫𝐚𝐜𝐢𝐚𝐬 𝐚 𝐭𝐮 𝐡𝐚𝐛𝐢𝐥𝐢𝐝𝐚𝐝 𝐦𝐢𝐧𝐞𝐫𝐚 𝐨𝐛𝐭𝐢𝐞𝐧𝐞𝐬',
+        '💰 ¡𝐄𝐬𝐭𝐚𝐬 𝐞𝐧 𝐫𝐚𝐜𝐡𝐚! 𝐇𝐚𝐬 𝐦𝐢𝐧𝐚𝐝𝐨 𝐲 𝐠𝐚𝐧𝐚𝐝𝐨',
+        '🔥 ¡𝐆𝐫𝐚𝐧 𝐦𝐢𝐧𝐞𝐫𝐢𝐚! 𝐓𝐮 𝐫𝐞𝐜𝐨𝐦𝐩𝐞𝐧𝐬𝐚 𝐞𝐬 𝐚𝐡𝐨𝐫𝐚',
+        '🚀 ¡𝐆𝐫𝐚𝐧 𝐡𝐚𝐥𝐥𝐚𝐳𝐠𝐨 𝐦𝐢𝐧𝐞𝐫𝐨! 𝐇𝐚𝐬 𝐫𝐞𝐜𝐢𝐛𝐢𝐝𝐨',
+        '🎯 ¡𝐎𝐛𝐣𝐞𝐭𝐢𝐯𝐨 𝐥𝐨𝐠𝐫𝐚𝐝𝐨! 𝐇𝐚𝐬 𝐦𝐢𝐧𝐚𝐝𝐨 𝐲 𝐫𝐞𝐜𝐢𝐛𝐢𝐝𝐨',
+        '🎉 ¡𝐄𝐧𝐡𝐨𝐫𝐚𝐛𝐮𝐞𝐧𝐚! 𝐋𝐚 𝐦𝐢𝐧𝐞𝐫𝐢𝐚 𝐭𝐞 𝐩𝐫𝐞𝐦𝐢𝐚 𝐜𝐨𝐧',
+        '🔍 ¡𝐃𝐞𝐬𝐜𝐮𝐛𝐫𝐢𝐦𝐢𝐞𝐧𝐭𝐨 𝐞𝐱𝐢𝐭𝐨𝐬𝐨! 𝐎𝐛𝐭𝐢𝐞𝐧𝐞𝐬 𝐚𝐡𝐨𝐫𝐚',
+        '💥 ¡𝐐𝐮𝐞 𝐞𝐱𝐢𝐭𝐨! 𝐓𝐮𝐬 𝐞𝐬𝐟𝐮𝐞𝐫𝐳𝐨𝐬 𝐦𝐢𝐧𝐞𝐫𝐨𝐬 𝐭𝐞 𝐡𝐚𝐧 𝐝𝐚𝐝𝐨'
     ])
 
     // Datos de recompensas
@@ -63,14 +63,14 @@ let handler = async (m, { conn, isPrems }) => {
     let cooldown = 600000 // 10 minutos
     let nextAvailableMiningTime = user.lastmiming + cooldown
     if (new Date - user.lastmiming < cooldown) {
-        return await conn.reply(m.chat, `Acabas de minar hace poco, por favor intenta nuevamente en ${msToTime(nextAvailableMiningTime - new Date())} ${global.rpgshopp.emoticon('exp')}`, m, {
+        return await conn.reply(m.chat, `𝐀𝐜𝐚𝐛𝐚𝐬 𝐝𝐞 𝐦𝐢𝐧𝐚𝐫 𝐫𝐞𝐜𝐢𝐞𝐧𝐭𝐞𝐦𝐞𝐧𝐭𝐞, 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐦𝐢𝐧𝐚𝐫 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 ${msToTime(nextAvailableMiningTime - new Date())} ${global.rpgshopp.emoticon('exp')}`, m, {
             contextInfo: {
                 'forwardingScore': 0,
                 'isForwarded': false,
                 externalAdReply: {
                     showAdAttribution: false,
-                    title: wm,
-                    body: `MINAR | SISTEMA X`,
+                    title: `ＭＩＮＡＲ`,
+                    body: `ＳＹＳＴＥＭ Ｘ`,
                     mediaType: 3,
                     sourceUrl: global.md,
                     thumbnail: imagen1
@@ -89,14 +89,14 @@ let handler = async (m, { conn, isPrems }) => {
     }
 
     // Enviar respuesta
-    await conn.reply(m.chat, `*\`MINAR | SISTEMA X\`*\n${miningMessage}\n${experience} XP`, m, {
+    await conn.reply(m.chat, `*\`ＭＩＮＡＲ | ＳＹＳＴＥＭ Ｘ\`*\n${miningMessage}\n${experience} XP`, m, {
         contextInfo: {
             'forwardingScore': 200,
             'isForwarded': false,
             externalAdReply: {
                 showAdAttribution: false,
-                title: wm,
-                body: `MINAR | SISTEMA X`,
+                title: `ＭＩＮＡＲ`,
+                body: `ＳＹＳＴＥＭ Ｘ`,
                 mediaType: 3,
                 sourceUrl: global.md,
                 thumbnail: imagen1
