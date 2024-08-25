@@ -1,3 +1,4 @@
+// Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
 import { createHash } from 'crypto'
 let handler = async function (m, { args }) {
 if (!args[0]) throw `✉𝐈𝐧𝐠𝐫𝐞𝐬𝐚 𝐭𝐮 𝐧𝐮𝐦𝐞𝐫𝐨 𝐝𝐞 𝐬𝐞𝐫𝐢𝐞, 𝐞𝐧 𝐜𝐚𝐬𝐨 𝐧𝐨 𝐥𝐚 𝐫𝐞𝐜𝐮𝐞𝐫𝐝𝐞𝐬 𝐮𝐬𝐞 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 .𝐦𝐲𝐧𝐬 𝐩𝐚𝐫𝐚 𝐨𝐛𝐭𝐞𝐧𝐞𝐫 𝐭𝐮 𝐧𝐮𝐦𝐞𝐫𝐨 𝐝𝐞 𝐬𝐞𝐫𝐢𝐞.`
