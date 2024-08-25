@@ -2,6 +2,13 @@ import FormData from 'form-data';
 import axios from 'axios';
 import Jimp from 'jimp'; // Verifica si realmente necesitas esta importación
 
+// Define 'icons' con una URL de imagen o una imagen local
+const icons = 'https://example.com/path-to-your-thumbnail-image.jpg'; // Cambia esto a la URL o ruta correcta
+const packname = "Tu Packname"; // Reemplaza con el packname correcto
+const wm = "Tu Watermark"; // Reemplaza con el watermark correcto
+const channel = "Tu Canal"; // Reemplaza con la URL de tu canal
+const fkontak = {}; // Define 'fkontak' si es necesario
+
 const handler = async (m, { conn, usedPrefix, command }) => {
   try {
     let q = m.quoted ? m.quoted : m;
