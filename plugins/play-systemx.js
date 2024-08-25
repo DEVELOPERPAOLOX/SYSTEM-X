@@ -1,3 +1,4 @@
+// C O D I G O   C R E A D O   P O R   P A O L O   X
 import fg from 'api-dylux'
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 import yts from 'yt-search'
