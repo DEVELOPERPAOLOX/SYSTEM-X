@@ -14,17 +14,10 @@ _muptime = await new Promise(resolve => { process.once('message', resolve)
 setTimeout(resolve, 1000) }) * 1000}
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 let uptime = clockString(_uptime)
-let estado = `${pickRandom([`*\`𝐔𝐏𝐓𝐈𝐌𝐄 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓:\`*\n> ⏰ ${uptime}`])}
+let estado = `${pickRandom([`*\`𝐔𝐏𝐓𝐈𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`*\n> ⏰ ${uptime}`, `*\`𝐔𝐏𝐓𝐈𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`*\n> ⏰ ${uptime}`])}
 `.trim()
 await conn.sendMessage(m.chat, {text: estado, mentions: [m.sender]}, {quoted: fkontak})
-/*await conn.reply(m.chat, `┌───⊷ *ミ🤖 Estado del Bot 🤖彡*
-┆ *=> Bot activo ✅*
-┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┆ *=> Bot uso público ✅️*
-┆┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┆=> 𝘼𝙘𝙩𝙞𝙫𝙤 𝙙𝙪𝙧𝙖𝙣𝙩𝙚
-┆=> ${uptime} ✅
-╰──────────────────`, fkontak, { mentions: [aa,] })*/
+/*await conn.reply(m.chat, `𝐔𝐏𝐓𝐈𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:`, fkontak, { mentions: [aa,] })*/
 }
 handler.help = ['estado']
 handler.tags = ['main']
