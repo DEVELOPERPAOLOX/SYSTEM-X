@@ -1,3 +1,4 @@
+// Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
 import { execSync } from 'child_process'
 
 var handler = async (m, { conn, text }) => {
