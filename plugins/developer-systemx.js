@@ -1,12 +1,14 @@
 // Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
-function handler(m) {
-  const data = global.owner.filter(([id, isCreator]) => id && isCreator)
-  this.sendContact(m.chat, data.map(([id, name]) => [id, name]), m)
 
+function contactHandler(message) {
+  const ownersList = global.owner.filter(([id, isCreator]) => id && isCreator);
+  const formattedContacts = ownersList.map(([id, name]) => [id, name]);
+
+  this.sendContact(message.chat, formattedContacts, message);
 }
 
-handler.help = ['owner']
-handler.tags = ['main']
-handler.command = ['owner', 'creator', 'creador', 'dueño'] 
+contactHandler.help = ['owner'];
+contactHandler.tags = ['main'];
+contactHandler.command = ['owner', 'creator', 'creador', 'dueño'];
 
-export default handler
+export default contactHandler;
