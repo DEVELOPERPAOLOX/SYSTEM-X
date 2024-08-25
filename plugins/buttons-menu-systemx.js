@@ -171,7 +171,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
     // Enviar mensaje y lista de opciones con una imagen en lugar de GIF
-    const imageUrl = 'https://imgur.com/a/aLHrhF9'; // URL de la imagen
+    const imageUrl = 'https://tse2.mm.bing.net/th?id=OIG4.l_LMIpYy_nxSMbBXNEWR&pid=ImgGn'; // URL de la imagen
     const optionsListMessage = [
       {
         title: '',
