@@ -28,7 +28,7 @@ const categoryLabels = {
 
 // Configuración predeterminada del menú
 const defaultMenuConfig = {
-  before: ``.trimStart(),
+  before: `.trimStart(),
   header: '',
   body: '',
   footer: '',
@@ -66,7 +66,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     const dayName = weekDays[Math.floor(currentTime / 84600000) % 5];
     const weekDay = currentTime.toLocaleDateString(locale, { weekday: 'long' });
     const fullDate = currentTime.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
-    const islamicDate = Intl.DateTimeFormat(`${locale}-TN-u-ca-islamic`, { day: 'numeric', month: 'long', year: 'numeric' }).format(currentTime);
+    const islamicDate = Intl.DateTimeFormat(${locale}-TN-u-ca-islamic, { day: 'numeric', month: 'long', year: 'numeric' }).format(currentTime);
     const time = currentTime.toLocaleTimeString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric' });
 
     // Obtener tiempos de actividad
@@ -113,7 +113,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     const menuHeader = conn.menu.header || defaultMenuConfig.header;
     const menuBody = conn.menu.body || defaultMenuConfig.body;
     const menuFooter = conn.menu.footer || defaultMenuConfig.footer;
-    const menuAfter = conn.menu.after || (conn.user.jid === global.conn.user.jid ? '' : ``) + defaultMenuConfig.after;
+    const menuAfter = conn.menu.after || (conn.user.jid === global.conn.user.jid ? '' : `) + defaultMenuConfig.after;
     
     const menuText = [
       menuBefore,
@@ -167,23 +167,24 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
       readmore: readMorePlaceholder
     };
 
-    formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
+    formattedMenuText = formattedMenuText.replace(new RegExp(%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join|}), 'g'), (_, key) => '' + replacements[key]);
 
-    // Enviar mensaje de texto sin imagen
+    // Enviar mensaje y lista de opciones
+    const gifSourceUrl = 'https://th.bing.com/th/id/OIG3.2LhHLm6qxvavru3HsK_z?w=1024&h=1024&rs=1&pid=ImgDetMain'; // URL de descarga directa del archivo
     const optionsListMessage = [
       {
         title: '',
         rows: [
-          { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚` },
-          { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀` },
-          { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: `.estado`, description: `𝐔𝐏𝐓𝐈𝐌𝐄⏰` },
-          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: `.creador`, description: `𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅` }
+          { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: .allmenu, description: 𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚 },
+          { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: .ping, description: 𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀 },
+          { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: .estado, description: 𝐔𝐏𝐓𝐈𝐌𝐄⏰ },
+          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: .creador, description: 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅ }
         ]
       }
     ];
 
-    await conn.sendMessage(message.chat, { caption: formattedMenuText.trim(), mentions: [message.sender] });
-    await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, optionsListMessage, { mentions: [message.sender] });
+    await conn.sendMessage(message.chat, { video: { url: gifSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
+    await conn.sendList(message.chat, '', null, 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗, optionsListMessage, { mentions: [message.sender] });
 
   } catch (error) {
     console.error('Error en el handler:', error.message); // Mensaje de error más claro
