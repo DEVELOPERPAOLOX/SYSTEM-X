@@ -44,7 +44,7 @@ global.taguser = '@' + m.sender.split("@s.whatsapp.net")
 
 //global.fake = { contextInfo:{ forwardingScore: 0, externalAdReply: {title: '👋 Hola ' + nombre, body: wm, sourceUrl: md, thumbnailUrl: imagen1 }}} //Fake simple
 
-global.fake = { contextInfo: { mentionedJid: conn.parseMention(wm), forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363316264159575@newsletter', serverMessageId: '', newsletterName: '✅𝐂𝐀𝐍𝐀𝐋 𝐎𝐅𝐂 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗' }, externalAdReply: { title: wm, body: `` + nombre, mediaType: 1, renderLargerThumbnail: false, previewType: `PHOTO`, thumbnailUrl: imagen1, thumbnail: imagen1, sourceUrl: yt }}}, { quoted: m } //fake con reenviado de canal
+global.fake = { contextInfo: { mentionedJid: conn.parseMention(wm), forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363316264159575@newsletter', serverMessageId: '', newsletterName: '𝐂𝐀𝐍𝐀𝐋 𝐎𝐅𝐂 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗' }, externalAdReply: { title: ``, body: ``, mediaType: 1, renderLargerThumbnail: false, previewType: `PHOTO`, thumbnailUrl: imagen1, thumbnail: imagen1, sourceUrl: yt }}}, { quoted: m } //fake con reenviado de canal
 }
 
 export default handler
