@@ -1,3 +1,4 @@
+// Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
 import { promises as fileSystem } from 'fs';
 import { join as joinPath } from 'path';
 import fetch from 'node-fetch';
