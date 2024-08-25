@@ -50,7 +50,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 
 handler.help = ['estado'];
 handler.tags = ['main'];
-handler.command = /^(estado|status|estate|state|stado|stats|botstat(us)?)$/i;
+handler.command = /^(estado|status|estate|state|stado|uptime|botstat(us)?)$/i;
 export default handler;
 
 function pickRandom(list) {
