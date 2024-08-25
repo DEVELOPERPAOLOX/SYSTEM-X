@@ -19,18 +19,18 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
     var vid = res.videos[0]
     var q = '128kbps'
 const texto1 = `┏・ \`ＰＬＡＹ | ＳＹＳＴＥＭ Ｘ\`\n
-            ┣・✅ \`𝐓𝐈𝐓𝐔𝐋𝐎:\`\n
-            ┣・${vid.title}\n
-            ┣・✅ \`𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:\`\n
-            ┣・${vid.timestamp}\n
-            ┣・✅ \`𝐕𝐈𝐒𝐈𝐓𝐀𝐒:\`\n
-            ┣・${vid.views}\n
-            ┣・✅ \`𝐀𝐔𝐓𝐎𝐑:\`\n
-            ┣・${vid.author.name}\n
-            ┣・✅ \`𝐅𝐄𝐂𝐇𝐀 𝐃𝐄 𝐏𝐔𝐁𝐋𝐈𝐂𝐀𝐂𝐈𝐎𝐍:\`\n
-            ┣・${vid.ago}\n
-            ┣・✅ \`𝐔𝐑𝐋:\`\n
-            ┗・${'https://youtu.be/' + vid.videoId}\n`.trim()
+┣・✅ \`𝐓𝐈𝐓𝐔𝐋𝐎:\`\n
+┣・${vid.title}\n
+┣・✅ \`𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:\`\n
+┣・${vid.timestamp}\n
+┣・✅ \`𝐕𝐈𝐒𝐈𝐓𝐀𝐒:\`\n
+┣・${vid.views}\n
+┣・✅ \`𝐀𝐔𝐓𝐎𝐑:\`\n
+┣・${vid.author.name}\n
+┣・✅ \`𝐅𝐄𝐂𝐇𝐀 𝐃𝐄 𝐏𝐔𝐁𝐋𝐈𝐂𝐀𝐂𝐈𝐎𝐍:\`\n
+┣・${vid.ago}\n
+┣・✅ \`𝐔𝐑𝐋:\`\n
+┗・${'https://youtu.be/' + vid.videoId}\n`.trim()
 		
 await conn.sendButton(m.chat, texto1, wm, res.videos[0].thumbnail, [
 	['𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐑 𝐀𝐔𝐃𝐈𝐎🎵', `${usedPrefix}mp3 ${text}`],
