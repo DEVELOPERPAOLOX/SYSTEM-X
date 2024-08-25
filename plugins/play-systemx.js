@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
     let [feature, inputs, inputs_, inputs__, inputs___] = text.split(" ")
    // if (!lister.includes(feature)) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.*\n\nEjemplo : ${usedPrefix + command} *mp3* SUICIDAL-IDOL - ecstacy\n\nFormatos disponibles :\n${usedPrefix + command} *mp3*\n${usedPrefix + command} *mp3doc*\n${usedPrefix + command} *mp4*\n${usedPrefix + command} *mp4doc*`,  m, fake,)
 	  if (command == "play" || command == 'play2') {
-            if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`,  m)
+            if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`,  m, fake,)
     await m.react('✅')
     var res = await yts(text)
     var vid = res.videos[0]
@@ -41,7 +41,7 @@ await conn.sendButton(m.chat, texto1, wm, res.videos[0].thumbnail, [
 	  }
   
             if (command == "mp3") {
-	 if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m)
+	 if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m, fake,)
 		
        try {
     const res = await yts(text)
