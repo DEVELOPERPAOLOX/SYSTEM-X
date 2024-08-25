@@ -68,8 +68,8 @@ let username = conn.getName(who)
 //user.registered = false
 
 let TerminoA = `
-*_Toda la información que se mencione aquí no excluye a la Propietario del Bot, y Propietarios Acredores al uso de The LoliBot-MD_*
-*_No Somos responsables del desconocimiento que tenga por parte de esta información._*`.trim()
+Aclaramos y a la vez damos creidos que la base no es creada por developer Paolo X, es de LoliBot y los plugins estan adaptados con mejor funcionamiento por Paolo X.
+No Somos responsables del desconocimiento que tenga por parte de esta información.`.trim()
 
 let terminoB = `    
 *TÉRMINOS DE PRIVACIDAD*
