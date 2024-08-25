@@ -36,10 +36,10 @@ let handler = async (m, { conn, command, usedPrefix }) => {
         text: estado, 
         contextInfo: { 
             externalAdReply: { 
-                title: 'Estado del Sistema', 
-                body: '𝐔𝐏𝐓𝐈𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗', 
-                thumbnailUrl: picture, 
-                sourceUrl: '', 
+                title: 'ＵＰＴＩＭＥ', 
+                body: 'ＳＹＳＴＥＭ Ｘ', 
+                thumbnailUrl: 'https://th.bing.com/th/id/OIG3.gykYEWN8QAgNYfwhtTvi?w=1024&h=1024&rs=1&pid=ImgDetMain',
+                sourceUrl: 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u', 
                 mediaType: 1, 
                 renderLargerThumbnail: true 
             }
