@@ -205,14 +205,14 @@ let menu = `*\`⌜ ＭＥＮＵ | ＣＯＭＰＬＥＴＯ ⌟\`*
 ┃➔ 🔩 ${usedPrefix}qc
 ╰━━━━━━━━━━━━━━╯`.trim()
 //conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
-let img = await (await fetch(`https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn`)).buffer()  
+let img = await (await fetch(`https://th.bing.com/th/id/OIG3.2LhHLm6qxvavru3HsK_z?w=1024&h=1024&rs=1&pid=ImgDetMain`)).buffer()  
 await conn.sendMessage(m.chat, {
 text: menu,
 contextInfo: { 
 mentionedJid: [m.sender],
 forwardingScore: 9, 
 externalAdReply: {
-title: 'ＳＹＳＴＥＭ Ｘ\nᴅᴇᴠᴇʟᴏᴘᴇʀ ᴘᴀᴏʟᴏ',
+title: 'ＳＹＳＴＥＭ  Ｘ',
 //body: 'ᴅᴇᴠᴇʟᴏᴘᴇʀ: ʙᴇɴᴊᴀᴍɪɴ',
 thumbnail: img,
 sourceUrl: 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u',
