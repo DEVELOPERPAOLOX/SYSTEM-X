@@ -1,3 +1,4 @@
+
 import fg from 'api-dylux';
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 import yts from 'yt-search';
@@ -117,31 +118,37 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
             });
             await m.react('✅');
         } catch (error) {
-            await conn.reply(m.chat, `*☓ Ocurrió un error inesperado*`, m).then(() => m.react('✖️'));
+            await conn.reply(m.chat, `❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.`, m).then(() => m.react('❎'));
             console.error(error);
         }
     }
 
     if (command == "mp3doc") {
-        if (!text) return conn.reply(m.chat, `*🚩 Ingresa el título de un video o música de YouTube.*`, m);
-        await m.react('🕓');
+        if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m);
+        await m.react('🎧');
         let res = await yts(text);
         let vid = res.videos[0];
         let q = '128kbps';
-        const texto1 = `Y O U T U B E 乂 D O C\n
-            ✩ *Título ∙* ${vid.title}\n
-            ✩ *Duración ∙* ${vid.timestamp}\n
-            ✩ *Visitas ∙* ${vid.views}\n
-            ✩ *Autor ∙* ${vid.author.name}\n
-            ✩ *Publicado ∙* ${vid.ago}\n
-            ✩ *Url ∙* ${'https://youtu.be/' + vid.videoId}\n`;
+        const texto1 = `┏・ \`ＰＬＡＹ | ＳＹＳＴＥＭ Ｘ\`\n
+            ┣・✅ \`𝐓𝐈𝐓𝐔𝐋𝐎:\`\n
+            ┣・${vid.title}\n
+            ┣・✅ \`𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:\`\n
+            ┣・${vid.timestamp}\n
+            ┣・✅ \`𝐕𝐈𝐒𝐈𝐓𝐀𝐒:\`\n
+            ┣・${vid.views}\n
+            ┣・✅ \`𝐀𝐔𝐓𝐎𝐑:\`\n
+            ┣・${vid.author.name}\n
+            ┣・✅ \`𝐅𝐄𝐂𝐇𝐀 𝐃𝐄 𝐏𝐔𝐁𝐋𝐈𝐂𝐀𝐂𝐈𝐎𝐍:\`\n
+            ┣・${vid.ago}\n
+            ┣・✅ \`𝐔𝐑𝐋:\`\n
+            ┗・${'https://youtu.be/' + vid.videoId}\n`;
 
         try {
             let yt = await fg.yta(vid.url, q);
             let { title, dl_url, size } = yt;
             let limit = 100;
             
-            if (size.split('MB')[0] >= limit) return conn.reply(m.chat, `El archivo pesa más de ${limit} MB, se canceló la descarga.`, m).then(() => m.react('✖️'));
+            if (size.split('MB')[0] >= limit) return conn.reply(m.chat, `❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m).then(() => m.react('❎'));
             
             await conn.sendMessage(m.chat, {
                 document: { url: dl_url },
@@ -163,31 +170,37 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
             });
             await m.react('✅');
         } catch (error) {
-            await conn.reply(m.chat, `*☓ Ocurrió un error inesperado*`, m).then(() => m.react('✖️'));
+            await conn.reply(m.chat, `❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.`, m).then(() => m.react('❎'));
             console.error(error);
         }
     }
 
     if (command == "mp4doc") {
-        if (!text) return conn.reply(m.chat, `*🚩 Ingresa el título de un video o música de YouTube.*`, m);
-        await m.react('🕓');
+        if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m);
+        await m.react('🎧');
         let res = await yts(text);
         let vid = res.videos[0];
         let q = '360p';
-        const texto1 = `Y O U T U B E 乂 M U S I C\n
-            ✩ *Título ∙* ${vid.title}\n
-            ✩ *Duración ∙* ${vid.timestamp}\n
-            ✩ *Visitas ∙* ${vid.views}\n
-            ✩ *Autor ∙* ${vid.author.name}\n
-            ✩ *Publicado ∙* ${vid.ago}\n
-            ✩ *Url ∙* ${'https://youtu.be/' + vid.videoId}\n`;
+        const texto1 = `┏・ \`ＰＬＡＹ | ＳＹＳＴＥＭ Ｘ\`\n
+            ┣・✅ \`𝐓𝐈𝐓𝐔𝐋𝐎:\`\n
+            ┣・${vid.title}\n
+            ┣・✅ \`𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:\`\n
+            ┣・${vid.timestamp}\n
+            ┣・✅ \`𝐕𝐈𝐒𝐈𝐓𝐀𝐒:\`\n
+            ┣・${vid.views}\n
+            ┣・✅ \`𝐀𝐔𝐓𝐎𝐑:\`\n
+            ┣・${vid.author.name}\n
+            ┣・✅ \`𝐅𝐄𝐂𝐇𝐀 𝐃𝐄 𝐏𝐔𝐁𝐋𝐈𝐂𝐀𝐂𝐈𝐎𝐍:\`\n
+            ┣・${vid.ago}\n
+            ┣・✅ \`𝐔𝐑𝐋:\`\n
+            ┗・${'https://youtu.be/' + vid.videoId}\n`;
 
         try {
             let yt = await fg.ytv(vid.url, q);
             let { title, dl_url, size } = yt;
             let limit = 100;
             
-            if (size.split('MB')[0] >= limit) return conn.reply(m.chat, `El archivo pesa más de ${limit} MB, se canceló la descarga.`, m).then(() => m.react('✖️'));
+            if (size.split('MB')[0] >= limit) return conn.reply(m.chat, `❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m).then(() => m.react('❎'));
             
             await conn.sendMessage(m.chat, {
                 document: { url: dl_url },
@@ -198,7 +211,7 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
             });
             await m.react('✅');
         } catch (error) {
-            await conn.reply(m.chat, `*☓ Ocurrió un error inesperado*`, m).then(() => m.react('✖️'));
+            await conn.reply(m.chat, `❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.`, m).then(() => m.react('❎'));
             console.error(error);
         }
     }
