@@ -1,32 +1,18 @@
 import { createHash } from 'crypto';
 
-// Función principal para procesar el comando
-const processCommand = async function (message, context) {
-  // Obtener el objeto de conexión y el texto del mensaje desde el contexto
-  const { connection, text, usedPrefix } = context;
+// Función para manejar el comando
+const handleRequest = async function (message, { conn, text, usedPrefix }) {
+  // Crear un hash MD5 usando el identificador del remitente
+  const seriesNumber = createHash('md5').update(message.sender).digest('hex');
 
-  // Generar un hash MD5 del identificador del remitente
-  const hashValue = createHash('md5').update(message.sender).digest('hex');
-
-  // Asegurarse de que connection y fakeReply estén definidos
-  if (connection && typeof connection.fakeReply === 'function') {
-    // Enviar una respuesta falsa con el hash generado
-    connection.fakeReply(
-      message.chat, 
-      hashValue, 
-      '0@s.whatsapp.net', 
-      '乂 N U M E R O - D E - S E R I E 乂', 
-      'status@broadcast'
-    );
-  } else {
-    console.error('Connection object or fakeReply method is not defined');
-  }
+  // Enviar una respuesta falsa con el número de serie generado
+  conn.fakeReply(message.chat, seriesNumber, '0@s.whatsapp.net', '乂 N U M E R O - D E - S E R I E 乂', 'status@broadcast');
 }
 
 // Configuración del comando
-processCommand.help = ['myns'];
-processCommand.tags = ['xp'];
-processCommand.command = /^(myns|ceksn)$/i;
-processCommand.register = true;
+handleRequest.help = ['myns'];
+handleRequest.tags = ['xp'];
+handleRequest.command = /^(myns|ceksn)$/i;
+handleRequest.register = true;
 
-export default processCommand;
+export default handleRequest;
