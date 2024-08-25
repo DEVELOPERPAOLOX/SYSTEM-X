@@ -13,12 +13,12 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
     let [feature, inputs, inputs_, inputs__, inputs___] = text.split(" ");
     
     if (command == "play" || command == 'play2') {
-        if (!text) return conn.reply(m.chat, `*🚩 Ingresa el título de un video o música de YouTube.*`, m);
-        await m.react('🕓');
+        if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m);
+        await m.react('🎧');
         var res = await yts(text);
         var vid = res.videos[0];
         var q = '128kbps';
-        const texto1 = `乂  Y O U T U B E   M U S I C\n
+        const texto1 = `\`ＰＬＡＹ | ＳＹＳＴＥＭ Ｘ\`\n
             ✩ *Título ∙* ${vid.title}\n
             ✩ *Duración ∙* ${vid.timestamp}\n
             ✩ *Visitas ∙* ${vid.views}\n
@@ -31,8 +31,8 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
             footer: wm,
             image: { url: res.videos[0].thumbnail },
             buttons: [
-                { buttonId: `${usedPrefix}mp3 ${text}`, buttonText: { displayText: 'Audio 📀' }, type: 1 },
-                { buttonId: `${usedPrefix}mp4 ${text}`, buttonText: { displayText: 'Video 🎥' }, type: 1 }
+                { buttonId: `${usedPrefix}mp3 ${text}`, buttonText: { displayText: '𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐑 𝐀𝐔𝐃𝐈𝐎🎵' }, type: 1 },
+                { buttonId: `${usedPrefix}mp4 ${text}`, buttonText: { displayText: '𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐑 𝐕𝐈𝐃𝐄𝐎📽' }, type: 1 }
             ],
             headerType: 4
         });
