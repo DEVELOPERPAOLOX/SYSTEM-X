@@ -170,7 +170,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
     // Enviar mensaje y lista de opciones
-    const gifSourceUrl = ''; // URL de descarga directa del archivo
+    const gifSourceUrl = 'https://th.bing.com/th/id/OIG3.2LhHLm6qxvavru3HsK_z?w=1024&h=1024&rs=1&pid=ImgDetMain'; // URL de descarga directa del archivo
     const optionsListMessage = [
       {
         title: '',
