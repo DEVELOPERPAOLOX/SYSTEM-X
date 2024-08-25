@@ -19,17 +19,17 @@ let handler = async (m, { conn, args, usedPrefix, text, command }) => {
     var vid = res.videos[0]
     var q = '128kbps'
 const texto1 = `┏・ \`ＰＬＡＹ | ＳＹＳＴＥＭ Ｘ\`
-┣・\`𝐓𝐈𝐓𝐔𝐋𝐎:\`
+┣・ \`𝐓𝐈𝐓𝐔𝐋𝐎:\`
 ┣・${vid.title}
-┣・\`𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:\`
+┣・ \`𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:\`
 ┣・${vid.timestamp}
-┣・\`𝐕𝐈𝐒𝐈𝐓𝐀𝐒:\`
+┣・ \`𝐕𝐈𝐒𝐈𝐓𝐀𝐒:\`
 ┣・${vid.views}
-┣・\`𝐀𝐔𝐓𝐎𝐑:\`
+┣・ \`𝐀𝐔𝐓𝐎𝐑:\`
 ┣・${vid.author.name}
-┣・\`𝐅𝐄𝐂𝐇𝐀:\`
+┣・ \`𝐅𝐄𝐂𝐇𝐀:\`
 ┣・${vid.ago}
-┣・\`𝐔𝐑𝐋:\`
+┣・ \`𝐔𝐑𝐋:\`
 ┗・${'https://youtu.be/' + vid.videoId}`.trim()
 		
 await conn.sendButton(m.chat, texto1, wm, res.videos[0].thumbnail, [
