@@ -37,7 +37,7 @@ const texto1 = `┏・ \`ＰＬＡＹ | ＳＹＳＴＥＭ Ｘ\`
 await conn.sendButton(m.chat, texto1, wm, res.videos[0].thumbnail, [
 	['𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐑 𝐀𝐔𝐃𝐈𝐎🎵', `${usedPrefix}mp3 ${text}`],
 	['𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐑 𝐕𝐈𝐃𝐄𝐎📽', `${usedPrefix}mp4 ${text}`]
-  ], null, [['𝐂𝐀𝐍𝐀𝐋 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗✅', `${md}`]], m)
+  ], null, [['𝐂𝐀𝐍𝐀𝐋 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗✅', `${md}`]], m, fake,)
 	  }
   
             if (command == "mp3") {
@@ -51,7 +51,7 @@ await conn.sendButton(m.chat, texto1, wm, res.videos[0].thumbnail, [
        let { title, dl_url, size } = yt
        let limit = 100
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m).then(_ => m.react('❎'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m, fake,).then(_ => m.react('❎'))
        
 await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mp4", fileName: vid.title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
@@ -70,7 +70,7 @@ thumbnail: await (await fetch(vid.thumbnail)).buffer()}}}, { quoted: m })
        let { title, dl_url, size } = yt
        let limit = 100
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m).then(_ => m.react('❎'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m, fake,).then(_ => m.react('❎'))
        
        await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: "audio/mp4", fileName: vid.title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
@@ -84,13 +84,13 @@ sourceUrl: `${vid.url}`,
 thumbnail: await (await fetch(vid.thumbnail)).buffer()}}}, { quoted: m })
        await m.react('✅')
        } catch (error) {
-        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.\n\n` + error, m).then(_ => m.react('❎'))
+        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.\n\n` + error, m, fake,).then(_ => m.react('❎'))
         console.error(error)
     }}
     }
         
         if (command == "mp4") {
-            if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m)
+            if (!text) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m, fake,)
     await m.react('✅')
     let res = await yts(text)
     let vid = res.videos[0]
@@ -119,9 +119,9 @@ await conn.sendButton(m.chat, wm, texto1, res.videos[0].thumbnail, [
        let { title, dl_url, size } = yt
        let limit = 100
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m).then(_ => m.react('❎'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m, fake,).then(_ => m.react('❎'))
        
-       await conn.sendFile(m.chat, dl_url, 'yt.jpg', `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━━━●────── ${vid.timestamp}`, m)
+       await conn.sendFile(m.chat, dl_url, 'yt.jpg', `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━━━●────── ${vid.timestamp}`, m, fake,)
        await m.react('✅')
        } catch {
        try {
@@ -129,17 +129,17 @@ if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚
        let { title, dl_url, size } = yt
        let limit = 100
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m).then(_ => m.react('✖️'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m, fake,).then(_ => m.react('✖️'))
        
-       await conn.sendFile(m.chat, dl_url, 'yt.jpg', `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━━━●────── ${vid.timestamp}`, m)
+       await conn.sendFile(m.chat, dl_url, 'yt.jpg', `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━━━●────── ${vid.timestamp}`, m, fake,)
        await m.react('✅')
        } catch (error) {
-        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.`, m).then(_ => m.react('❎'))
+        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.`, m, fake,).then(_ => m.react('❎'))
         console.error(error)
     }}}
     
     if (command == "mp3doc") {
-            if (!inputs) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`,  m)
+            if (!inputs) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`,  m, fake,)
     await m.react('🕓')
     let res = await yts(text)
     let vid = res.videos[0]
@@ -168,7 +168,7 @@ await conn.sendButton(m.chat, wm, texto1, res.videos[0].thumbnail, [
        let { title, dl_url, size } = yt
        let limit = 100
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m).then(_ => m.react('❎'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m, fake,).then(_ => m.react('❎'))
        
        await conn.sendMessage(m.chat, { document: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
@@ -187,7 +187,7 @@ thumbnail: await (await fetch(vid.thumbnail)).buffer()}}}, { quoted: m })
        let { title, dl_url, size } = yt
        let limit = 100
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m).then(_ => m.react('❎'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m, fake,).then(_ => m.react('❎'))
        
        await conn.sendMessage(m.chat, { document: { url: dl_url }, mimetype: "audio/mpeg", fileName: vid.title + '.mp3', quoted: m, contextInfo: {
 'forwardingScore': 200,
@@ -201,12 +201,12 @@ sourceUrl: `${vid.url}`,
 thumbnail: await (await fetch(vid.thumbnail)).buffer()}}}, { quoted: m })
        await m.react('✅')
        } catch (error) {
-        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.`,  m).then(_ => m.react('❎'))
+        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.`,  m, fake,).then(_ => m.react('❎'))
         console.error(error)
     }}}
     
     if (command == "mp4doc") {
-            if (!inputs) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m)
+            if (!inputs) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞𝐥 𝐭𝐢𝐭𝐮𝐥𝐨 𝐝𝐞 𝐮𝐧 𝐯𝐢𝐝𝐞𝐨 𝐨 𝐦𝐮𝐬𝐢𝐜𝐚 𝐝𝐞 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m, fake,)
     await m.react('✅')
     let res = await yts(text)
     let vid = res.videos[0]
@@ -236,7 +236,7 @@ await conn.sendButton(m.chat, wm, texto1, res.videos[0].thumbnail, [
        let { title, dl_url, size } = yt
        let limit = 300
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m).then(_ => m.react('❎'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m, fake,).then(_ => m.react('❎'))
        
        await conn.sendMessage(m.chat, { document: { url: dl_url }, caption: `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━●────── ${vid.timestamp}`, mimetype: 'video/mp4', fileName: `${vid.title}` + `.mp4`, quoted: m, contextInfo: {
 'forwardingScore': 200,
@@ -255,7 +255,7 @@ thumbnail: await (await fetch(vid.thumbnail)).buffer()}}}, { quoted: m })
        let { title, dl_url, size } = yt
        let limit = 300
        
-if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m).then(_ => m.react('❎'))
+if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`,  m, fake,).then(_ => m.react('❎'))
        
        await conn.sendMessage(m.chat, { document: { url: dl_url }, caption: `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━●────── ${vid.timestamp}`, mimetype: 'video/mp4', fileName: `${vid.title}` + `.mp4`, quoted: m, contextInfo: {
 'forwardingScore': 200,
@@ -269,7 +269,7 @@ sourceUrl: `${vid.url}`,
 thumbnail: await (await fetch(vid.thumbnail)).buffer()}}}, { quoted: m })
        await m.react('✅')
        } catch (error) {
-        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.\n\n` + error, m).then(_ => m.react('❎'))
+        await conn.reply(m.chat,`❎𝐒𝐮𝐜𝐞𝐝𝐢𝐨 𝐮𝐧 𝐩𝐫𝐨𝐛𝐥𝐞𝐦𝐚 𝐚𝐥 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚, 𝐯𝐮𝐞𝐥𝐯𝐞 𝐚 𝐢𝐧𝐭𝐞𝐧𝐭𝐚𝐫𝐥𝐨 𝐦𝐚𝐬 𝐭𝐚𝐫𝐝𝐞.\n\n` + error, m, fake,).then(_ => m.react('❎'))
         console.error(error)
 }}}
 }
