@@ -20,13 +20,13 @@ let chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats
 let groups = Object.entries(conn.chats).filter(([jid, chat]) => jid.endsWith('@g.us') && chat.isChats && !chat.metadata?.read_only && !chat.metadata?.announce).map(v => v[0])
 
 
-let texto = `*\`𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓:\`*
+let texto = `*\`𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`*
 > 🚀 ${latensi.toFixed(4)}
 
 *\`𝐃𝐀𝐓𝐎𝐒 𝐃𝐄𝐋 𝐒𝐄𝐑𝐕𝐈𝐃𝐎𝐑 𝐇𝐎𝐒𝐓:\`*
-> ✅𝙍𝙖𝙢: Ilimitado`.trim()
+> ✅𝐂𝐎𝐑𝐈𝐍𝐏𝐋𝐔𝐒`.trim()
 
-conn.sendMessage(m.chat, { text: texto, contextInfo: { externalAdReply: { title: '', body: 'ＭＩＺＵＫＩ | ＢＯＴ', thumbnailUrl: 'https://tse4.mm.bing.net/th?id=OIG3.cLOJAQj8neUVXa2OXGEU&pid=ImgGn', sourceUrl: '', mediaType: 1, renderLargerThumbnail: true }}})
+conn.sendMessage(m.chat, { text: texto, contextInfo: { externalAdReply: { title: 'H', body: 'ＶＥＬＯＣＩＤＡＤ | ＳＹＳＴＥＭ Ｘ', thumbnailUrl: 'https://th.bing.com/th/id/OIG3.2m4d0gMcd0jt.lPVn.B8?w=1024&h=1024&rs=1&pid=ImgDetMain', sourceUrl: '', mediaType: 1, renderLargerThumbnail: true }}})
 
 }
 handler.help = ['ping']
