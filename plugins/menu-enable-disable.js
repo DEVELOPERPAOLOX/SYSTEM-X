@@ -1,3 +1,5 @@
+
+
 import { promises } from 'fs'
 import { join } from 'path'
 import fetch from 'node-fetch'
@@ -142,24 +144,22 @@ let listSections = []
 listSections.push({
 title: '',
         rows: [
-          { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚` },
-          { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀` },
-          { header: "𝐔𝐏𝐓𝐈𝐌𝐄⏰", title: "", id: `.estado`, description: `𝐔𝐏𝐓𝐈𝐌𝐄⏰` },
-          { header: "𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅", title: "", id: `.creador`, description: `𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑✅` }
+          { header: "✅𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒", title: "", id: `.enable3`, description: `✅𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒` },
+          { header: "❎𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒", title: "", id: `.enable4`, description: `❎𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒` }
         ]
       }
     ];
 
-await conn.sendList(m.chat, '> 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 𝐏𝐀𝐑𝐀 𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐘 𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐀𝐋𝐆𝐔𝐍𝐀𝐒 𝐅𝐔𝐍𝐂𝐈𝐎𝐍𝐄𝐒 𝐃𝐄 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 𝐌𝐈𝐙𝐔𝐊𝐈 𝐁𝐎𝐓`, listSections, { mentions: [m.sender]}, {quoted: m})
+await conn.sendList(m.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, listSections, { mentions: [m.sender]}, {quoted: m})
   } catch (e) {
     conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
   }
 }
 
-handler.help = ['enable']
-handler.tags = ['disable']
-handler.command = ['enable2', 'disable2', 'on2'] 
+handler.help = ['enablex']
+handler.tags = ['disablex']
+handler.command = ['enablex', 'disablex', 'onx', 'offx'] 
 handler.register = true 
 export default handler
 
