@@ -171,7 +171,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     // Enviar mensaje y lista de opciones sin gif
     const optionsListMessage = [
       {
-        title: '',
+        title: 'hola',
         rows: [
           { header: "𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚", title: "", id: `.allmenu`, description: `𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎📚` },
           { header: "𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀", title: "", id: `.ping`, description: `𝐕𝐄𝐋𝐎𝐂𝐈𝐃𝐀𝐃🚀` },
