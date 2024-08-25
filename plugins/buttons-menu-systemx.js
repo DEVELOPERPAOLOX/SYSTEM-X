@@ -1,3 +1,4 @@
+// Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
 import { promises as fileSystem } from 'fs';
 import { join as joinPath } from 'path';
 import fetch from 'node-fetch';
@@ -181,8 +182,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
       }
     ];
 
-    // Enviar el menú como texto y lista de opciones sin gif
-    await conn.sendMessage(message.chat, { caption: formattedMenuText.trim(), mentions: [message.sender] });
+    await conn.sendMessage(message.chat, { video: { url: gifSourceUrl }, caption: formattedMenuText.trim(), mentions: [message.sender] });
     await conn.sendList(message.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, optionsListMessage, { mentions: [message.sender] });
 
   } catch (error) {
