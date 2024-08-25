@@ -25,8 +25,10 @@ const handleNotification = async (message, { conn, text, participants }) => {
 }
 
 // Configuración del comando
-handler.customPrefix = /notify|aviso|n, condiciones y privacidad|terminos, condiciones y privacidad|términos y condiciones y privacidad|terminosycondicionesyprivacidad|terminosycondiciones|terminos y condiciones y privacidad|terminos y condiciones|terminos y condiciones|terminos de uso|Terminos de uso|Terminó se uso|términos de uso|Términos de uso|Términos y condiciones/i
-handler.command = new RegExp
-handler.register = true
-handler.exp = 70
-export default handler
+handleNotification.help = ['notify <message>']
+handleNotification.tags = ['group']
+handleNotification.command = ['notify', 'n']
+handleNotification.group = true
+handleNotification.admin = true
+
+export default handleNotification
