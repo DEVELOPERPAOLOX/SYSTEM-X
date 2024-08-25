@@ -9,6 +9,20 @@ import { spawn, exec, execSync } from 'child_process';
 
 const format = sizeFormatter({ std: 'JEDEC', decimalPlaces: 2, keepTrailingZeroes: false, render: (literal, symbol) => `${literal} ${symbol}B` });
 
+// Define los IDs y nombres de los chats a los que enviar el mensaje
+let canalId = [
+    "120363316264159575@newsletter", 
+    "120363316264159575@newsletter", 
+    "120363316264159575@newsletter", 
+    "120363316264159575@newsletter"
+];
+let canalNombre = [
+    "✅ ＣＡＮＡＬ | ＳＹＳＴＥＭ Ｘ", 
+    "✅ ＣＡＮＡＬ | ＳＹＳＴＥＭ Ｘ", 
+    "✅ ＣＡＮＡＬ | ＳＹＳＴＥＭ Ｘ", 
+    "✅ ＣＡＮＡＬ | ＳＹＳＴＥＭ Ｘ"
+];
+
 var handler = async (m, { conn }) => {
     let timestamp = speed();
     let latensi = speed() - timestamp;
@@ -25,18 +39,25 @@ var handler = async (m, { conn }) => {
 *\`𝐃𝐀𝐓𝐎𝐒 𝐃𝐄𝐋 𝐒𝐄𝐑𝐕𝐈𝐃𝐎𝐑 𝐇𝐎𝐒𝐓:\`*
 > ✅𝐂𝐎𝐑𝐈𝐍𝐏𝐋𝐔𝐒`.trim();
 
-    await conn.sendMessage(m.chat, { 
-        text: texto, 
-        contextInfo: { 
-            externalAdReply: { 
-                title: 'ＶＥＬＯＣＩＤＡＤ', 
-                body: 'ＳＹＳＴＥＭ Ｘ', 
-                thumbnailUrl: 'https://th.bing.com/th/id/OIG3.2m4d0gMcd0jt.lPVn.B8?w=1024&h=1024&rs=1&pid=ImgDetMain', 
-                sourceUrl: 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u',
-                renderLargerThumbnail: true 
-            }
-        } 
-    });
+    // Itera sobre cada ID en el array canalId
+    for (let i = 0; i < canalId.length; i++) {
+        let chatId = canalId[i];
+        let nombreCanal = canalNombre[i];
+
+        await conn.sendMessage(chatId, { 
+            text: texto, 
+            contextInfo: { 
+                externalAdReply: { 
+                    title: 'ＶＥＬＯＣＩＤＡＤ',
+                    body: 'ＳＹＳＴＥＭ Ｘ', 
+                    thumbnailUrl: 'https://th.bing.com/th/id/OIG3.2m4d0gMcd0jt.lPVn.B8?w=1024&h=1024&rs=1&pid=ImgDetMain', 
+                    sourceUrl: 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u',
+                    mediaType: 1, 
+                    renderLargerThumbnail: true 
+                }
+            } 
+        });
+    }
 };
 
 handler.help = ['ping'];
