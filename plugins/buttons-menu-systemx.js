@@ -1,4 +1,4 @@
-
+// Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
 
 import { promises as fileSystem } from 'fs';
 import { join as joinPath } from 'path';
@@ -171,7 +171,7 @@ const createAndSendMenu = async (message, { conn, usedPrefix, __dirname }) => {
     formattedMenuText = formattedMenuText.replace(new RegExp(`%(${Object.keys(replacements).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, key) => '' + replacements[key]);
 
     // Enviar mensaje y lista de opciones con una imagen en lugar de GIF
-    const imageUrl = 'https://th.bing.com/th/id/OIG3.2LhHLm6qxvavru3HsK_z?w=1024&h=1024&rs=1&pid=ImgDetMain'; // URL de la imagen
+    const imageUrl = 'url'; // URL de la imagen
     const optionsListMessage = [
       {
         title: '',
