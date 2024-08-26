@@ -16,21 +16,8 @@ const fkontak = {
 
 let user = global.db.data.users[m.sender]
 let premium = user.premium  
-let minar = `${pickRandom(['Que pro 😎 has minado',
-'🌟✨ Genial!! Obtienes',
-'WOW!! eres un(a) gran Minero(a) ⛏️ Obtienes',
-'Has Minado!!',
-'😲 Lograste Minar la cantidad de',
-'Tus Ingresos subiran gracias a que minaste',
-'⛏️⛏️⛏️⛏️⛏️ Minando',
-'🤩 SII!!! AHORA TIENES',
-'La minaria esta de tu lado, por ello obtienes',
-'😻 La suerte de Minar',
-'♻️ Tu Mision se ha cumplido, lograste minar',
-'⛏️ La Mineria te ha beneficiado con',
-'🛣️ Has encontrado un Lugar y por minar dicho lugar Obtienes',
-'👾 Gracias a que has minado tus ingresos suman',
-'Felicidades!! Ahora tienes','⛏️⛏️⛏️ Obtienes'])}`
+let minar = `${pickRandom(['♻️ 𝐓𝐮 𝐦𝐢𝐬𝐢ó𝐧 𝐡𝐚 𝐬𝐢𝐝𝐨 𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐚𝐝𝐚, 𝐥𝐨𝐠𝐫𝐚𝐬𝐭𝐞 𝐞𝐱𝐭𝐫𝐚𝐞𝐫',
+'🛣️ 𝐇𝐚𝐬 𝐝𝐞𝐬𝐜𝐮𝐛𝐢𝐞𝐫𝐭𝐨 𝐮𝐧 𝐥𝐮𝐠𝐚𝐫 𝐲 𝐚𝐥 𝐞𝐱𝐭𝐫𝐚𝐞𝐫 𝐞𝐧 é𝐥, 𝐨𝐛𝐭𝐢𝐞𝐧𝐞𝐬'])}`
 
 let pp = 'https://media.tvalacarta.info/programas/0/clantve/44-gatos/aida-la-gata-robot.jpg'
 
