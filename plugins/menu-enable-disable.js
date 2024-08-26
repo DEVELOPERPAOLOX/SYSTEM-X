@@ -165,19 +165,18 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 let listSections = []    
 listSections.push({
 title: '',
-rows: [{ header: "ＴＯＴＡＬ ＤＥ ＯＰＣＩＯＮＥＳ | ＥＮＡＢＬＥ ✅", title: "", id: `.enable3`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚊𝚖𝚎 𝚝𝚘𝚍𝚊𝚜 𝚕𝚊𝚜 𝚘𝚙𝚌𝚒𝚘𝚗𝚎𝚜 𝚎𝚗𝚊𝚋𝚕𝚎 𝚙𝚊𝚛𝚊 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` }, { header: "ＴＯＴＡＬ ＤＥ ＯＰＣＩＯＮＥＳ | ＤＩＳＡＢＬＥ ❌", title: "", id: `.enable4`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚊𝚖𝚎 𝚝𝚘𝚍𝚊𝚜 𝚕𝚊𝚜 𝚘𝚙𝚌𝚒𝚘𝚗𝚎𝚜 𝚍𝚒𝚜𝚊𝚋𝚕𝚎 𝚙𝚊𝚛𝚊 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` },
-{ header: "📚ＭＥＮＵ ＣＯＭＰＬＥＴＯ", title: "", id: `.allmenu`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚊𝚖𝚎 𝚝𝚘𝚍𝚘𝚜 𝚕𝚘𝚜 𝚌𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚍𝚎 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` }
+rows: [{ header: "ＴＯＴＡＬ ＤＥ ＯＰＣＩＯＮＥＳ | ＥＮＡＢＬＥ ✅", title: "", id: `.enable3`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚊𝚖𝚎 𝚝𝚘𝚍𝚊𝚜 𝚕𝚊𝚜 𝚘𝚙𝚌𝚒𝚘𝚗𝚎𝚜 𝚎𝚗𝚊𝚋𝚕𝚎 𝚙𝚊𝚛𝚊 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` }, { header: "ＴＯＴＡＬ ＤＥ ＯＰＣＩＯＮＥＳ | ＤＩＳＡＢＬＥ ❌", title: "", id: `.enable4`, description: `𝙼𝚞𝚎𝚜𝚝𝚛𝚊𝚖𝚎 𝚝𝚘𝚍𝚊𝚜 𝚕𝚊𝚜 𝚘𝚙𝚌𝚒𝚘𝚗𝚎𝚜 𝚍𝚒𝚜𝚊𝚋𝚕𝚎 𝚙𝚊𝚛𝚊 𝙼𝚒𝚣𝚞𝚔𝚒 | 𝙱𝚘𝚝` }
 ]})
-await conn.sendList(m.chat, '> 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 𝐏𝐀𝐑𝐀 𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐘 𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐀𝐋𝐆𝐔𝐍𝐀𝐒 𝐅𝐔𝐍𝐂𝐈𝐎𝐍𝐄𝐒 𝐃𝐄 𝐌𝐈𝐙𝐔𝐊𝐈 | 𝐁𝐎𝐓', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 𝐌𝐈𝐙𝐔𝐊𝐈 𝐁𝐎𝐓`, listSections, { mentions: [m.sender]}, {quoted: m})
+await conn.sendList(m.chat, '', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗`, listSections, { mentions: [m.sender]}, {quoted: m})
   } catch (e) {
     conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error.', m)
     throw e
   }
 }
 
-handler.help = ['enable']
-handler.tags = ['disable']
-handler.command = ['enable2', 'disable2', 'on2'] 
+handler.help = ['enablex']
+handler.tags = ['disablex']
+handler.command = ['enablex', 'disablex'] 
 handler.register = true 
 export default handler
 
