@@ -65,7 +65,7 @@ let handler = async (m, { conn, isPrems }) => {
     let cooldown = 600000 // 10 minutos
     let nextAvailableMiningTime = user.lastmiming + cooldown
     if (new Date - user.lastmiming < cooldown) {
-        return await conn.reply(m.chat, `𝐀𝐜𝐚𝐛𝐚𝐬 𝐝𝐞 𝐦𝐢𝐧𝐚𝐫 𝐫𝐞𝐜𝐢𝐞𝐧𝐭𝐞𝐦𝐞𝐧𝐭𝐞, 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐦𝐢𝐧𝐚𝐫 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 ${msToTime(nextAvailableMiningTime - new Date())} ${global.rpgshopp.emoticon('exp')}`, m, {
+        return await conn.reply(m.chat, `𝐀𝐜𝐚𝐛𝐚𝐬 𝐝𝐞 𝐦𝐢𝐧𝐚𝐫 𝐫𝐞𝐜𝐢𝐞𝐧𝐭𝐞𝐦𝐞𝐧𝐭𝐞, 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐦𝐢𝐧𝐚𝐫 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 ${msToTime(nextAvailableMiningTime - new Date())} ${global.rpgshopp.emoticon('exp')}`, m, fake, {
             contextInfo: {
                 'forwardingScore': 0,
                 'isForwarded': false,
@@ -91,7 +91,7 @@ let handler = async (m, { conn, isPrems }) => {
     }
 
     // Enviar respuesta
-    await conn.reply(m.chat, `*\`ＭＩＮＡＲ | ＳＹＳＴＥＭ Ｘ\`*\n${miningMessage}\n${experience} XP`, m, {
+    await conn.reply(m.chat, `*\`ＭＩＮＡＲ | ＳＹＳＴＥＭ Ｘ\`*\n${miningMessage}\n${experience} XP`, m, fake, {
         contextInfo: {
             'forwardingScore': 200,
             'isForwarded': false,
