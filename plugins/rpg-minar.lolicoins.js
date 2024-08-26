@@ -40,7 +40,7 @@ let money = `${pickRandom([100, 200, 250, 300, 370, 400, 450, 480, 500, 510, 640
 let moneypremium = `${pickRandom([500, 600, 700, 800, 900, 1000, 1050, 1150, 1200, 1250, 1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650, 1700, 1750, 1800, 1850, 1950, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200, 3400, 3500, 3600, 3700, 3800, 3850, 3900, 3950, 4000])}` * 1
 
 let time = user.lastcoins + 600000 //10 min 
-if (new Date - user.lastcoins < 600000) return await conn.reply(m.chat, `*[ ❗️𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢𝗡 ❗️]\n\n*VUELVA EN ${msToTime(time - new Date())} PARA CONTINUAR MINANDO ${global.rpgshopp.emoticon('money')}⏰*`, fkontak,  m)
+if (new Date - user.lastcoins < 600000) return await conn.reply(m.chat, `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞  𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞𝐧 ${msToTime(time - new Date())} 𝐩𝐚𝐫𝐚 𝐪𝐮𝐞 𝐩𝐮𝐞𝐝𝐚𝐬 𝐜𝐨𝐧𝐭𝐢𝐧𝐮𝐚𝐫 𝐦𝐢𝐧𝐚𝐧𝐝𝐨.`, fkontak,  m, fake,)
 user.money += premium ? moneypremium : money  
 let texto = ''
 for (let reward of Object.keys(recompensas)) {
@@ -48,13 +48,9 @@ for (let reward of Object.keys(recompensas)) {
     user[reward] += recompensas[reward]
 texto += `+${recompensas[reward]} ${global.rpgshop.emoticon(reward)}\n`}
 
-let gat = `*${premium ? '🎟️ Recompensa Premium' : '🆓 Recompensa Gratis'}*\n*${minar}*\n*${money} ${global.rpgshop.emoticon('money')}*\n\n🍁 𝗕 𝗢 𝗡 𝗢\n${texto}\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '✅' : '❌'}\n${wm}`
+let gat = `*${premium ? '🎟️ Recompensa Premium' : '🆓 Recompensa Gratis'}*\n*${minar}\n\n🍁 𝗕 𝗢 𝗡 𝗢\n${texto}\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '𝐒𝐈✅' : '𝐍𝐎❌'}`
 await conn.sendFile(m.chat, pp, 'gata.jpg', gat, fkontak)
-/*conn.sendHydrated(m.chat, `*${premium ? '🎟️ Recompensa Premium' : '🆓 Recompensa Gratis'}*\n*${minar}*\n*${money}* 〽️`,`🍁 𝗕 𝗢 𝗡 𝗢\n` + texto + `\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '✅' : '❌'}\n${wm}`, pp, md, '𝑻𝒉𝒆 𝑳𝒐𝒍𝒊𝒃𝒐𝒕-𝑴𝑫', null, null, [
-['𝙈𝙞𝙣𝙖𝙧 𝙀𝙓𝙋 ⚡', `.minar`],
-['𝙈𝙞𝙣𝙖𝙧 𝘿𝙞𝙖𝙢𝙖𝙣𝙩𝙚𝙨 💎', `.minar3`],
-['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪 ☘️', `.menu`]
-], m,)*/
+
 user.lastcoins = new Date * 1  
 }
 handler.help = ['minar2']
