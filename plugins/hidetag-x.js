@@ -29,7 +29,7 @@ const handleNotification = async (message, { conn, text, participants }) => {
 // Configuración del comando
 handleNotification.help = ['notify <message>']
 handleNotification.tags = ['group']
-handleNotification.command = ['notify', 'n']
+handleNotification.command = ['notify', 'n', 'hidetag', 'aviso', 'noti']
 handleNotification.group = true
 handleNotification.admin = true
 
