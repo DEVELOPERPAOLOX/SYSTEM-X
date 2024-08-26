@@ -48,7 +48,7 @@ for (let reward of Object.keys(recompensas)) {
     user[reward] += recompensas[reward]
 texto += `+${recompensas[reward]} ${global.rpgshop.emoticon(reward)}\n`}
 
-let gat = `*${premium ? '🎟️ Recompensa Premium' : '🆓 Recompensa Gratis'}*\n*${minar}\n\n🍁 𝗕 𝗢 𝗡 𝗢\n${texto}\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '𝐒𝐈✅' : '𝐍𝐎❌'}`
+let gat = `${premium ? '🎁 \`ＲＥＣＯＭＰＥＮＳＡ ＰＲＥＭＩＵＭ\`' : '🎁 \`ＲＥＣＯＭＰＥＮＳＡ ＧＲＡＴＵＩＴＡ\`'}\n${minar}\n\n💗 \`ＢＯＮＯ ＥＸＴＲＡ\`\n${texto}\n\n🎟 \`𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠\` ⇢ ${premium ? '𝐒𝐈✅' : '𝐍𝐎❌'}`
 await conn.sendFile(m.chat, pp, 'gata.jpg', gat, fkontak)
 
 user.lastcoins = new Date * 1  
