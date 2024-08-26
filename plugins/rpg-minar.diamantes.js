@@ -1,3 +1,5 @@
+
+
 let handler = async (m, { conn, isPrems}) => { //lastmiming
 const fkontak = {
         "key": {
@@ -41,7 +43,7 @@ let limit = `${pickRandom([2, 3, 4, 5, 0, 1, 6, 7, 8, 9, 10])}` * 1
 let limitpremium = `${pickRandom([4, 7, 8, 9, 11, 13, 16, 17, 19, 22, 24, 26, 28, 30])}` * 1
 
 let time = user.lastdiamantes + 900000 //15 min
-if (new Date - user.lastdiamantes < 900000) return await conn.reply(m.chat, `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞  𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞𝐧 ${msToTime(time - new Date())} 𝐩𝐚𝐫𝐚 𝐪𝐮𝐞 𝐩𝐮𝐞𝐝𝐚𝐬 𝐜𝐨𝐧𝐭𝐢𝐧𝐮𝐚𝐫 𝐦𝐢𝐧𝐚𝐧𝐝𝐨. ${global.rpgshopp.emoticon('limit')}⛏️`, fkontak,  m, fake,)
+if (new Date - user.lastdiamantes < 900000) return await conn.reply(m.chat, `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞  𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞𝐧 ${msToTime(time - new Date())} 𝐩𝐚𝐫𝐚 𝐪𝐮𝐞 𝐩𝐮𝐞𝐝𝐚𝐬 𝐜𝐨𝐧𝐭𝐢𝐧𝐮𝐚𝐫 𝐦𝐢𝐧𝐚𝐧𝐝𝐨.`, fkontak,  m, fake,)
 user.limit += premium ? limitpremium : limit  
 let texto = ''
 for (let reward of Object.keys(recompensas)) {
