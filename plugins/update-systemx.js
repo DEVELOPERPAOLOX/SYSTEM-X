@@ -8,7 +8,7 @@ const stdout = execSync('git pull' + (m.fromMe && text ? ' ' + text : ''));
 let messager = stdout.toString()
 if (messager.includes('Already up to date.')) messager = '\`ＵＰＤＡＴＥ | ＳＹＳＴＥＭ Ｘ\`'
 if (messager.includes('Updating')) messager = '\`ＵＰＤＡＴＥ | ＳＹＳＴＥＭ Ｘ\`\n\n> 𝙲𝚊𝚖𝚋𝚒𝚘𝚜 𝚑𝚎𝚌𝚑𝚘𝚜:\n' + stdout.toString()
-conn.reply(m.chat, messager, m)
+conn.reply(m.chat, messager, m, fake,)
 } catch { 
 try {
 const status = execSync('git status --porcelain')
