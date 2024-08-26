@@ -144,8 +144,8 @@ let listSections = []
 listSections.push({
 title: '',
         rows: [
-          { header: "✅𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒", title: "", id: `.enable3`, description: `✅𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒` },
-          { header: "❎𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒", title: "", id: `.enable4`, description: `❎𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒` }
+          { header: "✅𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒", title: "", id: `.creador`, description: `✅𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒` },
+          { header: "❎𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒", title: "", id: `.creador`, description: `❎𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒` }
         ]
       }
     ];
@@ -157,9 +157,9 @@ await conn.sendList(m.chat, 'hola', null, `𝐎𝐏𝐂𝐈𝐎𝐍𝐄𝐒 | �
   }
 }
 
-handler.help = ['enablex']
-handler.tags = ['disablex']
-handler.command = ['enablex', 'disablex', 'onx', 'offx'] 
+handler.help = ['enable']
+handler.tags = ['disable']
+handler.command = ['enable2', 'disable2', 'on2', 'off2'] 
 handler.register = true 
 export default handler
 
