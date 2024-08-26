@@ -1,4 +1,5 @@
 // Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
+
 import { createHash } from 'crypto'
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {
@@ -7,7 +8,7 @@ let totalreg = Object.keys(global.db.data.users).length
 let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
   let name2 = conn.getName(m.sender)
   if (user.registered === true) throw `✉𝐘𝐚 𝐭𝐞 𝐭𝐞𝐧𝐠𝐨 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐝𝐨 𝐞𝐧 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬, 𝐮𝐬𝐚 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 .𝐮𝐧𝐫𝐞𝐠 𝐞𝐧 𝐜𝐚𝐬𝐨 𝐪𝐮𝐢𝐞𝐫𝐚𝐬 𝐛𝐨𝐫𝐫𝐚𝐫 𝐭𝐮 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐨.`
-  if (!Reg.test(text)) throw `𝐔𝐬𝐚𝐬𝐭𝐞 𝐦𝐚𝐬 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨, 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐞 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫.\n𝐄𝐉𝐄𝐌𝐏𝐋𝐎: ${usedPrefix + command} ${name2}.18`
+  if (!Reg.test(text)) throw `❎𝐔𝐬𝐚𝐬𝐭𝐞 𝐦𝐚𝐥 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨, 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐞 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫.\n𝐄𝐉𝐄𝐌𝐏𝐋𝐎: ${usedPrefix + command} ${name2}.18`
   let [_, name, splitter, age] = text.match(Reg)
   if (!name) throw '✉𝐍𝐞𝐜𝐞𝐬𝐢𝐭𝐚𝐬 𝐜𝐨𝐥𝐨𝐜𝐚𝐫 𝐭𝐮 𝐧𝐨𝐦𝐛𝐫𝐞 𝐩𝐚𝐫𝐚 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐫𝐭𝐞 𝐞𝐧 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬.'
   if (!age) throw '✉𝐍𝐞𝐜𝐞𝐬𝐢𝐭𝐚𝐬 𝐜𝐨𝐥𝐨𝐜𝐚𝐫 𝐭𝐮 𝐞𝐝𝐚𝐝 𝐩𝐚𝐫𝐚 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐫𝐭𝐞 𝐞𝐧 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬.'
