@@ -1,4 +1,5 @@
-// C O D I G O   C R E A D O   P O R   P A O L O   X
+// Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
+
 let handleTag = async (message, { conn, text, participants }) => {
   // Obtén los IDs de los participantes, excluyendo el ID del bot
   let participantIds = participants.map(user => user.id).filter(id => id !== conn.user.jid);
