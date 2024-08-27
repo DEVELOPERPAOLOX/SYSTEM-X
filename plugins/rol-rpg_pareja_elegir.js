@@ -57,16 +57,16 @@ await conn.reply(m.chat, `❎𝐄𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐲�
 	
 if (pacar){
 if (m.sender == pacar && global.db.data.users[m.sender].pasangan == user) return conn.reply(m.chat, `ya estas saliendo ${spac.split('@')[0]}`, m , { contextInfo: { mentionedJid: [spac]}})
-conn.reply(m.chat, `❎𝐍𝐨 𝐩𝐮𝐞𝐝𝐞𝐬 𝐟𝐨𝐫𝐦𝐚𝐫 𝐩𝐚𝐫𝐞𝐣𝐚 𝐜𝐨𝐧 𝐞𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐲𝐚 𝐪𝐮𝐞 𝐚𝐜𝐭𝐮𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐞𝐬𝐭𝐚 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧.\n𝐏𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐈𝐧𝐭𝐞𝐧𝐭𝐚 𝐜𝐨𝐧 𝐨𝐭𝐫𝐨 𝐮𝐬𝐮𝐚𝐫𝐢𝐨.`, m , { contextInfo: { mentionedJid: [m.sender, global.db.data.users[m.sender].pasangan]}})
+conn.reply(m.chat, `❎𝐍𝐨 𝐩𝐮𝐞𝐝𝐞𝐬 𝐟𝐨𝐫𝐦𝐚𝐫 𝐩𝐚𝐫𝐞𝐣𝐚 𝐜𝐨𝐧 𝐞𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐲𝐚 𝐪𝐮𝐞 𝐚𝐜𝐭𝐮𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐞𝐬𝐭𝐚 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧.\n𝐏𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐈𝐧𝐭𝐞𝐧𝐭𝐚 𝐜𝐨𝐧 𝐨𝐭𝐫𝐨 𝐮𝐬𝐮𝐚𝐫𝐢𝐨.`, m , fake , { contextInfo: { mentionedJid: [m.sender, global.db.data.users[m.sender].pasangan]}})
 }else{
 	
 global.db.data.users[m.sender].pasangan = user
-conn.reply(m.chat, `${await ktnmbk.getRandom()}\n\n❎𝐑𝐞𝐜𝐢𝐞𝐧𝐭𝐞𝐦𝐞𝐧𝐭𝐞 𝐚𝐜𝐚𝐛𝐚𝐬 𝐝𝐞 𝐢𝐧𝐯𝐢𝐭𝐚𝐫 𝐚 𝐮𝐧 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐚 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧.\n𝐏𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐞𝐬𝐩𝐞𝐫𝐚 𝐮𝐧𝐚 𝐫𝐞𝐬𝐩𝐮𝐞𝐬𝐭𝐚.`, m, fake, , { contextInfo: { mentionedJid: [user]}})
+conn.reply(m.chat, `${await ktnmbk.getRandom()}\n\n❎𝐑𝐞𝐜𝐢𝐞𝐧𝐭𝐞𝐦𝐞𝐧𝐭𝐞 𝐚𝐜𝐚𝐛𝐚𝐬 𝐝𝐞 𝐢𝐧𝐯𝐢𝐭𝐚𝐫 𝐚 𝐮𝐧 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐚 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧.\n𝐏𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐞𝐬𝐩𝐞𝐫𝐚 𝐮𝐧𝐚 𝐫𝐞𝐬𝐩𝐮𝐞𝐬𝐭𝐚.`, m , fake , { contextInfo: { mentionedJid: [user]}})
 }	
 	
 }else if (global.db.data.users[user].pasangan == m.sender){
 global.db.data.users[m.sender].pasangan = user
-conn.reply(m.chat, `💗𝐎𝐟𝐢𝐜𝐢𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐚𝐡𝐨𝐫𝐚 𝐞𝐬𝐭𝐚𝐧 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧. @${user.split('@')[0]}\n𝐅𝐞𝐥𝐢𝐜𝐢𝐭𝐚𝐜𝐢𝐨𝐧𝐞𝐬 𝐩𝐚𝐫𝐚 𝐞𝐬𝐭𝐚 𝐩𝐚𝐫𝐞𝐣𝐚 𝐪𝐮𝐞 𝐞𝐬𝐭𝐚 𝐞𝐧𝐚𝐦𝐨𝐫𝐚𝐝𝐚.`, m, fake, , { contextInfo: { mentionedJid: [user]}})
+conn.reply(m.chat, `💗𝐎𝐟𝐢𝐜𝐢𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐚𝐡𝐨𝐫𝐚 𝐞𝐬𝐭𝐚𝐧 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧. @${user.split('@')[0]}\n𝐅𝐞𝐥𝐢𝐜𝐢𝐭𝐚𝐜𝐢𝐨𝐧𝐞𝐬 𝐩𝐚𝐫𝐚 𝐞𝐬𝐭𝐚 𝐩𝐚𝐫𝐞𝐣𝐚 𝐪𝐮𝐞 𝐞𝐬𝐭𝐚 𝐞𝐧𝐚𝐦𝐨𝐫𝐚𝐝𝐚.`, m , fake , { contextInfo: { mentionedJid: [user]}})
 }else {
 	
 global.db.data.users[m.sender].pasangan = user
