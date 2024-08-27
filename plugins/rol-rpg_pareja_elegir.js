@@ -57,7 +57,7 @@ await conn.reply(m.chat, `❎𝐄𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐲�
 	
 if (pacar){
 if (m.sender == pacar && global.db.data.users[m.sender].pasangan == user) return conn.reply(m.chat, `ya estas saliendo ${spac.split('@')[0]}`, m , { contextInfo: { mentionedJid: [spac]}})
-conn.reply(m.chat, `❎𝐍𝐨 𝐩𝐮𝐞𝐝𝐞𝐬 𝐟𝐨𝐫𝐦𝐚𝐫 𝐩𝐚𝐫𝐞𝐣𝐚 𝐜𝐨𝐧 𝐞𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐲𝐚 𝐪𝐮𝐞 𝐚𝐜𝐭𝐮𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐞𝐬𝐭𝐚 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧.\n𝐏𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐈𝐧𝐭𝐞𝐧𝐭𝐚 𝐜𝐨𝐧 𝐨𝐭𝐫𝐨 𝐮𝐬𝐮𝐚𝐫𝐢𝐨.`, m, fake, , { contextInfo: { mentionedJid: [m.sender, global.db.data.users[m.sender].pasangan]}})
+conn.reply(m.chat, `❎𝙉𝙊 𝙋𝙐𝙀𝘿𝙀𝙎 𝙋𝙊𝙍𝙌𝙐𝙀 *${await conn.getName(user)}* 𝙔 ${await conn.getName(pacar)} 𝙀𝙎𝙏𝘼𝙉 𝙀𝙉 𝙐𝙉𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉\n𝘽𝙐𝙎𝙌𝙐𝙀 𝙊𝙏𝙍𝘼 𝙋𝙀𝙍𝙎𝙊𝙉𝘼 𝙌𝙐𝙀 𝙌𝙐𝙄𝙀𝙍𝘼 𝙎𝙀𝙍 𝙎𝙐 𝙋𝘼𝙍𝙀𝙅𝘼`, m, fake, , { contextInfo: { mentionedJid: [m.sender, global.db.data.users[m.sender].pasangan]}})
 }else{
 	
 global.db.data.users[m.sender].pasangan = user
