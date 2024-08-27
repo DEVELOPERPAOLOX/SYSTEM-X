@@ -38,13 +38,13 @@ var user = number + '@s.whatsapp.net'
 } finally {
 let users = m.isGroup ? participants.find(v => areJidsSameUser(v.jid == user)) : {}
 	
-if(!users) return await conn.reply(m.chat, `${fg}𝙉𝙊 𝙎𝙀 𝙀𝙉𝘾𝙊𝙉𝙏𝙍𝙊 𝘼 𝙇𝘼 𝙋𝙀𝙍𝙎𝙊𝙉𝘼, 𝘿𝙀𝘽𝙀 𝘿𝙀 𝙀𝙎𝙏𝘼𝙍 𝙀𝙉 𝙀𝙎𝙏𝙀 𝙂𝙍𝙐𝙋𝙊\n\n𝙏𝙃𝙀 𝙋𝙀𝙍𝙎𝙊𝙉 𝙒𝘼𝙎 𝙉𝙊𝙏 𝙁𝙊𝙐𝙉𝘿, 𝙏𝙃𝙀𝙔 𝙈𝙐𝙎𝙏 𝘽𝙀 𝙄𝙉 𝙏𝙃𝙄𝙎 𝙂𝙍𝙊𝙐𝙋`, fkontak,  m)
+if(!users) return await conn.reply(m.chat, `𝙉𝙊 𝙎𝙀 𝙀𝙉𝘾𝙊𝙉𝙏𝙍𝙊 𝘼 𝙇𝘼 𝙋𝙀𝙍𝙎𝙊𝙉𝘼, 𝘿𝙀𝘽𝙀 𝘿𝙀 𝙀𝙎𝙏𝘼𝙍 𝙀𝙉 𝙀𝙎𝙏𝙀 𝙂𝙍𝙐𝙋𝙊`, fkontak,  m, fake,)
 
-if(user === m.sender) return await conn.reply(m.chat, `${fg}𝙐𝙎𝙏𝙀𝘿 𝙈𝙄𝙎𝙈𝙊 𝙉𝙊 𝙋𝙐𝙀𝘿𝙀 𝙎𝙀𝙍 𝙋𝘼𝙍𝙀𝙅𝘼\n\n𝙔𝙊𝙐 𝙔𝙊𝙐𝙍𝙎𝙀𝙇𝙁 𝘾𝘼𝙉𝙉𝙊𝙏 𝘽𝙀 𝘼 𝙋𝘼𝙍𝙏𝙉𝙀𝙍`, fkontak,  m)
+if(user === m.sender) return await conn.reply(m.chat, `𝙐𝙎𝙏𝙀𝘿 𝙈𝙄𝙎𝙈𝙊 𝙉𝙊 𝙋𝙐𝙀𝘿𝙀 𝙎𝙀𝙍 𝙋𝘼𝙍𝙀𝙅𝘼`, fkontak,  m, fake,)
 	
-if(user === conn.user.jid) return await conn.reply(m.chat, `${fg}𝙔𝙊 𝙉𝙊 𝙋𝙐𝙀𝘿𝙊 𝙎𝙀𝙍 𝙎𝙐 𝙋𝘼𝙍𝙀𝙅𝘼 😹\n\n𝙒𝙄𝙏𝙃 𝙈𝙀 𝙔𝙊𝙐 𝘾𝘼𝙉𝙉𝙊𝙏 𝘽𝙀 𝘼 𝘾𝙊𝙐𝙋𝙇𝙀`, fkontak,  m)
+if(user === conn.user.jid) return await conn.reply(m.chat, `𝙔𝙊 𝙉𝙊 𝙋𝙐𝙀𝘿𝙊 𝙎𝙀𝙍 𝙎𝙐 𝙋𝘼𝙍𝙀𝙅𝘼`, fkontak,  m, fake,)
 
-if (typeof global.db.data.users[user] == "undefined") return await conn.reply(m.chat, `${fg}𝙇𝘼 𝙋𝙀𝙍𝙎𝙊𝙉𝘼 𝙌𝙐𝙀 𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝙊 𝙉𝙊 𝙀𝙎𝙏𝘼 𝙀𝙉 𝙈𝙄 𝘽𝘼𝙎𝙀 𝘿𝙀 𝘿𝘼𝙏𝙊𝙎\n\n𝙏𝙃𝙀 𝙋𝙀𝙍𝙎𝙊𝙉 𝙄 𝙏𝘼𝙂 𝙄𝙎 𝙉𝙊𝙏 𝙄𝙉 𝙈𝙔 𝘿𝘼𝙏𝘼𝘽𝘼𝙎𝙀`, fkontak,  m)
+if (typeof global.db.data.users[user] == "undefined") return await conn.reply(m.chat, `𝐋𝐨 𝐥𝐚𝐦𝐞𝐧𝐭𝐨 𝐩𝐞𝐫𝐨 𝐧𝐨 𝐩𝐮𝐞𝐝𝐞𝐬 𝐟𝐨𝐫𝐦𝐚𝐫 𝐩𝐚𝐫𝐞𝐣𝐚 𝐜𝐨𝐧 𝐞𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨, 𝐲𝐚 𝐪𝐮𝐞 𝐧𝐨 𝐬𝐞 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐨 𝐞𝐧 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬.`, fkontak,  m, fake,)
 	
 let pacar = global.db.data.users[user].pasangan
 let spac = global.db.data.users[m.sender].pasangan
@@ -52,22 +52,21 @@ let yo = conn.getName(m.sender)
 let tu = conn.getName(who)
 
 if(global.db.data.users[m.sender].pasangan != "" && global.db.data.users[global.db.data.users[m.sender].pasangan].pasangan == m.sender && global.db.data.users[m.sender].pasangan != user){
-await conn.reply(m.chat, `𝙀𝙍𝙀𝙎 𝙄𝙉𝙁𝙄𝙀𝙇 🙀😠 𝙋𝙀𝙍𝙊 𝙎𝙄 𝙔𝘼 𝙀𝙎𝙏𝘼𝙎 𝙀𝙉 𝙐𝙉𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉 𝘾𝙊𝙉 *${await conn.getName(spac)}*\n\n𝘼𝘾𝘼𝙎𝙊 𝙌𝙐𝙄𝙀𝙍𝙀𝙎 𝙏𝙀𝙍𝙈𝙄𝙉𝘼𝙍 𝙇𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉? 🤔\n𝘿𝙀 𝙎𝙀𝙍 𝘼𝙎𝙄, 𝙀𝙎𝘾𝙍𝙄𝘽𝘼 *${usedPrefix}terminar @tag* 𝙋𝘼𝙍𝘼 𝙌𝙐𝙀 𝙋𝙐𝙀𝘿𝘼 𝙏𝙀𝙉𝙀𝙍 𝙐𝙉𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉 𝘾𝙊𝙉 *${await conn.getName(user)}*`,  m, { contextInfo: { mentionedJid: [m.sender, who, user, global.db.data.users[m.sender].pasangan]}}) 
-//await conn.sendButton(m.chat, `𝙀𝙍𝙀𝙎 𝙄𝙉𝙁𝙄𝙀𝙇 🙀😠 𝙋𝙀𝙍𝙊 𝙎𝙄 𝙔𝘼 𝙀𝙎𝙏𝘼𝙎 𝙀𝙉 𝙐𝙉𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉 𝘾𝙊𝙉 *${await conn.getName(spac)}*\n\n𝘼𝘾𝘼𝙎𝙊 𝙌𝙐𝙄𝙀𝙍𝙀𝙎 𝙏𝙀𝙍𝙈𝙄𝙉𝘼𝙍 𝙇𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉? 🤔\n𝘿𝙀 𝙎𝙀𝙍 𝘼𝙎𝙄, 𝙀𝙎𝘾𝙍𝙄𝘽𝘼 *${usedPrefix}terminar @tag* 𝙋𝘼𝙍𝘼 𝙌𝙐𝙀 𝙋𝙐𝙀𝘿𝘼 𝙏𝙀𝙉𝙀𝙍 𝙐𝙉𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉 𝘾𝙊𝙉 *${await conn.getName(user)}*`, wm, null, [['❤️ 𝙈𝘼𝙉𝙏𝙀𝙉𝙀𝙍 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉', '.mipareja'],['💔 𝙏𝙀𝙍𝙈𝙄𝙉𝘼𝙍 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉', '/terminar']], m, { contextInfo: { mentionedJid: [m.sender, who, user, global.db.data.users[m.sender].pasangan]}})
+await conn.reply(m.chat, `❎𝐄𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐲𝐚 𝐞𝐬𝐭𝐚 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧. *${await conn.getName(spac)}*\n\n𝐄𝐧 𝐜𝐚𝐬𝐨 𝐪𝐮𝐢𝐞𝐫𝐚𝐬 𝐚𝐜𝐚𝐛𝐚𝐫 𝐭𝐮 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧 𝐮𝐬𝐚 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨: *${usedPrefix}terminar @𝐮𝐬𝐮𝐚𝐫𝐢𝐨`,  m, fake,, { contextInfo: { mentionedJid: [m.sender, who, user, global.db.data.users[m.sender].pasangan]}}) 
 }else if(global.db.data.users[user].pasangan != ""){
 	
 if (pacar){
 if (m.sender == pacar && global.db.data.users[m.sender].pasangan == user) return conn.reply(m.chat, `ya estas saliendo ${spac.split('@')[0]}`, m , { contextInfo: { mentionedJid: [spac]}})
-conn.reply(m.chat, `𝙉𝙊 𝙋𝙐𝙀𝘿𝙀𝙎 𝙋𝙊𝙍𝙌𝙐𝙀 *${await conn.getName(user)}* 𝙔 ${await conn.getName(pacar)} 𝙀𝙎𝙏𝘼𝙉 𝙀𝙉 𝙐𝙉𝘼 𝙍𝙀𝙇𝘼𝘾𝙄𝙊𝙉\n𝘽𝙐𝙎𝙌𝙐𝙀 𝙊𝙏𝙍𝘼 𝙋𝙀𝙍𝙎𝙊𝙉𝘼 𝙌𝙐𝙀 𝙌𝙐𝙄𝙀𝙍𝘼 𝙎𝙀𝙍 𝙎𝙐 𝙋𝘼𝙍𝙀𝙅𝘼`, m , { contextInfo: { mentionedJid: [m.sender, global.db.data.users[m.sender].pasangan]}})
+conn.reply(m.chat, `❎𝐍𝐨 𝐩𝐮𝐞𝐝𝐞𝐬 𝐟𝐨𝐫𝐦𝐚𝐫 𝐩𝐚𝐫𝐞𝐣𝐚 𝐜𝐨𝐧 𝐞𝐬𝐭𝐞 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐲𝐚 𝐪𝐮𝐞 𝐚𝐜𝐭𝐮𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐞𝐬𝐭𝐚 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧.\n𝐏𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐈𝐧𝐭𝐞𝐧𝐭𝐚 𝐜𝐨𝐧 𝐨𝐭𝐫𝐨 𝐮𝐬𝐮𝐚𝐫𝐢𝐨.`, m, fake, , { contextInfo: { mentionedJid: [m.sender, global.db.data.users[m.sender].pasangan]}})
 }else{
 	
 global.db.data.users[m.sender].pasangan = user
-conn.reply(m.chat, `${await ktnmbk.getRandom()}\n\nAcabas de invitar @${user.split('@')[0]}\n\n¡Por favor espere una respuesta!`, m , { contextInfo: { mentionedJid: [user]}})
+conn.reply(m.chat, `${await ktnmbk.getRandom()}\n\n❎𝐑𝐞𝐜𝐢𝐞𝐧𝐭𝐞𝐦𝐞𝐧𝐭𝐞 𝐚𝐜𝐚𝐛𝐚𝐬 𝐝𝐞 𝐢𝐧𝐯𝐢𝐭𝐚𝐫 𝐚 𝐮𝐧 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 𝐚 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧.\n𝐏𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐞𝐬𝐩𝐞𝐫𝐚 𝐮𝐧𝐚 𝐫𝐞𝐬𝐩𝐮𝐞𝐬𝐭𝐚.`, m, fake, , { contextInfo: { mentionedJid: [user]}})
 }	
 	
 }else if (global.db.data.users[user].pasangan == m.sender){
 global.db.data.users[m.sender].pasangan = user
-conn.reply(m.chat, `Felicitaciones, oficialmente están saliendo @${user.split('@')[0]}\n\nQue dure para siempre y siempre sea feliz 🥳🥳🥳`, m , { contextInfo: { mentionedJid: [user]}})
+conn.reply(m.chat, `💗𝐎𝐟𝐢𝐜𝐢𝐚𝐥𝐦𝐞𝐧𝐭𝐞 𝐚𝐡𝐨𝐫𝐚 𝐞𝐬𝐭𝐚𝐧 𝐞𝐧 𝐮𝐧𝐚 𝐫𝐞𝐥𝐚𝐜𝐢𝐨𝐧. @${user.split('@')[0]}\n𝐅𝐞𝐥𝐢𝐜𝐢𝐭𝐚𝐜𝐢𝐨𝐧𝐞𝐬 𝐩𝐚𝐫𝐚 𝐞𝐬𝐭𝐚 𝐩𝐚𝐫𝐞𝐣𝐚 𝐪𝐮𝐞 𝐞𝐬𝐭𝐚 𝐞𝐧𝐚𝐦𝐨𝐫𝐚𝐝𝐚.`, m, fake, , { contextInfo: { mentionedJid: [user]}})
 }else {
 	
 global.db.data.users[m.sender].pasangan = user
