@@ -6,7 +6,7 @@ let memeHandler = async (message, { command, conn }) => {
     const memeUrl = await memeGenerator.meme();
 
     // Envía el archivo del meme con un pie de foto
-    conn.sendFile(message.chat, memeUrl, 'meme.jpg', '😂😂😂', message);
+    conn.sendFile(message.chat, memeUrl, 'meme.jpg', '𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗', message);
   } catch (error) {
     console.error('Error al obtener el meme:', error);
     // Verifica si el método `reply` existe en el objeto `conn`
