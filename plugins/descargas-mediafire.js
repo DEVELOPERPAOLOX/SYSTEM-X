@@ -10,13 +10,15 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     let res = await mediafiredl(args[0])
     let { url, filename, ext, aploud, filesizeH } = res
-    let caption = `
-*📓 Nombre ∙* ${filename}\n
-*📁 Peso ∙* ${filesizeH}\n
-*📄 Tipo ∙* ${ext}\n
-*🕐 Subido ∙* ${aploud}\n
-
-*↻ Espera soy lenta. . .*
+    let caption = `┏・\`𝐌𝐄𝐃𝐈𝐀𝐅𝐈𝐑𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗\`
+┣・✅𝐍𝐎𝐌𝐁𝐑𝐄 𝐃𝐄𝐋 𝐀𝐑𝐂𝐇𝐈𝐕𝐎:
+┣・${filename}
+┣・🗃𝐏𝐄𝐒𝐎 𝐀𝐂𝐓𝐔𝐀𝐋:
+┣・${filesizeH}
+┣・📁𝐓𝐈𝐏𝐎 𝐃𝐄𝐋 𝐀𝐑𝐂𝐇𝐈𝐕𝐎:
+┣・${ext}
+┣・📅𝐅𝐄𝐂𝐇𝐀 𝐃𝐄 𝐒𝐔𝐁𝐈𝐃𝐀:
+┗・${aploud}
     `.trim()
 
     if (parseFloat(filesizeH.split('MB')[0]) >= limit) {
