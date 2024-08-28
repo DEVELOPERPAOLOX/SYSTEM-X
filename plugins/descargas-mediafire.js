@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     `.trim()
 
     if (parseFloat(filesizeH.split('MB')[0]) >= limit) {
-      return conn.reply(m.chat, `El archivo pesa más de ${limit} MB, se canceló la descarga.`, m, fake,).then(_ => m.react('✖️'))
+      return conn.reply(m.chat, `❎𝐒𝐞 𝐜𝐚𝐧𝐜𝐞𝐥𝐨 𝐥𝐚 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚 𝐩𝐨𝐫 𝐞𝐥 𝐦𝐨𝐭𝐢𝐯𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐞𝐥 𝐚𝐫𝐜𝐡𝐢𝐯𝐨 𝐬𝐮𝐩𝐞𝐫𝐚 𝐞𝐥 𝐥𝐢𝐦𝐢𝐭𝐞 𝐝𝐞 ${limit} 𝐌𝐁.`, m, fake,).then(_ => m.react('✖️'))
     }
 
     await conn.reply(m.chat, caption, m)
