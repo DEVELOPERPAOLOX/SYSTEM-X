@@ -1,15 +1,20 @@
 import memeGenerator from 'hispamemes';
 
-let memeHandler = async (message, { command, connection }) => {
+let memeHandler = async (message, { command, conn }) => {
   try {
     // Obtén la URL del meme
     const memeUrl = await memeGenerator.meme();
 
     // Envía el archivo del meme con un pie de foto
-    connection.sendFile(message.chat, memeUrl, 'meme.jpg', '😂😂h😂', message);
+    conn.sendFile(message.chat, memeUrl, 'meme.jpg', '😂😂😂', message);
   } catch (error) {
     console.error('Error al obtener el meme:', error);
-    connection.reply(message.chat, 'Hubo un problema al obtener el meme. Intenta de nuevo más tarde.', message);
+    // Verifica si el método `reply` existe en el objeto `conn`
+    if (conn.reply) {
+      conn.reply(message.chat, 'Hubo un problema al obtener el meme. Intenta de nuevo más tarde.', message);
+    } else {
+      console.error('Método `reply` no encontrado en el objeto `conn`.');
+    }
   }
 };
 
