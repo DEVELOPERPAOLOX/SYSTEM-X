@@ -6,10 +6,10 @@ let memeHandler = async (message, { command, connection }) => {
     const memeUrl = await memeGenerator.meme();
 
     // Envía el archivo del meme con un pie de foto
-    connection.sendFile(message.chat, memeUrl, 'meme.jpg', '𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗', message);
+    connection.sendFile(message.chat, memeUrl, 'meme.jpg', '𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗', message, fake,);
   } catch (error) {
-    console.error('Error al obtener el meme:', error);
-    connection.reply(message.chat, 'Hubo un problema al obtener el meme. Intenta de nuevo más tarde.', message);
+    console.error('❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐮𝐧𝐨𝐬 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.', error);
+    connection.reply(message.chat, 'Hubo un problema al obtener el meme. Intenta de nuevo más tarde.', message, fake,);
   }
 };
 
