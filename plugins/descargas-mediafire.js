@@ -2,8 +2,8 @@ import { mediafiredl } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let limit = 200
-  if (!args[0]) return conn.reply(m.chat, `*🈴 Escribe la URL de un archivo de Mediafire que deseas descargar.*`, m)
-  if (!args[0].match(/mediafire/gi)) return conn.reply(m.chat, `Verifica que la *URL* sea de Mediafire.`, m).then(_ => m.react('✖️'))
+  if (!args[0]) return conn.reply(m.chat, `🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐚𝐜𝐨𝐦𝐩𝐚ñ𝐚𝐝𝐨 𝐝𝐞 𝐥𝐚 𝐮𝐫𝐥 𝐦𝐞𝐝𝐢𝐚𝐟𝐢𝐫𝐞 𝐪𝐮𝐞 𝐝𝐞𝐬𝐞𝐚𝐬 𝐝𝐞𝐬𝐜𝐚𝐫𝐠𝐚𝐫.`, m, fake,)
+  if (!args[0].match(/mediafire/gi)) return conn.reply(m.chat, `❎𝐋𝐚 𝐮𝐫𝐥 𝐧𝐨 𝐞𝐬 𝐝𝐞 𝐦𝐞𝐝𝐢𝐚𝐟𝐢𝐫𝐞, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞.`, m, fake,).then(_ => m.react('✖️'))
   
   await m.react('🕓')
   
@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     `.trim()
 
     if (parseFloat(filesizeH.split('MB')[0]) >= limit) {
-      return conn.reply(m.chat, `El archivo pesa más de ${limit} MB, se canceló la descarga.`, m).then(_ => m.react('✖️'))
+      return conn.reply(m.chat, `El archivo pesa más de ${limit} MB, se canceló la descarga.`, m, fake,).then(_ => m.react('✖️'))
     }
 
     await conn.reply(m.chat, caption, m)
@@ -30,7 +30,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     await m.react('✅')
   } catch (error) {
     console.error(error)
-    conn.reply(m.chat, `Hubo un error al procesar la solicitud. Verifica la URL o intenta de nuevo más tarde.`, m).then(_ => m.react('✖️'))
+    conn.reply(m.chat, `❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐮𝐧𝐨𝐬 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.`, m, fake,).then(_ => m.react('✖️'))
   }
 }
 
