@@ -1,10 +1,21 @@
-/*   Creditos - ig : https://www.instagram.com/fg98._/    */
-import hispamemes from 'hispamemes'
-let handler = async (m, {command, conn}) => {
-const url = await hispamemes.meme()  
-conn.sendFile(m.chat, url, 'error.jpg', `😂😂😂`, m)}
-//conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['𝙎𝙄𝙂𝙐𝙄𝙀𝙉𝙏𝙀 | 𝙉𝙀𝙓𝙏 🆕', `/${command}`]], m)}
-handler.help = ['meme']
-handler.tags = ['random']
-handler.command = /^(meme|memes)$/i
-export default handler
+import memeGenerator from 'hispamemes';
+
+let memeHandler = async (message, { command, connection }) => {
+  try {
+    // Obtén la URL del meme
+    const memeUrl = await memeGenerator.meme();
+
+    // Envía el archivo del meme con un pie de foto
+    connection.sendFile(message.chat, memeUrl, 'meme.jpg', '𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗', message);
+  } catch (error) {
+    console.error('Error al obtener el meme:', error);
+    connection.reply(message.chat, 'Hubo un problema al obtener el meme. Intenta de nuevo más tarde.', message);
+  }
+};
+
+// Define las propiedades del handler
+memeHandler.help = ['meme'];
+memeHandler.tags = ['random'];
+memeHandler.command = /^(meme|memes)$/i;
+
+export default memeHandler;
