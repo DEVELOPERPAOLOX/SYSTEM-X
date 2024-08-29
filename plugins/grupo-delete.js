@@ -1,50 +1,18 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
 
-// Adaptación realizada por [TuNombre]
-
-const procesarEliminacion = async (mensaje, { conexion, prefijo, comando }) => {
-  // Verifica si el mensaje está citado
-  if (!mensaje.quoted) {
-    throw `👋🏻 ¡Hola usuario!\n🚀 Asegúrate de utilizar el comando correctamente.\n✅ Ejemplo: ${prefijo + comando} y responde al mensaje`;
-  }
-
-  // Verifica el objeto `conexion`
-  if (!conexion || typeof conexion.sendMessage !== 'function') {
-    throw new Error('El objeto "conexion" no está definido correctamente o no tiene el método "sendMessage".');
-  }
-
-  try {
-    // Obtiene el participante y el ID del mensaje
-    const participante = mensaje.message.extendedTextMessage.contextInfo.participant;
-    const mensajeId = mensaje.message.extendedTextMessage.contextInfo.stanzaId;
-
-    // Intenta eliminar el mensaje
-    await conexion.sendMessage(mensaje.chat, {
-      delete: {
-        remoteJid: mensaje.chat,
-        fromMe: false,
-        id: mensajeId,
-        participant: participante
-      }
-    });
-  } catch (error) {
-    console.error('Error en el proceso de eliminación:', error);
-    if (mensaje.quoted && mensaje.quoted.vM && mensaje.quoted.vM.key) {
-      // Si falla, intenta eliminar el mensaje citado
-      await conexion.sendMessage(mensaje.chat, { delete: mensaje.quoted.vM.key });
-    } else {
-      throw new Error('No se pudo eliminar el mensaje porque no se encontró la clave del mensaje citado.');
-    }
-  }
-};
-
-// Define las propiedades del manejador
-procesarEliminacion.help = ['del', 'delete'];
-procesarEliminacion.tags = ['group'];
-procesarEliminacion.command = /^del(ete)?$/i;
-procesarEliminacion.group = true;
-procesarEliminacion.admin = true;
-procesarEliminacion.botAdmin = true;
-
-// Exporta el manejador
-export default procesarEliminacion;
+let handler = async (m, { conn, usedPrefix, command }) => {	
+if (!m.quoted) throw `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐝𝐞𝐥 + 𝐫𝐞𝐬𝐩𝐨𝐧𝐝𝐞 𝐚𝐥 𝐦𝐬𝐣`
+try {
+let delet = m.message.extendedTextMessage.contextInfo.participant
+let bang = m.message.extendedTextMessage.contextInfo.stanzaId
+return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
+} catch {
+return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
+}}
+handler.help = ['del', 'delete']
+handler.tags = ['group']
+handler.command = /^del(ete)?$/i
+handler.group = true
+handler.admin = true
+handler.botAdmin = true
+export default handler 
