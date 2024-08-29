@@ -2,43 +2,46 @@ import cheerio from 'cheerio';
 import axios from 'axios';
 import fetch from 'node-fetch';
 
-let handler = async (m, { conn, args, command, usedPrefix }) => {
-if (!args[0]) throw `*Formato incorrecto*\nEjemplo:\n\n${usedPrefix + command} con mi prima`;
-try {
-let searchResults = await searchPornhub(args[0]);
-let teks = searchResults.result.map((v, i) => 
-`「 *P O R N H U B  - S E A R C H* 」
-• *Título:* ${v.title}
-• *Duración:* ${v.duration}
-• *Vistas:* ${v.views}
-• *Link:* ${v.url}
----------------------------------------------------\n`).join('\n\n');
-if (searchResults.result.length === 0) {
-teks = '*Sin resultados*';
-}
-m.reply(teks);
-} catch (e) {
-}};
+const handler = async (message, { connection, parameters, command, prefix }) => {
+  if (!parameters[0]) throw `*Formato incorrecto*\nEjemplo:\n\n${prefix + command} con mi prima`;
+  try {
+    const results = await fetchPornhubData(parameters[0]);
+    let responseText = results.items.map(item => 
+      `┏・\`ＰＯＲＮＨＵＢ | ＳＹＳＴＥＭ Ｘ\`
+┣・𝐓𝐈𝐓𝐔𝐋𝐎:
+┣・${item.title}
+┣・𝐕𝐈𝐄𝐖𝐒:
+┣・${item.views}
+┣・𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:
+┣・${item.duration}
+┣・𝐔𝐑𝐋:
+┗・${item.url}`).join('\n\n');
+    if (results.items.length === 0) {
+      responseText = '*Sin resultados*';
+    }
+    message.reply(responseText);
+  } catch (error) {
+    console.error('Error en la búsqueda:', error);
+  }
+};
 handler.command = /^(phsearch|pornhubsearch)$/i;
 export default handler;
-async function searchPornhub(search) {
+
+async function fetchPornhubData(query) {
   try {
-    const response = await axios.get(`https://www.pornhub.com/video/search?search=${search}`);
-    const html = response.data;
-    const $ = cheerio.load(html);
-    const result = [];
-    $('ul#videoSearchResult > li.pcVideoListItem').each(function(a, b) {
-      const _title = $(b).find('a').attr('title');
-      const _duration = $(b).find('var.duration').text().trim();
-      const _views = $(b).find('var.views').text().trim();
-      const _url = 'https://www.pornhub.com' + $(b).find('a').attr('href');
-      const hasil = { title: _title, duration: _duration, views: _views, url: _url };
-      result.push(hasil);
+    const { data } = await axios.get(`https://www.pornhub.com/video/search?search=${query}`);
+    const $ = cheerio.load(data);
+    const items = [];
+    $('ul#videoSearchResult > li.pcVideoListItem').each((index, element) => {
+      const title = $(element).find('a').attr('title');
+      const duration = $(element).find('var.duration').text().trim();
+      const views = $(element).find('var.views').text().trim();
+      const url = 'https://www.pornhub.com' + $(element).find('a').attr('href');
+      items.push({ title, duration, views, url });
     });
-    
-    return { result };
+    return { items };
   } catch (error) {
-    console.error('Ocurrió un error al buscar en Pornhub:', error);
-    return { result: [] };
+    console.error('Error durante la búsqueda:', error);
+    return { items: [] };
   }
 }
