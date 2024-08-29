@@ -30,7 +30,14 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     
   } catch (error) {
     console.error(error);  // Imprime el error en la consola para depuración
-    await conn.sendMessage(m.chat, { text: `*Hubo un error al procesar la solicitud: ${error.message}*` }, { quoted: m });
+    let errorMessage = '*Hubo un error al procesar la solicitud.*';
+
+    // Añade más detalles sobre el error si es posible
+    if (error.message.includes('Cannot find package')) {
+      errorMessage = '*Error: Paquete faltante o configuración incorrecta en aptoide-scraper.*';
+    }
+
+    await conn.sendMessage(m.chat, { text: errorMessage }, { quoted: m });
   }
 };
 
