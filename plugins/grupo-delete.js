@@ -1,18 +1,43 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
 
-let handler = async (m, { conn, usedPrefix, command }) => {	
-if (!m.quoted) throw `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐝𝐞𝐥 + 𝐫𝐞𝐬𝐩𝐨𝐧𝐝𝐞 𝐚𝐥 𝐦𝐬𝐣`
-try {
-let delet = m.message.extendedTextMessage.contextInfo.participant
-let bang = m.message.extendedTextMessage.contextInfo.stanzaId
-return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
-} catch {
-return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
-}}
-handler.help = ['del', 'delete']
-handler.tags = ['group']
-handler.command = /^del(ete)?$/i
-handler.group = true
-handler.admin = true
-handler.botAdmin = true
-export default handler 
+// Adaptado por [TuNombre]
+
+const eliminarMensaje = async (msg, { cliente, prefijo, comando }) => {
+  if (!msg.quoted) {
+    throw `👋🏻 ¡Hola usuario!\n🚀 Por favor, asegúrate de usar el comando correctamente.\n✅ Ejemplo: ${prefijo + comando} y responde al mensaje`;
+  }
+
+  try {
+    // Obtiene información del mensaje citado
+    const participante = msg.message.extendedTextMessage.contextInfo.participant;
+    const mensajeId = msg.message.extendedTextMessage.contextInfo.stanzaId;
+
+    // Intenta eliminar el mensaje
+    await cliente.sendMessage(msg.chat, {
+      delete: {
+        remoteJid: msg.chat,
+        fromMe: false,
+        id: mensajeId,
+        participant: participante
+      }
+    });
+  } catch (error) {
+    console.error('Error al eliminar el mensaje:', error);
+    if (msg.quoted && msg.quoted.vM && msg.quoted.vM.key) {
+      // Si la eliminación falla, intenta con el mensaje citado
+      await cliente.sendMessage(msg.chat, { delete: msg.quoted.vM.key });
+    } else {
+      throw new Error('No se pudo eliminar el mensaje porque no se encontró la clave del mensaje citado.');
+    }
+  }
+};
+
+// Configura el manejador
+eliminarMensaje.help = ['del', 'delete'];
+eliminarMensaje.tags = ['group'];
+eliminarMensaje.command = /^del(ete)?$/i;
+eliminarMensaje.group = true;
+eliminarMensaje.admin = true;
+eliminarMensaje.botAdmin = true;
+
+export default eliminarMensaje;
