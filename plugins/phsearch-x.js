@@ -12,14 +12,12 @@ let teks = searchResults.result.map((v, i) =>
 `┏・\`ＰＯＲＮＨＵＢ | ＳＹＳＴＥＭ Ｘ\`
 ┣・𝐓𝐈𝐓𝐔𝐋𝐎:
 ┣・${v.title}
-┣・𝐕𝐈𝐄𝐖𝐒:
-┣・${v.views}
 ┣・𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:
 ┣・${v.duration}
 ┣・𝐔𝐑𝐋:
 ┗・${v.url}\n`).join('\n\n');
 if (searchResults.result.length === 0) {
-teks = '*Sin resultados*';
+teks = '❎𝐍𝐨 𝐞𝐱𝐢𝐬𝐭𝐞𝐧 𝐫𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨𝐬 𝐜𝐨𝐧 𝐞𝐬𝐭𝐞 𝐭𝐢𝐭𝐮𝐥𝐨. 𝐈𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐜𝐨𝐧 𝐨𝐭𝐫𝐨 𝐭𝐢𝐭𝐮𝐥𝐨.';
 }
 m.reply(teks);
 } catch (e) {
@@ -43,7 +41,7 @@ async function searchPornhub(search) {
     
     return { result };
   } catch (error) {
-    console.error('Ocurrió un error al buscar en Pornhub:', error);
+    console.error('❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫 𝐞𝐧 𝐥𝐚 𝐛𝐮𝐬𝐪𝐮𝐞𝐝𝐚 𝐜𝐨𝐧 𝐞𝐬𝐭𝐞 𝐭𝐢𝐭𝐮𝐥𝐨. 𝐈𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞.', error);
     return { result: [] };
   }
 }
