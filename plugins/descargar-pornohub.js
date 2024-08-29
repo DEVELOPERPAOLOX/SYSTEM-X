@@ -9,12 +9,15 @@ if (!args[0]) throw `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫�
 try {
 let searchResults = await searchPornhub(args[0]);
 let teks = searchResults.result.map((v, i) => 
-`\`ＰＯＲＮＨＵＢ | ＳＹＳＴＥＭ Ｘ\`
-• *Título:* ${v.title}
-• *Duración:* ${v.duration}
-• *Vistas:* ${v.views}
-• *Link:* ${v.url}
----------------------------------------------------\n`).join('\n\n');
+`┏・\`ＰＯＲＮＨＵＢ | ＳＹＳＴＥＭ Ｘ\`
+┣・𝐓𝐈𝐓𝐔𝐋𝐎:
+┣・${v.title}
+┣・𝐕𝐈𝐄𝐖𝐒:
+┣・${v.views}
+┣・𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍:
+┣・${v.duration}
+┣・𝐔𝐑𝐋:
+┗・${v.url}\n`).join('\n\n');
 if (searchResults.result.length === 0) {
 teks = '*Sin resultados*';
 }
