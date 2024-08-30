@@ -43,15 +43,15 @@ args[0] = args[0].replace('--code', '').trim()
 if (args[1]) args[1] = args[1].replace('--code', '').trim()
 if (args[0] == '') args[0] = undefined
 console.log(args[0])}
-if (!fs.existsSync('./IgnaJadiBot/'+ id)){
-fs.mkdirSync('./IgnaJadiBot/'+ id, { recursive: true })}
-args[0] && args[0] != undefined ? fs.writeFileSync('./IgnaJadiBot/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
+if (!fs.existsSync('./JadiBot/'+ id)){
+fs.mkdirSync('./JadiBot/'+ id, { recursive: true })}
+args[0] && args[0] != undefined ? fs.writeFileSync('./JadiBot/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
 
-if (fs.existsSync('./IgnaJadiBot/' + id + '/creds.json')) {
-let creds = JSON.parse(fs.readFileSync("./IgnaJadiBot/" + id + "/creds.json"))
+if (fs.existsSync('./JadiBot/' + id + '/creds.json')) {
+let creds = JSON.parse(fs.readFileSync("./JadiBot/" + id + "/creds.json"))
 if (creds) {
 if (creds.registered = false) {
-fs.unlinkSync('./IgnaJadiBot/' + id + '/creds.json')
+fs.unlinkSync('./JadiBot/' + id + '/creds.json')
 }}}
 
 const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, 'base64')
@@ -60,15 +60,15 @@ const drmer = Buffer.from(drm1 + drm2, `base64`)
 async function jddt() {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? parentw.user.jid : m.sender
 let id = `${who.split`@`[0]}`
-if (!fs.existsSync('./IgnaJadiBot/'+ id)){
-fs.mkdirSync('./IgnaJadiBot/'+ id, { recursive: true })
+if (!fs.existsSync('./JadiBot/'+ id)){
+fs.mkdirSync('./JadiBot/'+ id, { recursive: true })
 }
 args[0] ? fs.writeFileSync('./IgnaJadiBot/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
 
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const msgRetry = (MessageRetryMap) => { }
 const msgRetryCache = new NodeCache()
-const { state, saveState, saveCreds } = await useMultiFileAuthState("./IgnaJadiBot/" + id)
+const { state, saveState, saveCreds } = await useMultiFileAuthState("./JadiBot/" + id)
 
 const connectionOptions = {
 printQRInTerminal: false,
@@ -79,14 +79,14 @@ msgRetryCache,
 version,
 syncFullHistory: true,
 //browser: Browsers.ubuntu('Chrome')
-browser: mcode ? ['Ubuntu', 'Edge', '20.0.4'] : ['IgnaBot-MD', 'Edge', '2.0.0'],
+browser: mcode ? ['Ubuntu', 'Edge', '20.0.4'] : ['𝐒𝐮𝐝𝐁𝐨𝐭 | 𝐒𝐲𝐬𝐭𝐞𝐦 𝐗', 'Edge', '2.0.0'],
 defaultQueryTimeoutMs: undefined,
 getMessage: async (key) => {
 if (store) {
 const msg = store.loadMessage(key.remoteJid, key.id)
 return msg.message && undefined
 } return {
-conversation: 'IgnaBot-MD',
+conversation: '𝐒𝐮𝐝𝐁𝐨𝐭 | 𝐒𝐲𝐬𝐭𝐞𝐦 𝐗',
 }}}
 
 let conn = makeWASocket(connectionOptions)
@@ -152,7 +152,7 @@ global.conns.push(conn)
 await parentw.sendMessage(m.chat, {text : args[0] ? `⚪️ Conectado` : `🔵 𝙻𝚊 𝚜𝚞𝚋-𝚋𝚘𝚝 𝚎𝚜𝚝𝚊 𝚊𝚌𝚝𝚒𝚟𝚊, 𝚞𝚜𝚎 𝚜𝚞 (𝙸𝙳) 𝚙𝚊𝚛𝚊 𝚊𝚌𝚝𝚒𝚟𝚊𝚛 𝚗𝚞𝚎𝚟𝚊𝚖𝚎𝚗𝚝𝚎 𝚕𝚊 𝚜𝚞𝚋-𝚋𝚘𝚝`}, { quoted: m })
 await parentw.sendMessage(m.chat, {text : `😝 conectado espere un momento...`}, { quoted: m })
 await sleep(5000)
-if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./IgnaJadiBot/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
+if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./JadiBot/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
 
 }}
 setInterval(async () => {
