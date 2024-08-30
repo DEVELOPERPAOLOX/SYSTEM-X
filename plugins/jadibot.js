@@ -24,8 +24,8 @@ let crm3 = 'SBpbmZvLWRvbmFyLmpz'
 let crm4 = 'IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz'
 let drm1 = ''
 let drm2 = ''
-let rtx = lenguajeGB['smsIniJadi']() 
-let rtx2 = lenguajeGB['smsIniJadi2']() 
+let rtx = 'hola'
+let rtx2 = 'hola2'
 
 if (global.conns instanceof Array) console.log()
 else global.conns = []
