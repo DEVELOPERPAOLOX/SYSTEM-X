@@ -123,34 +123,34 @@ console.log(reason)
 if (reason == 405) {
 await fs.unlinkSync('./JadiBot/' + id + '/creds.json')
 
-return await conn.reply(m.chat, '✨️ 𝙲𝚎𝚛𝚛𝚊𝚗𝚍𝚘 :𝚌', m)
+return await conn.reply(m.chat, '⚒️ 𝐂𝐞𝐫𝐫𝐚𝐧𝐝𝐨 𝐥𝐚 𝐬𝐞𝐬𝐢𝐨𝐧 𝐝𝐞 𝐒𝐮𝐝𝐁𝐨𝐭 𝐗...', m, fake,)
 }
 if (reason === DisconnectReason.restartRequired) {
 jddt()
-return console.log('🟡 la conexion del subbot se ha remplazado, se ha abierto una nueva session, cierre la session primero del subbot')
+return console.log('𝐋𝐚 𝐜𝐨𝐧𝐞𝐱𝐢𝐨𝐧 𝐝𝐞𝐥 𝐒𝐮𝐝𝐁𝐨𝐭 𝐗 𝐡𝐚 𝐬𝐢𝐝𝐨 𝐚𝐜𝐭𝐮𝐚𝐥𝐢𝐳𝐚𝐝𝐚; 𝐬𝐞 𝐡𝐚 𝐢𝐧𝐢𝐜𝐢𝐚𝐝𝐨 𝐮𝐧𝐚 𝐧𝐮𝐞𝐯𝐚 𝐬𝐞𝐬𝐢𝐨𝐧. 𝐏𝐫𝐢𝐦𝐞𝐫𝐨, 𝐜𝐢𝐞𝐫𝐫𝐚 𝐥𝐚 𝐬𝐞𝐬𝐢𝐨𝐧 𝐚𝐜𝐭𝐮𝐚𝐥 𝐝𝐞𝐥 𝐒𝐮𝐝𝐁𝐨𝐭 𝐗.')
 } else if (reason === DisconnectReason.loggedOut) {
 sleep(4000)
-return conn.reply(m.chat, '✨️ *𝙻𝚊 𝚌𝚘𝚗𝚎𝚡𝚒𝚘𝚗 𝚜𝚎 𝚑𝚊 𝚌𝚎𝚛𝚛𝚊𝚍𝚘, 𝚝𝚎𝚗𝚍𝚛𝚊𝚜 𝚚𝚞𝚎 𝚟𝚘𝚕𝚟𝚎𝚛 𝚊 𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚛𝚜𝚎 𝚞𝚜𝚊𝚗𝚍𝚘:*\n!deletesesion (𝙿𝚊𝚛𝚊 𝚎𝚕𝚒𝚖𝚒𝚗𝚊𝚛 𝚕𝚘𝚜 𝚍𝚊𝚝𝚘𝚜 𝚍𝚎 𝚜𝚎𝚜𝚜𝚒𝚘𝚗 𝚢 𝚙𝚘𝚍𝚎𝚛 𝚊 𝚟𝚘𝚕𝚟𝚎𝚛 𝚜𝚘𝚕𝚒𝚌𝚒𝚝𝚊𝚛 𝚗𝚞𝚎𝚟𝚘 𝚌𝚘𝚍𝚒𝚐𝚘 𝚚𝚛 𝚘 𝚌𝚘𝚍𝚒𝚐𝚘 𝚍𝚎 𝚎𝚖𝚙𝚊𝚛𝚎𝚓𝚊𝚖𝚒𝚎𝚗𝚝𝚘 𝚙𝚊𝚛𝚊 𝚊𝚌𝚝𝚒𝚟𝚊𝚛 𝚗𝚞𝚎𝚟𝚊𝚖𝚎𝚗𝚝𝚎 𝚕𝚊 𝚜𝚞𝚋-𝚋𝚘𝚝', m)
+return conn.reply(m.chat, '✅ 𝐋𝐚 𝐜𝐨𝐧𝐞𝐱𝐢𝐨𝐧 𝐡𝐚 𝐬𝐢𝐝𝐨 𝐜𝐞𝐫𝐫𝐚𝐝𝐚. 𝐏𝐚𝐫𝐚 𝐫𝐞𝐜𝐨𝐧𝐞𝐜𝐭𝐚𝐫𝐭𝐞, 𝐮𝐭𝐢𝐥𝐢𝐳𝐚 𝐞𝐥 𝐬𝐢𝐠𝐮𝐢𝐞𝐧𝐭𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨:\n.𝐝𝐞𝐥𝐞𝐭𝐞𝐬𝐞𝐬𝐢𝐨𝐧 (𝐏𝐚𝐫𝐚 𝐞𝐥𝐢𝐦𝐢𝐧𝐚𝐫 𝐥𝐨𝐬 𝐝𝐚𝐭𝐨𝐬 𝐝𝐞 𝐬𝐞𝐬𝐢𝐨𝐧 𝐲 𝐬𝐨𝐥𝐢𝐜𝐢𝐭𝐚𝐫 𝐮𝐧 𝐧𝐮𝐞𝐯𝐨 𝐜𝐨𝐝𝐢𝐠𝐨 𝐐𝐑 𝐨 𝐜𝐨𝐝𝐢𝐠𝐨 𝐝𝐞 𝐞𝐦𝐩𝐚𝐫𝐞𝐣𝐚𝐦𝐢𝐞𝐧𝐭𝐨 𝐩𝐚𝐫𝐚 𝐚𝐜𝐭𝐢𝐯𝐚𝐫 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐥 𝐒𝐮𝐝𝐁𝐨𝐭 𝐗).', m, fake,)
 } else if (reason == 428) {
 await endSesion(false)
-return conn.reply(m.chat, '🐈 *𝙻𝚊 𝚌𝚘𝚗𝚎𝚡𝚒𝚘𝚗 𝚜𝚎 𝚌𝚎𝚛𝚛𝚘 𝚜𝚎 𝚒𝚗𝚝𝚎𝚗𝚝𝚊𝚛𝚊 𝚛𝚎𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚛 :𝙳*', m)
+return conn.reply(m.chat, '🚨 𝐋𝐚 𝐜𝐨𝐧𝐞𝐱𝐢𝐨𝐧 𝐡𝐚 𝐬𝐢𝐝𝐨 𝐜𝐞𝐫𝐫𝐚𝐝𝐚. 𝐈𝐧𝐭𝐞𝐧𝐭𝐚𝐧𝐝𝐨 𝐫𝐞𝐜𝐨𝐧𝐞𝐜𝐭𝐚𝐫...', m, fake,)
 } else if (reason === DisconnectReason.connectionLost) {
 await jddt()
-return console.log('🌻 𝙲𝚘𝚗𝚎𝚡𝚒𝚘𝚗 𝚙𝚎𝚛𝚍𝚒𝚍𝚊 𝚌𝚘𝚗 𝚎𝚕 𝚜𝚎𝚛𝚟𝚒𝚍𝚘𝚛, 𝚛𝚎𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚗𝚍𝚘 𝚕𝚊 𝚜𝚞𝚋-𝚋𝚘𝚝 :𝚅')
+return console.log('🚨 𝐋𝐚 𝐜𝐨𝐧𝐞𝐱𝐢𝐨𝐧 𝐡𝐚 𝐬𝐢𝐝𝐨 𝐜𝐞𝐫𝐫𝐚𝐝𝐚. 𝐈𝐧𝐭𝐞𝐧𝐭𝐚𝐧𝐝𝐨 𝐫𝐞𝐜𝐨𝐧𝐞𝐜𝐭𝐚𝐫...')
 } else if (reason === DisconnectReason.badSession) {
-return await conn.reply(m.chat, '🥵 𝙻𝚊 𝚌𝚘𝚗𝚎𝚡𝚒𝚘𝚗 𝚜𝚎 𝚑𝚊 𝚌𝚎𝚛𝚛𝚊𝚍𝚘, 𝚍𝚎𝚋𝚎𝚛𝚊 𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚛𝚜𝚎 𝚗𝚞𝚎𝚟𝚊𝚖𝚎𝚗𝚝𝚎', m)
+return await conn.reply(m.chat, '🚨 𝐋𝐚 𝐜𝐨𝐧𝐞𝐱𝐢𝐨𝐧 𝐡𝐚 𝐬𝐢𝐝𝐨 𝐜𝐞𝐫𝐫𝐚𝐝𝐚; 𝐝𝐞𝐛𝐞𝐫𝐚𝐬 𝐫𝐞𝐜𝐨𝐧𝐞𝐜𝐭𝐚𝐫 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞.', m, fake,)
 } else if (reason === DisconnectReason.timedOut) {
 await endSesion(false)
-return console.log('🎋 𝚃𝚒𝚎𝚖𝚙𝚘 𝚍𝚎 𝚌𝚘𝚗𝚎𝚡𝚒𝚘𝚗 𝚊𝚐𝚘𝚝𝚊𝚍𝚘, 𝚛𝚎𝚌𝚘𝚗𝚎𝚌𝚝𝚊𝚗𝚍𝚘 𝚕𝚊 𝚜𝚞𝚋-𝚋𝚘𝚝....')
+return console.log('🚨 𝐋𝐚 𝐜𝐨𝐧𝐞𝐱𝐢𝐨𝐧 𝐡𝐚 𝐬𝐢𝐝𝐨 𝐜𝐞𝐫𝐫𝐚𝐝𝐚. 𝐈𝐧𝐭𝐞𝐧𝐭𝐚𝐧𝐝𝐨 𝐫𝐞𝐜𝐨𝐧𝐞𝐜𝐭𝐚𝐫...')
 } else {
-console.log('🌈 𝚁𝚊𝚣𝚘𝚗 𝚍𝚎 𝚍𝚎𝚜𝚌𝚘𝚗𝚎𝚡𝚒𝚘𝚗 𝚍𝚎𝚜𝚌𝚘𝚗𝚘𝚌𝚒𝚍𝚊: ${reason || ""} >> ${connection || ""}')
+console.log('🚨 𝐑𝐚𝐳𝐨𝐧 𝐝𝐞 𝐥𝐚 𝐝𝐞𝐬𝐜𝐨𝐧𝐞𝐱𝐢𝐨𝐧: 𝐝𝐞𝐬𝐜𝐨𝐧𝐨𝐜𝐢𝐝𝐚. ${reason || ""} >> ${connection || ""}')
 }}
 if (global.db.data == null) loadDatabase()
 if (connection == `open`) {
 conn.isInit = true
 global.conns.push(conn)
-await parentw.sendMessage(m.chat, {text : args[0] ? `⚪️ Conectado` : `🔵 𝙻𝚊 𝚜𝚞𝚋-𝚋𝚘𝚝 𝚎𝚜𝚝𝚊 𝚊𝚌𝚝𝚒𝚟𝚊, 𝚞𝚜𝚎 𝚜𝚞 (𝙸𝙳) 𝚙𝚊𝚛𝚊 𝚊𝚌𝚝𝚒𝚟𝚊𝚛 𝚗𝚞𝚎𝚟𝚊𝚖𝚎𝚗𝚝𝚎 𝚕𝚊 𝚜𝚞𝚋-𝚋𝚘𝚝`}, { quoted: m })
-await parentw.sendMessage(m.chat, {text : `😝 conectado espere un momento...`}, { quoted: m })
+await parentw.sendMessage(m.chat, {text : args[0] ? `✅ 𝐂𝐎𝐍𝐄𝐂𝐓𝐀𝐃𝐎` : `🚨 𝐄𝐥 𝐒𝐮𝐝𝐁𝐨𝐭 𝐗 𝐞𝐬𝐭𝐚 𝐚𝐜𝐭𝐢𝐯𝐨. 𝐔𝐬𝐚 𝐬𝐮 (𝐈𝐃) 𝐩𝐚𝐫𝐚 𝐚𝐜𝐭𝐢𝐯𝐚𝐫 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐥 𝐒𝐮𝐝𝐁𝐨𝐭 𝐗.`}, { quoted: m })
+await parentw.sendMessage(m.chat, {text : `✅ 𝐂𝐨𝐧𝐞𝐜𝐭𝐚𝐧𝐝𝐨, 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐞𝐬𝐩𝐞𝐫𝐚 𝐮𝐧 𝐦𝐨𝐦𝐞𝐧𝐭𝐨...`}, { quoted: m })
 await sleep(5000)
 if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./JadiBot/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
 
@@ -217,7 +217,7 @@ Object.keys(conn.chats).forEach(jid => {
 conn.chats[jid].isBanned = false
 })
 } else {
-console.log(conn.chats, `🟡 Leyendo mensajes...`, conn.ev)
+console.log(conn.chats, `🚨 𝐃𝐞𝐭𝐞𝐜𝐭𝐚𝐧𝐝𝐨 𝐥𝐨𝐬 𝐦𝐞𝐧𝐬𝐚𝐣𝐞𝐬...`, conn.ev)
 Object.keys(conn.chats).forEach(jid => {
 conn.chats[jid].isBanned = true
 })
@@ -241,7 +241,7 @@ jddt()
 } 
 handler.help = [`jadibot`, `SERSYSTEMX`, `sersystemx`, `SUDSYSTEMX`, `sudsystemx`]
 handler.tags = [`jadibot`]
-handler.command = /^(SUDSYSTEMX|sudsystemx)/i
+handler.command = /^(SUDSYSTEMX|sudsystemx|SERSYSTEM|sersystemx)/i
 handler.register = false
 handler.private = false
 
