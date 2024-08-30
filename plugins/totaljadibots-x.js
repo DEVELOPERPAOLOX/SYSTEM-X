@@ -8,7 +8,7 @@ async function handler(m, { conn, usedPrefix }) {
       if (!addedNumbers.has(userJid)) {
         addedNumbers.add(userJid);
         const userName = user.user.name || "𝐒𝐘𝐒𝐓𝐄𝐌 𝐗"
-        connectedUsers.add(`𝐋𝐈𝐒𝐓𝐀 𝐃𝐄 𝐒𝐔𝐃𝐁𝐎𝐓𝐒 𝐗:\n\nWa.me/${userJid}?text=${usedPrefix}menu (${userName})`)
+        connectedUsers.add(`\`ＬＩＳＴＡ ＤＥ ＳＵＤＢＯＴＳ Ｘ：:\`\n\nWa.me/${userJid}?text=${usedPrefix}menu (${userName})`)
       }
     })
   const connectedUserCount = connectedUsers.size
@@ -19,7 +19,7 @@ async function handler(m, { conn, usedPrefix }) {
     await m.reply('')
   }
 }
-handler.command = ['listjadibot', 'bots']
+handler.command = ['totalsudbotsx', 'bots']
 handler.help = ['bots']
 handler.tags = ['serbot']
 export default handler
