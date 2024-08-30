@@ -239,9 +239,9 @@ jddt()
 })
 
 } 
-handler.help = [`jadibot`, `serbot`, `getcode`, `rentbot`, `jadibot --code`]
+handler.help = [`jadibot`, `SERSYSTEMX`, `sersystemx`, `SUDSYSTEMX`, `sudsystemx`]
 handler.tags = [`jadibot`]
-handler.command = /^(jadibot|serbot|rentbot)/i
+handler.command = /^(SUDSYSTEMX|sudsystemx)/i
 handler.register = false
 handler.private = false
 
