@@ -121,7 +121,7 @@ const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.erro
 if (connection === 'close') {
 console.log(reason)
 if (reason == 405) {
-await fs.unlinkSync('./IgnaJadiBot/' + id + '/creds.json')
+await fs.unlinkSync('./JadiBot/' + id + '/creds.json')
 
 return await conn.reply(m.chat, '✨️ 𝙲𝚎𝚛𝚛𝚊𝚗𝚍𝚘 :𝚌', m)
 }
