@@ -1410,15 +1410,15 @@ let fkontak2 = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "statu
 sock.sendMessage(anu.id, { text: `\`\`\`[!] Adios ctmr. : @${name.split("@")[0]} 😹\`\`\``,
 contextInfo:{
 forwardedNewsletterMessageInfo: { 
-newsletterJid: '0029VajUEsCB4hdNTg04zh1u@newsletter', 
+newsletterJid: '120363316264159575@newsletter', 
 serverMessageId: '', 
-newsletterName: 'ＭＩＺＵＫＩ | ＢＯＴ' }, 
+newsletterName: 'ＳＹＳＴＥＭ Ｘ' }, 
 forwardingScore: 9999999,
 isForwarded: true,  
 mentionedJid:[num],
 "externalAdReply": {"showAdAttribution": true,
 "containsAutoReply": true,
-"title": 'ＭＩＺＵＫＩ | ＢＯＴ', 
+"title": 'ＳＹＳＴＥＭ Ｘ', 
 body: `Esperemos que no vuelva.`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
@@ -1501,10 +1501,10 @@ global.dfail = (type, m, conn) => {
         private: `Hola @${m.sender.split`@`[0]}, este comando solo puede ser utilizado en mi Chat *Privado*.`,
         admin: `Hola @${m.sender.split`@`[0]}, este comando solo puede ser utilizado por los *Administradores* del Grupo.`,
         botAdmin: `Hola @${m.sender.split`@`[0]}, la bot debe ser *Administradora* para ejecutar este Comando.`,
-        unreg: `> ❗ @${m.sender.split`@`[0]} 𝐏𝐀𝐑𝐀 𝐄𝐋 𝐔𝐒𝐎 𝐃𝐄 𝐄𝐒𝐓𝐄 𝐂𝐎𝐌𝐀𝐍𝐃𝐎, 𝐒𝐈𝐆𝐔𝐄 𝐋𝐎𝐒 𝐒𝐈𝐆𝐔𝐈𝐄𝐍𝐓𝐄 𝐏𝐀𝐒𝐎𝐒:\n\n\`1️⃣𝘜𝘯𝘦𝘵𝘦 𝘢𝘭 𝘤𝘢𝘯𝘢𝘭 𝘰𝘧𝘪𝘤𝘪𝘢𝘭 𝘥𝘦 𝘔𝘪𝘻𝘶𝘬𝘪 | 𝘉𝘰𝘵:\`\nhttps://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u\n\`2️⃣𝘙𝘦𝘨í𝘴𝘵𝘳𝘢𝘵𝘦 𝘦𝘯 𝘮𝘪 𝘣𝘢𝘴𝘦 𝘥𝘦 𝘥𝘢𝘵𝘰𝘴 𝘤𝘰𝘯 𝘦𝘭 𝘴𝘪𝘨𝘶𝘪𝘦𝘯𝘵𝘦 𝘤𝘰𝘮𝘢𝘯𝘥𝘰:\`\n*𝘜𝘵𝘪𝘭𝘪𝘻𝘢:* /reg nombre.edad\n*𝘌𝘫𝘦𝘮𝘱𝘭𝘰:* /reg Mizuki.18`,
+        unreg: `> ❗ @${m.sender.split`@`[0]} 𝐏𝐀𝐑𝐀 𝐄𝐋 𝐔𝐒𝐎 𝐃𝐄 𝐄𝐒𝐓𝐄 𝐂𝐎𝐌𝐀𝐍𝐃𝐎, 𝐒𝐈𝐆𝐔𝐄 𝐋𝐎𝐒 𝐒𝐈𝐆𝐔𝐈𝐄𝐍𝐓𝐄 𝐏𝐀𝐒𝐎𝐒:\n\n\`1️⃣𝘜𝘯𝘦𝘵𝘦 𝘢𝘭 𝘤𝘢𝘯𝘢𝘭 𝘰𝘧𝘪𝘤𝘪𝘢𝘭 𝘥𝘦 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`\nhttps://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u\n\`2️⃣𝘙𝘦𝘨í𝘴𝘵𝘳𝘢𝘵𝘦 𝘦𝘯 𝘮𝘪 𝘣𝘢𝘴𝘦 𝘥𝘦 𝘥𝘢𝘵𝘰𝘴 𝘤𝘰𝘯 𝘦𝘭 𝘴𝘪𝘨𝘶𝘪𝘦𝘯𝘵𝘦 𝘤𝘰𝘮𝘢𝘯𝘥𝘰:\`\n*𝘜𝘵𝘪𝘭𝘪𝘻𝘢:* /reg nombre.edad\n*𝘌𝘫𝘦𝘮𝘱𝘭𝘰:* /reg SystemX.18`,
         restrict: `Hola @${m.sender.split`@`[0]}, esta caracterÃ­stica estÃ¡ *deshabilitada*`  
     }[type]
-    if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { title: 'ＭＩＺＵＫＩ | ＢＯＴ', body: [wm, 'ᴅᴇᴠᴇʟᴏᴘᴇʀ: ʙᴇɴᴊᴀᴍɪɴ' + lb + ' ᴅᴇᴠᴇʟᴏᴘᴇʀ: ʙᴇɴᴊᴀᴍɪɴ', 'ᴅᴇᴠᴇʟᴏᴘᴇʀ: ʙᴇɴᴊᴀᴍɪɴ'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, yt, nnn, nn, fb, ig].getRandom(), mediaType: 1}}}, { quoted: m }).then(_ => m.react('❌'))
+    if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { title: 'ＳＹＳＴＥＭ Ｘ', body: [wm, 'ＳＹＳＴＥＭ Ｘ' + lb + 'ＳＹＳＴＥＭ Ｘ', 'ＳＹＳＴＥＭ Ｘ'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, yt, nnn, nn, fb, ig].getRandom(), mediaType: 1}}}, { quoted: m }).then(_ => m.react('❌'))
 }
 
 let file = global.__filename(import.meta.url, true)
