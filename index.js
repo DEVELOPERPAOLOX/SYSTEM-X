@@ -77,14 +77,14 @@ const packageJsonData = await fsPromises.readFile(packageJsonPath, 'utf-8')
 const packageJsonObj = JSON.parse(packageJsonData)
 const currentTime = new Date().toLocaleString()
 let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
-console.log(chalk.yellow(`╭${lineM}
-┊${chalk.blueBright('╭━')} ${chalk.red(`〔 ＤＥＶＥＬＯＰＥＲ Ｘ 〕━╮`)}
-┊${chalk.blueBright('┃')} ${chalk.red('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
-┊${chalk.blueBright('┃➔')}${chalk.blue(`𝐏𝐀𝐎𝐋𝐎 𝐗`)}
-┊${chalk.blueBright('┃')}${chalk.red('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
-┊${chalk.blueBright('┃')}${chalk.red(`〔 ＡＧＲＡＤＥＣＩＭＩＥＮＴＯ 〕`)}
-┊${chalk.blueBright('┃➔')}${chalk.blue(`𝐆𝐀𝐓𝐀 𝐃𝐈𝐎𝐒`)}
-┊${chalk.blueBright('╰━━━━━━━━━━━━━━╯')} 
+console.log(chalk.blue(`╭${lineM}
+┊${chalk.red('╭━')} ${chalk.red(`〔 ＤＥＶＥＬＯＰＥＲ Ｘ 〕━╮`)}
+┊${chalk.red('┃')} ${chalk.red('ㅤㅤㅤㅤ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.red('┃➔')}${chalk.yellow(`ㅤㅤㅤㅤ𝐏𝐀𝐎𝐋𝐎 𝐗`)}
+┊${chalk.red('┃')}${chalk.red('ㅤㅤㅤㅤ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.red('┃')}${chalk.red(`〔 ＡＧＲＡＤＥＣＩＭＩＥＮＴＯ 〕`)}
+┊${chalk.red('┃➔')}${chalk.yellow(`ㅤㅤㅤㅤ𝐆𝐀𝐓𝐀 𝐃𝐈𝐎𝐒`)}
+┊${chalk.red('╰━━━━━━━━━━━━━━╯')} 
 ╰${lineM}`));
 setInterval(() => {}, 1000)
 } catch (err) {
