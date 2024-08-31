@@ -22,7 +22,7 @@ const rl = createInterface(process.stdin, process.stdout)
 //const app = express()
 //const port = process.env.PORT || 8080;
 
-say('S Y S T E MㅤㅤX', {
+say('S Y S T E M\nX', {
 font: 'chrome',
 align: 'center',
 gradient: ['red', 'magenta']})
