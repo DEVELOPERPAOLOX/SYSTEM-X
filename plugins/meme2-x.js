@@ -1,23 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-import memeService from 'hispamemes';
-
-let memeCommandHandler = async (msg, { connection, prefix, cmd }) => {
-  try {
-    // Obtén la URL del meme
-    const memeUrl = await memeService.meme();
-
-    // Envía el archivo del meme con un pie de foto
-    connection.sendFile(msg.chat, memeUrl, '𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗.jpg', '\`𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗\`', msg, fake,);
-  } catch (error) {
-    console.error('❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐮𝐧𝐨𝐬 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.', error);
-    connection.reply(msg.chat, '❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐮𝐧𝐨𝐬 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.', msg, fake,);
-  }
-};
-
-// Define los comandos disponibles para este handler
-memeCommandHandler.command = ['meme2', 'memes2'];
-memeCommandHandler.level = 2;
-memeCommandHandler.register = true;
-
-export default memeCommandHandler;
+const _0x106fd9=_0x5a0b;(function(_0x283096,_0x5ab58c){const _0x570e2e=_0x5a0b,_0x4443d9=_0x283096();while(!![]){try{const _0x109454=parseInt(_0x570e2e(0xab))/0x1+parseInt(_0x570e2e(0xac))/0x2+-parseInt(_0x570e2e(0xb0))/0x3+-parseInt(_0x570e2e(0xba))/0x4*(-parseInt(_0x570e2e(0xb9))/0x5)+-parseInt(_0x570e2e(0xaf))/0x6+-parseInt(_0x570e2e(0xb8))/0x7+-parseInt(_0x570e2e(0xad))/0x8*(-parseInt(_0x570e2e(0xb3))/0x9);if(_0x109454===_0x5ab58c)break;else _0x4443d9['push'](_0x4443d9['shift']());}catch(_0x504aa3){_0x4443d9['push'](_0x4443d9['shift']());}}}(_0x5946,0x8f7e3));function _0x5a0b(_0x293920,_0x596ea8){const _0x594651=_0x5946();return _0x5a0b=function(_0x5a0b5a,_0x5a5909){_0x5a0b5a=_0x5a0b5a-0xaa;let _0x214855=_0x594651[_0x5a0b5a];return _0x214855;},_0x5a0b(_0x293920,_0x596ea8);}import _0x1687b0 from'hispamemes';let memeCommandHandler=async(_0x17f23e,{connection:_0x2f11fb,prefix:_0xcffda7,cmd:_0x13802a})=>{const _0xafe48e=_0x5a0b;try{const _0x450aa3=await _0x1687b0[_0xafe48e(0xbb)]();_0x2f11fb[_0xafe48e(0xae)](_0x17f23e[_0xafe48e(0xb4)],_0x450aa3,_0xafe48e(0xb1),_0xafe48e(0xb5),_0x17f23e,fake);}catch(_0x5b0e67){console[_0xafe48e(0xb7)](_0xafe48e(0xaa),_0x5b0e67),_0x2f11fb[_0xafe48e(0xb6)](_0x17f23e[_0xafe48e(0xb4)],_0xafe48e(0xaa),_0x17f23e,fake);}};function _0x5946(){const _0x3cae46=['meme2','❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨\x20𝐮𝐧\x20𝐞𝐫𝐫𝐨𝐫,\x20𝐢𝐧𝐭𝐞𝐧𝐭𝐚\x20𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞\x20𝐞𝐧\x20𝐮𝐧𝐨𝐬\x20𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.','929730CirYMj','825664TCGnYr','48HIddFQ','sendFile','4855614HqtqXZ','3041907fbdxsC','𝐌𝐄𝐌𝐄\x20|\x20𝐒𝐘𝐒𝐓𝐄𝐌\x20𝐗.jpg','register','2388978bMnTYE','chat','`𝐌𝐄𝐌𝐄\x20|\x20𝐒𝐘𝐒𝐓𝐄𝐌\x20𝐗`','reply','error','4043270DpoTAQ','5SsWApU','213524UteVYk','meme','level'];_0x5946=function(){return _0x3cae46;};return _0x5946();}memeCommandHandler['command']=[_0x106fd9(0xbd),'memes2'],memeCommandHandler[_0x106fd9(0xbc)]=0x2,memeCommandHandler[_0x106fd9(0xb2)]=!![];export default memeCommandHandler;
