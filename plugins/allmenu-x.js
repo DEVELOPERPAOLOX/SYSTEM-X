@@ -1,95 +1,101 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
 
-import fs from 'fs';
-import fetch from 'node-fetch';
-import { xpRange, levelling } from './lib/levelling';
-import PhoneNumber from 'awesome-phonenumber';
-import { promises } from 'fs';
-import { join } from 'path';
-
-const _0x5b36 = ['fromMe', 'media/menu.mp3', 'vcard', 'contextInfo', 'message', 'msg', 'mentionedJid', 'reply', 'chat', 'sendMessage', 'buffer', 'getName', 'replace', 'replaceAll', 'split', 'join', 'getRandom', 'date', 'text', 'contextInfo', 'externalAdReply', 'thumbnail', 'sourceUrl', 'mediaType', 'renderLargerThumbnail', 'forwardingScore', 'mentionedJid', 'name', 'command', 'sendFile', 'string', 'readMore', 'catch', 'log', 'toLocaleDateString', 'toLocaleTimeString', 'Intl', 'DateTimeFormat', 'u-ca-islamic', 'get', 'hour', 'minute', 'second', 'numeric', 'month', 'year', 'day', 'week', 'exp', 'level', 'role', 'locale', 'min', 'xp', 'max', 'totalexp', 'maxexp', 'xp4levelup', 'role', 'dateIslamic', 'totalreg', 'rtotalreg', 'replace', 'text', 'who', 'mentionedJid', 'taguser', 'image', 'await', 'json', 'catch', 'config', 'try', 'log', 'function', 'console', 'method', 'export', 'import', 'fs', 'promises', 'path', 'fetch', 'github', 'npmname', 'npmdesc', 'version', 'pm', 'default', 'string', 'true', 'false', 'split', 'map', 'sort', 'join', 'padStart', 'repeat', 'padEnd', 'filter', 'length', 'Object', 'keys', 'values', 'find', 'setTimeout', 'then', 'catch', 'number', 'parse', 'resolve', 'promise', 'once', 'send', 'Promise', 'await', 'process', 'catch', 'message', 'text', 'function', 'user', 'string', 'date', 'code'];
-
-function _0x2675(_0x1b02b4, _0x1873a7) {
-    return _0x5b36[_0x1b02b4 - _0x1873a7];
+import fs from 'fs'
+import fetch from 'node-fetch'
+import { xpRange } from '../lib/levelling.js'
+const { levelling } = '../lib/levelling.js'
+import PhoneNumber from 'awesome-phonenumber'
+import { promises } from 'fs'
+import { join } from 'path'
+let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, command }) => {
+try {	
+let vn = './media/menu.mp3'
+let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
+let { exp, limit, level, role } = global.db.data.users[m.sender]
+let { min, xp, max } = xpRange(level, global.multiplier)
+let name = await conn.getName(m.sender)
+let d = new Date(new Date + 3600000)
+let locale = 'es'
+let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+let week = d.toLocaleDateString(locale, { weekday: 'long' })
+let date = d.toLocaleDateString(locale, {
+day: 'numeric',
+month: 'long',
+year: 'numeric'
+})
+let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
+day: 'numeric',
+month: 'long',
+year: 'numeric'
+}).format(d)
+let time = d.toLocaleTimeString(locale, {
+hour: 'numeric',
+minute: 'numeric',
+second: 'numeric'
+})
+let _uptime = process.uptime() * 1000
+let _muptime
+if (process.send) {
+process.send('uptime')
+_muptime = await new Promise(resolve => {
+process.once('message', resolve)
+setTimeout(resolve, 1000)
+}) * 1000
 }
-
-function _0x49cf(_0x1b02b4) {
-    return _0x5b36[_0x1b02b4];
+let { money, joincount } = global.db.data.users[m.sender]
+let user = global.db.data.users[m.sender]
+let muptime = clockString(_muptime)
+let uptime = clockString(_uptime)
+let totalreg = Object.keys(global.db.data.users).length
+let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
+let replace = {
+'%': '%',
+p: _p, uptime, muptime,
+me: conn.getName(conn.user.jid),
+npmname: _package.name,
+npmdesc: _package.description,
+version: _package.version,
+exp: exp - min,
+maxexp: xp,
+totalexp: exp,
+xp4levelup: max - exp,
+github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
+level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+readmore: readMore
 }
-
-let handler = async (_0x1234, { conn, usedPrefix, __dirname, text, command }) => {
-    try {
-        let vn = _0x49cf(0x0);
-        let _package = JSON.parse(await promises.readFile(join(__dirname, _0x49cf(0x1))).catch(_ => ({}))) || {};
-        let { exp, limit, level, role } = global.db.data.users[_0x1234.sender];
-        let { min, xp, max } = xpRange(level, global.multiplier);
-        let name = await conn[_0x49cf(0x2)](_0x1234.sender);
-        let d = new Date(new Date() + 3600000);
-        let locale = _0x49cf(0x3);
-        let weton = [_0x49cf(0x4), _0x49cf(0x5), _0x49cf(0x6), _0x49cf(0x7), _0x49cf(0x8)][Math.floor(d / 84600000) % 5];
-        let week = d.toLocaleDateString(locale, { weekday: _0x49cf(0x9) });
-        let date = d.toLocaleDateString(locale, { day: _0x49cf(0xa), month: _0x49cf(0xb), year: _0x49cf(0xc) });
-        let dateIslamic = Intl[_0x49cf(0xd)](locale + '-TN-u-ca-islamic', { day: _0x49cf(0xa), month: _0x49cf(0xb), year: _0x49cf(0xc) }).format(d);
-        let time = d.toLocaleTimeString(locale, { hour: _0x49cf(0xe), minute: _0x49cf(0xf), second: _0x49cf(0x10) });
-        let _uptime = process.uptime() * 1000;
-        let _muptime;
-        if (process.send) {
-            process.send(_0x49cf(0x11));
-            _muptime = await new Promise(resolve => {
-                process.once(_0x49cf(0x12), resolve);
-                setTimeout(resolve, 1000);
-            }) * 1000;
+text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+//let user = global.db.data.users[m.sender]
+//user.registered = false
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let mentionedJid = [who]
+let username = conn.getName(who)
+let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
+//let enlace = { contextInfo: { externalAdReply: {title: wm, body: 'support group' , sourceUrl: nna, thumbnail: await(await fetch(img)).buffer() }}}
+  let pp = './Menu2.jpg'
+//let pp = gataVidMenu.getRandom()
+await conn.sendMessage(m.chat, {
+        text: `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 @${m.sender.split`@`[0]}\n𝐄𝐧 𝐮𝐧𝐨𝐬 𝐢𝐧𝐬𝐭𝐚𝐧𝐭𝐞𝐬 𝐭𝐞 𝐥𝐥𝐞𝐠𝐚𝐫𝐚 𝐦𝐢 𝐦𝐞𝐧𝐮 𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐨.`,
+        contextInfo: { 
+          mentionedJid: [m.sender],
         }
-        let { money, joincount } = global.db.data.users[_0x1234.sender];
-        let user = global.db.data.users[_0x1234.sender];
-        let muptime = clockString(_muptime);
-        let uptime = clockString(_uptime);
-        let totalreg = Object.keys(global.db.data.users).length;
-        let rtotalreg = Object.values(global.db.data.users).filter(user => user[_0x49cf(0x13)] === _0x49cf(0x14)).length;
-        let replace = {
-            '%': '%',
-            p: usedPrefix, uptime, muptime,
-            me: conn[_0x49cf(0x2)](conn.user.jid),
-            npmname: _package.name,
-            npmdesc: _package.description,
-            version: _package.version,
-            exp: exp - min,
-            maxexp: xp,
-            totalexp: exp,
-            xp4levelup: max - exp,
-            github: _package.homepage ? _package.homepage.url || _package.homepage : _0x49cf(0x15),
-            level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
-            readmore: readMore
-        };
-        text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join('|')})`, 'g'), (_, name) => '' + replace[name]);
-        let who = _0x1234.mentionedJid && _0x1234.mentionedJid[0] ? _0x1234.mentionedJid[0] : _0x1234.fromMe ? conn.user.jid : _0x1234.sender;
-        let mentionedJid = [who];
-        let username = conn[_0x49cf(0x2)](who);
-        let taguser = '@' + _0x1234.sender.split("@s.whatsapp.net")[0];
-        let pp = _0x49cf(0x16);
-        let img = await (await fetch(_0x49cf(0x17))).buffer();
-        await conn[_0x49cf(0x18)](_0x1234.chat, {
-            text: `${_0x49cf(0x19)} @${_0x1234.sender.split(_0x49cf(0x1a))[0]}\n${_0x49cf(0x1b)}`,
-            contextInfo: {
-                mentionedJid: [_0x1234.sender],
-            }
-        }, { quoted: _0x1234 });
-        let fkontak = { "key": { "participants": "0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${_0x1234.sender.split('@')[0]}:${_0x1234.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" };
+      }, { quoted: m })
+  
+let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 
-        let menu = `${_0x49cf(0x1c)}
+let menu = `*\`⌜ ＭＥＮＵ | ＣＯＭＰＬＥＴＯ ⌟\`*
 
-${_0x49cf(0x1d)}
+*\`╭━〔 𝐈𝐍𝐅𝐎 𝐃𝐄𝐋 𝐁𝐎𝐓 〕━╮\`*
 ┃➔ *👑𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧:* 𝐏𝐚𝐨𝐥𝐨 𝐱 𝐃𝐢𝐚𝐧𝐚
 ┃➔ *☑𝙑𝙚𝙧𝙨𝙞𝙤𝙣:* 1.0.0
 ┃➔ *⏰𝙏𝙞𝙚𝙢𝙥𝙤 𝙖𝙘𝙩𝙞𝙫𝙤:* ${uptime}
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x1e)}
+*\`╭━〔 𝐀𝐂𝐓𝐈𝐕𝐀𝐑|𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐑 〕━╮\`*
 ┃➔ ✅ ${usedPrefix}enable
 ┃➔ ❌ ${usedPrefix}disable
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x1f)}
+*\`╭━〔 𝐆𝐑𝐔𝐏𝐎𝐒 〕━╮\`*
 ┃➔ 🚫 ${usedPrefix}kick
 ┃➔ 🏠 ${usedPrefix}grupo
 ┃➔ ⬆️ ${usedPrefix}promote
@@ -104,7 +110,7 @@ ${_0x49cf(0x1f)}
 ┃➔ 👻🚫 ${usedPrefix}kickfantasmas
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x20)}
+*\`╭━━〔 𝐉𝐔𝐄𝐆𝐎𝐒 〕━━╮\`*
 ┃➔ 📖 ${usedPrefix}pokedex
 ┃➔ 👨🏼 ${usedPrefix}prostituto <@tag>
 ┃➔ 👩🏼 ${usedPrefix}prostituta <@tag>
@@ -143,7 +149,7 @@ ${_0x49cf(0x20)}
 ┃➔ 😎 ${usedPrefix}kchero
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x21)}
+*\`╭━〔 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 〕━╮\`*
 ┃➔ ▶️ ${usedPrefix}play
 ┃➔ ▶️ ${usedPrefix}play.1
 ┃➔ ▶️ ${usedPrefix}play2.2
@@ -165,7 +171,7 @@ ${_0x49cf(0x21)}
 ┃➔ 🎧 ${usedPrefix}igstory
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x22)}
+*\`╭━〔 𝐁𝐔𝐒𝐂𝐀𝐃𝐎𝐑𝐄𝐒 〕━╮\`*
 ┃➔ 🕵️‍♂️ ${usedPrefix}xnxxsearch
 ┃➔ 📂 ${usedPrefix}tiktoksearch
 ┃➔ 🌐 ${usedPrefix}google
@@ -177,7 +183,7 @@ ${_0x49cf(0x22)}
 ┃➔ 📂 ${usedPrefix}pornhubsearch
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x23)}
+*\`╭━〔 𝐇𝐄𝐑𝐑𝐀𝐌𝐈𝐄𝐍𝐓𝐀𝐒 〕━╮\`*
 ┃➔ 🔇 ${usedPrefix}mute
 ┃➔ 🎷 ${usedPrefix}trad
 ┃➔ 🧮 ${usedPrefix}calc
@@ -185,7 +191,7 @@ ${_0x49cf(0x23)}
 ┃➔ 🎶 ${usedPrefix}whatmusic
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x24)}
+*\`╭━〔 𝐄𝐂𝐎𝐍𝐎𝐌𝐈𝐀𝐒 〕━╮\`*
 ┃➔ 🔫 ${usedPrefix}crimen
 ┃➔ 📝 ${usedPrefix}reg
 ┃➔ ⛏️ ${usedPrefix}minar
@@ -194,49 +200,45 @@ ${_0x49cf(0x24)}
 ┃➔ 🏗️ ${usedPrefix}mendigar
 ╰━━━━━━━━━━━━━━╯
 
-${_0x49cf(0x25)}
+*\`╭━━〔 𝐒𝐓𝐈𝐂𝐊𝐄𝐑𝐒 〕━━╮\`*
 ┃➔ 🛠️ ${usedPrefix}s
 ┃➔ 🏷️ ${usedPrefix}emojimix
 ┃➔ ⚙️ ${usedPrefix}attp
 ┃➔ 🔩 ${usedPrefix}qc
-╰━━━━━━━━━━━━━━╯`.trim();
+╰━━━━━━━━━━━━━━╯`.trim()
+//conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
+let img = await (await fetch(`https://th.bing.com/th/id/OIG3.2LhHLm6qxvavru3HsK_z?w=1024&h=1024&rs=1&pid=ImgDetMain`)).buffer()  
+await conn.sendMessage(m.chat, {
+text: menu,
+contextInfo: { 
+mentionedJid: [m.sender],
+forwardingScore: 9, 
+externalAdReply: {
+title: 'ＳＹＳＴＥＭ  Ｘ',
+//body: 'ᴅᴇᴠᴇʟᴏᴘᴇʀ: ʙᴇɴᴊᴀᴍɪɴ',
+thumbnail: img,
+sourceUrl: 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u',
+mediaType: 1,
+renderLargerThumbnail: true
+}}}, { quoted: m})
+await m.react('✅')	
+} catch (e) {
+//await conn.sendButton(m.chat, `\n${wm}`, lenguajeGB['smsMalError3']() + '#report ' + usedPrefix + command, null, [[lenguajeGB.smsMensError1(), `#reporte ${lenguajeGB['smsMensError2']()} *${usedPrefix + command}*`]], m)
+console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
+console.log(e)	
+}}
+handler.help = ['menu', 'help', '?']
+handler.tags = ['main']
+handler.command = /^(allmenu|allmenu\?)$/i
+//handler.register = true
+handler.exp = 50
+handler.fail = null
+export default handler
 
-        await conn[_0x49cf(0x26)](_0x1234.chat, {
-            text: menu,
-            contextInfo: {
-                mentionedJid: [_0x1234.sender],
-                forwardingScore: 9,
-                externalAdReply: {
-                    title: 'ＳＹＳＴＥＭ  Ｘ',
-                    thumbnail: img,
-                    sourceUrl: _0x49cf(0x27),
-                    mediaType: 1,
-                    renderLargerThumbnail: true
-                }
-            }
-        }, { quoted: _0x1234 });
-
-        await _0x1234.react('✅');
-    } catch (e) {
-        console.log(`❗❗ ${_0x49cf(0x28)} ${usedPrefix + command} ❗❗`);
-        console.log(e);
-    }
-}
-
-handler.help = [_0x49cf(0x29), _0x49cf(0x2a), '?'];
-handler.tags = [_0x49cf(0x2b)];
-handler.command = new RegExp(`^(allmenu|allmenu\\?)$`, 'i');
-handler.exp = 50;
-handler.fail = null;
-
-export default handler;
-
-const more = String.fromCharCode(8206);
-const readMore = more.repeat(4001);
-
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
 function clockString(ms) {
-    let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000);
-    let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
-    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
-    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':');
-}
+let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
