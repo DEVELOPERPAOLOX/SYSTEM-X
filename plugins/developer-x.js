@@ -1,14 +1,2 @@
-// Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ    Ｐ Ａ Ｏ Ｌ Ｏ    Ｘ
-
-function contactHandler(message) {
-  const ownersList = global.owner.filter(([id, isCreator]) => id && isCreator);
-  const formattedContacts = ownersList.map(([id, name]) => [id, name]);
-
-  this.sendContact(message.chat, formattedContacts, message);
-}
-
-contactHandler.help = ['owner'];
-contactHandler.tags = ['main'];
-contactHandler.command = ['owner', 'creator', 'creador', 'dueño'];
-
-export default contactHandler;
+// Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
+const _0x33c7fa=_0x4e7f;function _0x4e7f(_0x4547e4,_0x2dc384){const _0x5b68ba=_0x5b68();return _0x4e7f=function(_0x4e7f6a,_0x43b1c7){_0x4e7f6a=_0x4e7f6a-0xcf;let _0x35e463=_0x5b68ba[_0x4e7f6a];return _0x35e463;},_0x4e7f(_0x4547e4,_0x2dc384);}(function(_0x124560,_0x38346c){const _0x33c723=_0x4e7f,_0x1c81f1=_0x124560();while(!![]){try{const _0x1206a4=parseInt(_0x33c723(0xd1))/0x1*(parseInt(_0x33c723(0xd8))/0x2)+parseInt(_0x33c723(0xd4))/0x3+parseInt(_0x33c723(0xd2))/0x4+-parseInt(_0x33c723(0xda))/0x5+parseInt(_0x33c723(0xd3))/0x6+parseInt(_0x33c723(0xd9))/0x7+-parseInt(_0x33c723(0xd0))/0x8;if(_0x1206a4===_0x38346c)break;else _0x1c81f1['push'](_0x1c81f1['shift']());}catch(_0x21e2c4){_0x1c81f1['push'](_0x1c81f1['shift']());}}}(_0x5b68,0xca397));function contactHandler(_0x11f774){const _0x22955d=_0x4e7f,_0x18a887=global[_0x22955d(0xd5)]['filter'](([_0xda82ec,_0xe1ad3b])=>_0xda82ec&&_0xe1ad3b),_0x275a2d=_0x18a887['map'](([_0x202580,_0x5b5e6b])=>[_0x202580,_0x5b5e6b]);this['sendContact'](_0x11f774['chat'],_0x275a2d,_0x11f774);}function _0x5b68(){const _0x4fbf95=['creator','16774304SUpRLG','183403qGoqzk','2992700onEZHl','8708670DHQaFT','1499478kjDStc','owner','main','dueño','2UzfHip','778099eJlBOJ','344535TVKFeY','tags'];_0x5b68=function(){return _0x4fbf95;};return _0x5b68();}contactHandler['help']=[_0x33c7fa(0xd5)],contactHandler[_0x33c7fa(0xdb)]=[_0x33c7fa(0xd6)],contactHandler['command']=[_0x33c7fa(0xd5),_0x33c7fa(0xcf),'creador',_0x33c7fa(0xd7)];export default contactHandler;
