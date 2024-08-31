@@ -1,26 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-import { addExif } from '../lib/sticker.js'
-let handler = async (m, { conn, text }) => {
-if (!m.quoted) throw '👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐰𝐦 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'
-let stiker = false
-try {
-let [packname, ...author] = text.split('|')
-author = (author || []).join('|')
-let mime = m.quoted.mimetype || ''
-if (!/webp/.test(mime)) throw '👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐰𝐦 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'
-let img = await m.quoted.download()
-if (!img) throw '👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐰𝐦 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'
-stiker = await addExif(img, packname || '', author || '')
-} catch (e) {
-console.error(e)
-if (Buffer.isBuffer(e)) stiker = e
-} finally {
-if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: wm, body: `h`, mediaType: 2, sourceUrl: nn, thumbnail: imagen1}}}, { quoted: m })
-else throw '❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫 𝐝𝐮𝐫𝐚𝐧𝐭𝐞 𝐞𝐥 𝐩𝐫𝐨𝐜𝐞𝐬𝐨, 𝐩𝐨𝐫 𝐟𝐚𝐯𝐨𝐫 𝐮𝐬𝐚 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞.'
-}}
-handler.help = ['wm <packname>|<author>']
-handler.tags = ['sticker']
-handler.command = /^robar|wm$/i
-handler.register = true
-export default handler
+function _0x447f(){const _0x2f7b34=['wm\x20<packname>|<author>','129016jwhuzX','quoted','7266438oXWwHj','tags','2118704OlNYSy','join','1094690BUFalq','register','12PsOsyP','3568vUYxkw','chat','error','👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬\x20𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\x0a🚀𝐕𝐮𝐞𝐥𝐯𝐞\x20𝐚\x20𝐮𝐬𝐚𝐫\x20𝐞𝐥\x20𝐜𝐨𝐦𝐚𝐧𝐝𝐨\x20𝐩𝐞𝐫𝐨\x20𝐜𝐨𝐧\x20𝐞𝐥\x20𝐮𝐬𝐨\x20𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\x0a✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨:\x20.𝐰𝐦\x20𝐒𝐘𝐒𝐓𝐄𝐌\x20𝐗','sticker','sticker.webp','test','download','8050kimmPb','command','253KEaczH','split','513122OQhtio','675KAMvkh','isBuffer','mimetype','1327mABaoq'];_0x447f=function(){return _0x2f7b34;};return _0x447f();}const _0x1349cb=_0x4d1b;(function(_0x100df5,_0x2a5e1e){const _0x1f1d8b=_0x4d1b,_0x13808f=_0x100df5();while(!![]){try{const _0x328227=-parseInt(_0x1f1d8b(0x99))/0x1+-parseInt(_0x1f1d8b(0x95))/0x2*(parseInt(_0x1f1d8b(0x88))/0x3)+parseInt(_0x1f1d8b(0x89))/0x4*(parseInt(_0x1f1d8b(0x91))/0x5)+-parseInt(_0x1f1d8b(0x9d))/0x6+parseInt(_0x1f1d8b(0x9f))/0x7+-parseInt(_0x1f1d8b(0x9b))/0x8*(parseInt(_0x1f1d8b(0x96))/0x9)+-parseInt(_0x1f1d8b(0xa1))/0xa*(-parseInt(_0x1f1d8b(0x93))/0xb);if(_0x328227===_0x2a5e1e)break;else _0x13808f['push'](_0x13808f['shift']());}catch(_0x2bba48){_0x13808f['push'](_0x13808f['shift']());}}}(_0x447f,0xc55da));import{addExif}from'../lib/sticker.js';let handler=async(_0x3dec4c,{conn:_0x5a008a,text:_0x3bee21})=>{const _0x2bfba3=_0x4d1b;if(!_0x3dec4c[_0x2bfba3(0x9c)])throw _0x2bfba3(0x8c);let _0x4acb2b=![];try{let [_0x42e252,..._0x5d58d5]=_0x3bee21[_0x2bfba3(0x94)]('|');_0x5d58d5=(_0x5d58d5||[])[_0x2bfba3(0xa0)]('|');let _0x5cfacc=_0x3dec4c['quoted'][_0x2bfba3(0x98)]||'';if(!/webp/[_0x2bfba3(0x8f)](_0x5cfacc))throw'👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬\x20𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\x0a🚀𝐕𝐮𝐞𝐥𝐯𝐞\x20𝐚\x20𝐮𝐬𝐚𝐫\x20𝐞𝐥\x20𝐜𝐨𝐦𝐚𝐧𝐝𝐨\x20𝐩𝐞𝐫𝐨\x20𝐜𝐨𝐧\x20𝐞𝐥\x20𝐮𝐬𝐨\x20𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\x0a✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨:\x20.𝐰𝐦\x20𝐒𝐘𝐒𝐓𝐄𝐌\x20𝐗';let _0x41a622=await _0x3dec4c[_0x2bfba3(0x9c)][_0x2bfba3(0x90)]();if(!_0x41a622)throw _0x2bfba3(0x8c);_0x4acb2b=await addExif(_0x41a622,_0x42e252||'',_0x5d58d5||'');}catch(_0x2b1647){console[_0x2bfba3(0x8b)](_0x2b1647);if(Buffer[_0x2bfba3(0x97)](_0x2b1647))_0x4acb2b=_0x2b1647;}finally{if(_0x4acb2b)_0x5a008a['sendFile'](_0x3dec4c[_0x2bfba3(0x8a)],_0x4acb2b,_0x2bfba3(0x8e),'',_0x3dec4c,!![],{'contextInfo':{'forwardingScore':0xc8,'isForwarded':![],'externalAdReply':{'showAdAttribution':![],'title':wm,'body':'h','mediaType':0x2,'sourceUrl':nn,'thumbnail':imagen1}}},{'quoted':_0x3dec4c});else throw'❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨\x20𝐮𝐧\x20𝐞𝐫𝐫𝐨𝐫\x20𝐝𝐮𝐫𝐚𝐧𝐭𝐞\x20𝐞𝐥\x20𝐩𝐫𝐨𝐜𝐞𝐬𝐨,\x20𝐩𝐨𝐫\x20𝐟𝐚𝐯𝐨𝐫\x20𝐮𝐬𝐚\x20𝐞𝐥\x20𝐜𝐨𝐦𝐚𝐧𝐝𝐨\x20𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞.';}};function _0x4d1b(_0x1a4ea3,_0x4e24ef){const _0x447f35=_0x447f();return _0x4d1b=function(_0x4d1b08,_0x4f7b22){_0x4d1b08=_0x4d1b08-0x88;let _0x59322c=_0x447f35[_0x4d1b08];return _0x59322c;},_0x4d1b(_0x1a4ea3,_0x4e24ef);}handler['help']=[_0x1349cb(0x9a)],handler[_0x1349cb(0x9e)]=[_0x1349cb(0x8d)],handler[_0x1349cb(0x92)]=/^robar|wm$/i,handler[_0x1349cb(0xa2)]=!![];export default handler;
