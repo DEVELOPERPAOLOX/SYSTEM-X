@@ -1,28 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-import memeGenerator from 'hispamemes';
-
-let memeHandler = async (message, { command, conn }) => {
-  try {
-    // Obtén la URL del meme
-    const memeUrl = await memeGenerator.meme();
-
-    // Envía el archivo del meme con un pie de foto
-    conn.sendFile(message.chat, memeUrl, '𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗.jpg', '\`𝐌𝐄𝐌𝐄 | 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗\`', message, fake,);
-  } catch (error) {
-    console.error('❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐮𝐧𝐨𝐬 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.', error);
-    // Verifica si el método `reply` existe en el objeto `conn`
-    if (conn.reply) {
-      conn.reply(message.chat, '❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨 𝐮𝐧 𝐞𝐫𝐫𝐨𝐫, 𝐢𝐧𝐭𝐞𝐧𝐭𝐚 𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞 𝐞𝐧 𝐮𝐧𝐨𝐬 𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.', message, fake,);
-    } else {
-      console.error('Método `reply` no encontrado en el objeto `conn`.');
-    }
-  }
-};
-
-// Define las propiedades del handler
-memeHandler.help = ['meme'];
-memeHandler.tags = ['random'];
-memeHandler.command = /^(meme|memes)$/i;
-
-export default memeHandler;
+const _0x284c6b=_0x2a39;(function(_0x49df7a,_0xe9515b){const _0x202240=_0x2a39,_0x46e319=_0x49df7a();while(!![]){try{const _0x44cfdb=-parseInt(_0x202240(0x11f))/0x1*(-parseInt(_0x202240(0x11c))/0x2)+-parseInt(_0x202240(0x116))/0x3+parseInt(_0x202240(0x11b))/0x4*(-parseInt(_0x202240(0x123))/0x5)+-parseInt(_0x202240(0x121))/0x6+-parseInt(_0x202240(0x11d))/0x7*(-parseInt(_0x202240(0x120))/0x8)+-parseInt(_0x202240(0x122))/0x9+parseInt(_0x202240(0x126))/0xa;if(_0x44cfdb===_0xe9515b)break;else _0x46e319['push'](_0x46e319['shift']());}catch(_0xb34c92){_0x46e319['push'](_0x46e319['shift']());}}}(_0x4015,0x9b2d3));import _0x390cf8 from'hispamemes';function _0x4015(){const _0x4d9530=['20wJsOPI','1894gSlTsk','7ERqjYp','reply','467JwhLiB','519608LsERPJ','6927684gZsHHo','4512762cATWiG','1147045UjfNOh','chat','command','35272740CuYxsp','help','❎𝐎𝐜𝐮𝐫𝐫𝐢𝐨\x20𝐮𝐧\x20𝐞𝐫𝐫𝐨𝐫,\x20𝐢𝐧𝐭𝐞𝐧𝐭𝐚\x20𝐧𝐮𝐞𝐯𝐚𝐦𝐞𝐧𝐭𝐞\x20𝐞𝐧\x20𝐮𝐧𝐨𝐬\x20𝐬𝐞𝐠𝐮𝐧𝐝𝐨𝐬.','`𝐌𝐄𝐌𝐄\x20|\x20𝐒𝐘𝐒𝐓𝐄𝐌\x20𝐗`','1787382FmHgun','Método\x20`reply`\x20no\x20encontrado\x20en\x20el\x20objeto\x20`conn`.','error','𝐌𝐄𝐌𝐄\x20|\x20𝐒𝐘𝐒𝐓𝐄𝐌\x20𝐗.jpg','meme'];_0x4015=function(){return _0x4d9530;};return _0x4015();}let memeHandler=async(_0x1e2491,{command:_0x114ed0,conn:_0x499984})=>{const _0x41c3b1=_0x2a39;try{const _0x20da80=await _0x390cf8[_0x41c3b1(0x11a)]();_0x499984['sendFile'](_0x1e2491[_0x41c3b1(0x124)],_0x20da80,_0x41c3b1(0x119),_0x41c3b1(0x115),_0x1e2491,fake);}catch(_0x372c59){console[_0x41c3b1(0x118)](_0x41c3b1(0x114),_0x372c59),_0x499984[_0x41c3b1(0x11e)]?_0x499984[_0x41c3b1(0x11e)](_0x1e2491['chat'],_0x41c3b1(0x114),_0x1e2491,fake):console[_0x41c3b1(0x118)](_0x41c3b1(0x117));}};memeHandler[_0x284c6b(0x113)]=[_0x284c6b(0x11a)],memeHandler['tags']=['random'],memeHandler[_0x284c6b(0x125)]=/^(meme|memes)$/i;function _0x2a39(_0x164ebb,_0x363e22){const _0x4015bc=_0x4015();return _0x2a39=function(_0x2a39e8,_0x5d6b48){_0x2a39e8=_0x2a39e8-0x113;let _0x48acae=_0x4015bc[_0x2a39e8];return _0x48acae;},_0x2a39(_0x164ebb,_0x363e22);}export default memeHandler;
