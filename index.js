@@ -22,11 +22,11 @@ const rl = createInterface(process.stdin, process.stdout)
 //const app = express()
 //const port = process.env.PORT || 8080;
 
-say('SYSTEM\nX', {
+say('ＳＹＳＴＥＭ Ｘ', {
 font: 'chrome',
 align: 'center',
 gradient: ['red', 'magenta']})
-say(`Desarrollado por Paolo X`, {
+say(`ᴅᴇꜱᴀʀᴏʟʟᴀᴅᴏ ᴘᴏʀ ᴘᴀᴏʟᴏ x`, {
 font: 'console',
 align: 'center',
 gradient: ['red', 'magenta']});
@@ -77,13 +77,15 @@ const packageJsonData = await fsPromises.readFile(packageJsonPath, 'utf-8')
 const packageJsonObj = JSON.parse(packageJsonData)
 const currentTime = new Date().toLocaleString()
 let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
-console.log(chalk.blue(`╭${lineM}
-┊${chalk.red('╭━')} ${chalk.red(`〔 ＤＥＶＥＬＯＰＥＲ Ｘ 〕━╮`)}
-┊${chalk.red('┃➔')}${chalk.yellow(`ㅤㅤㅤㅤㅤㅤＰＡＯＬＯ Ｘ`)}
-┊${chalk.red('┃')}${chalk.red('ㅤㅤㅤㅤ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
-┊${chalk.red('┃')}${chalk.red(`〔 ＡＧＲＡＤＥＣＩＭＩＥＮＴＯ 〕`)}
-┊${chalk.red('┃➔')}${chalk.yellow(`ㅤㅤㅤㅤㅤㅤＧＡＴＡ ＤＩＯＳ`)}
-┊${chalk.red('╰━━━━━━━━━━━━━━╯')} 
+console.log(chalk.yellow(`╭${lineM}
+┊${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
+┊${chalk.blueBright('┊')} ${chalk.blue.bold(`ㅤＤＥＶＥＬＯＰＥＲ`)}
+┊${chalk.blueBright('┊')} ${chalk.blueBright('ㅤ ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.blueBright('┊')}${chalk.cyan(`ㅤ ㅤＰＡＯＬＯ Ｘ`)}
+┊${chalk.blueBright('┊')}${chalk.blueBright(' ㅤ ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.blueBright('┊')}${chalk.yellow(`ＡＧＲＡＤＥＣＩＭＩＥＮＴＯ`)}
+┊${chalk.blueBright('┊')}${chalk.yellow(`ㅤㅤㅤＧＡＴＡ ＤＩＯＳ`)}
+┊${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
 ╰${lineM}`));
 setInterval(() => {}, 1000)
 } catch (err) {
