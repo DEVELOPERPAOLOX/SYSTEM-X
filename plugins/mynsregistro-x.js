@@ -1,20 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-import { createHash } from 'crypto';
-
-// Función para manejar el comando
-const handleRequest = async function (message, { conn, text, usedPrefix }) {
-  // Crear un hash MD5 usando el identificador del remitente
-  const seriesNumber = createHash('md5').update(message.sender).digest('hex');
-
-  // Enviar una respuesta falsa con el número de serie generado
-  conn.fakeReply(message.chat, seriesNumber, '0@s.whatsapp.net', 'ＮＵＭＥＲＯ ＤＥ ＳＥＲＩＥ | ＳＹＳＴＥＭ Ｘ', 'status@broadcast');
-}
-
-// Configuración del comando
-handleRequest.help = ['myns'];
-handleRequest.tags = ['xp'];
-handleRequest.command = /^(myns|ceksn)$/i;
-handleRequest.register = true;
-
-export default handleRequest;
+function _0x12bd(_0xd4c24b,_0x402b6e){const _0x185ddd=_0x185d();return _0x12bd=function(_0x12bd00,_0x2e7f6c){_0x12bd00=_0x12bd00-0x18c;let _0x4ef239=_0x185ddd[_0x12bd00];return _0x4ef239;},_0x12bd(_0xd4c24b,_0x402b6e);}function _0x185d(){const _0x4871fe=['437319PbAlfE','401853fAouYP','command','16iElmYa','10LTbIpm','tags','10756737XtjmzK','sender','register','3049884wiMdEX','0@s.whatsapp.net','status@broadcast','13895KohcNP','6IKpmba','ＮＵＭＥＲＯ\x20ＤＥ\x20ＳＥＲＩＥ\x20|\x20ＳＹＳＴＥＭ\x20Ｘ','myns','1216220bmNvOG','1444276wuwxra'];_0x185d=function(){return _0x4871fe;};return _0x185d();}const _0x1750fc=_0x12bd;(function(_0x38efbd,_0x79b8de){const _0x1acfdd=_0x12bd,_0x2e7227=_0x38efbd();while(!![]){try{const _0x1b1c84=-parseInt(_0x1acfdd(0x19c))/0x1+-parseInt(_0x1acfdd(0x196))/0x2*(parseInt(_0x1acfdd(0x19b))/0x3)+-parseInt(_0x1acfdd(0x19a))/0x4+-parseInt(_0x1acfdd(0x199))/0x5+parseInt(_0x1acfdd(0x192))/0x6+parseInt(_0x1acfdd(0x195))/0x7*(-parseInt(_0x1acfdd(0x18c))/0x8)+-parseInt(_0x1acfdd(0x18f))/0x9*(-parseInt(_0x1acfdd(0x18d))/0xa);if(_0x1b1c84===_0x79b8de)break;else _0x2e7227['push'](_0x2e7227['shift']());}catch(_0xe47d82){_0x2e7227['push'](_0x2e7227['shift']());}}}(_0x185d,0x3e834));import{createHash}from'crypto';const handleRequest=async function(_0x34e39c,{conn:_0x1666e9,text:_0x4c380d,usedPrefix:_0x38484d}){const _0x2081b3=_0x12bd,_0x5c21e5=createHash('md5')['update'](_0x34e39c[_0x2081b3(0x190)])['digest']('hex');_0x1666e9['fakeReply'](_0x34e39c['chat'],_0x5c21e5,_0x2081b3(0x193),_0x2081b3(0x197),_0x2081b3(0x194));};handleRequest['help']=[_0x1750fc(0x198)],handleRequest[_0x1750fc(0x18e)]=['xp'],handleRequest[_0x1750fc(0x19d)]=/^(myns|ceksn)$/i,handleRequest[_0x1750fc(0x191)]=!![];export default handleRequest;
