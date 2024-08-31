@@ -1,18 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-let handler = async (m, { conn, usedPrefix, command }) => {	
-if (!m.quoted) throw `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐝𝐞𝐥 + 𝐫𝐞𝐬𝐩𝐨𝐧𝐝𝐞 𝐚𝐥 𝐦𝐬𝐣`
-try {
-let delet = m.message.extendedTextMessage.contextInfo.participant
-let bang = m.message.extendedTextMessage.contextInfo.stanzaId
-return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
-} catch {
-return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
-}}
-handler.help = ['del', 'delete']
-handler.tags = ['group']
-handler.command = /^del(ete)?$/i
-handler.group = true
-handler.admin = true
-handler.botAdmin = true
-export default handler 
+const _0x471d67=_0xc1c4;function _0x4a3f(){const _0x39edb7=['message','contextInfo','sendMessage','del','admin','tags','672702rpeJWN','delete','extendedTextMessage','botAdmin','help','group','382530SdDTWZ','quoted','1913765mDrEPb','participant','745352eiQXFU','173630LlAnHB','1269080UzCEtN','chat','key','581196tCIgLc'];_0x4a3f=function(){return _0x39edb7;};return _0x4a3f();}(function(_0x1c4f91,_0xedd1d1){const _0x342810=_0xc1c4,_0x13fcf9=_0x1c4f91();while(!![]){try{const _0x3cc08a=-parseInt(_0x342810(0x1bb))/0x1+-parseInt(_0x342810(0x1c0))/0x2+parseInt(_0x342810(0x1b5))/0x3+-parseInt(_0x342810(0x1bf))/0x4+parseInt(_0x342810(0x1c1))/0x5+parseInt(_0x342810(0x1c4))/0x6+parseInt(_0x342810(0x1bd))/0x7;if(_0x3cc08a===_0xedd1d1)break;else _0x13fcf9['push'](_0x13fcf9['shift']());}catch(_0x36b824){_0x13fcf9['push'](_0x13fcf9['shift']());}}}(_0x4a3f,0x2f074));let handler=async(_0x1de155,{conn:_0x30f437,usedPrefix:_0x57b15b,command:_0x37d046})=>{const _0x224fe2=_0xc1c4;if(!_0x1de155['quoted'])throw'👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬\x20𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\x0a🚀𝐕𝐮𝐞𝐥𝐯𝐞\x20𝐚\x20𝐮𝐬𝐚𝐫\x20𝐞𝐥\x20𝐜𝐨𝐦𝐚𝐧𝐝𝐨\x20𝐩𝐞𝐫𝐨\x20𝐜𝐨𝐧\x20𝐞𝐥\x20𝐮𝐬𝐨\x20𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨.\x0a✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨:\x20.𝐝𝐞𝐥\x20+\x20𝐫𝐞𝐬𝐩𝐨𝐧𝐝𝐞\x20𝐚𝐥\x20𝐦𝐬𝐣';try{let _0x330970=_0x1de155[_0x224fe2(0x1c5)]['extendedTextMessage']['contextInfo'][_0x224fe2(0x1be)],_0x5b3666=_0x1de155['message'][_0x224fe2(0x1b7)][_0x224fe2(0x1b0)]['stanzaId'];return _0x30f437[_0x224fe2(0x1b1)](_0x1de155[_0x224fe2(0x1c2)],{'delete':{'remoteJid':_0x1de155['chat'],'fromMe':![],'id':_0x5b3666,'participant':_0x330970}});}catch{return _0x30f437[_0x224fe2(0x1b1)](_0x1de155[_0x224fe2(0x1c2)],{'delete':_0x1de155[_0x224fe2(0x1bc)]['vM'][_0x224fe2(0x1c3)]});}};function _0xc1c4(_0x4eeb83,_0x47f7d6){const _0x4a3f95=_0x4a3f();return _0xc1c4=function(_0xc1c46c,_0x2fade6){_0xc1c46c=_0xc1c46c-0x1b0;let _0x218e2a=_0x4a3f95[_0xc1c46c];return _0x218e2a;},_0xc1c4(_0x4eeb83,_0x47f7d6);}handler[_0x471d67(0x1b9)]=[_0x471d67(0x1b2),_0x471d67(0x1b6)],handler[_0x471d67(0x1b4)]=['group'],handler['command']=/^del(ete)?$/i,handler[_0x471d67(0x1ba)]=!![],handler[_0x471d67(0x1b3)]=!![],handler[_0x471d67(0x1b8)]=!![];export default handler;
