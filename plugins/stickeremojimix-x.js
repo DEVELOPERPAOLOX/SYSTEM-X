@@ -1,28 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-import { sticker } from '../lib/sticker.js'
-let MessageType = (await import(global.baileys)).default
-import fetch from 'node-fetch'
-import fs from "fs"
-let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-if (!args[0]) throw `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐞𝐦𝐨𝐣𝐢𝐦𝐢𝐱 😆+😠`
-let [emoji1, emoji2] = text.split`+`
-let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
-for (let res of anu.results) {
-let stiker = await sticker(false, res.url, global.packname, global.author)
-conn.sendFile(m.chat, stiker, null, { asSticker: true })
-}}
-handler.help = ['emojimix'].map(v => v + ' emot1|emot2>')
-handler.tags = ['fun']
-handler.command = /^(emojimix|emogimix|combinaremojis|crearemoji|emojismix|emogismix)$/i
-handler.register = true
-export default handler
-const fetchJson = (url, options) => new Promise(async (resolve, reject) => {
-fetch(url, options)
-.then(response => response.json())
-.then(json => {
-resolve(json)
-})
-.catch((err) => {
-reject(err)
-})})
+const _0x2a6ec4=_0x4cf5;(function(_0x33f67a,_0x22e28b){const _0x50ff24=_0x4cf5,_0x4344dc=_0x33f67a();while(!![]){try{const _0x315368=-parseInt(_0x50ff24(0x9a))/0x1+-parseInt(_0x50ff24(0x8b))/0x2*(-parseInt(_0x50ff24(0x98))/0x3)+parseInt(_0x50ff24(0x90))/0x4*(-parseInt(_0x50ff24(0x99))/0x5)+-parseInt(_0x50ff24(0x95))/0x6*(parseInt(_0x50ff24(0x8e))/0x7)+-parseInt(_0x50ff24(0x8a))/0x8+-parseInt(_0x50ff24(0x9f))/0x9*(parseInt(_0x50ff24(0x86))/0xa)+-parseInt(_0x50ff24(0x88))/0xb*(-parseInt(_0x50ff24(0x84))/0xc);if(_0x315368===_0x22e28b)break;else _0x4344dc['push'](_0x4344dc['shift']());}catch(_0x48e08f){_0x4344dc['push'](_0x4344dc['shift']());}}}(_0x56ca,0xb97b9));import{sticker}from'../lib/sticker.js';let MessageType=(await import(global[_0x2a6ec4(0x82)]))[_0x2a6ec4(0x8c)];import _0x36c5a0 from'node-fetch';import _0x2fceb9 from'fs';function _0x56ca(){const _0x1b9c16=['then','url','chat','tags','9GoMOzr','baileys','fun','47313348qXFnVs','command','4490110wbxEkO','map','11VRGDZh','json','2483976yvJEBD','4mPxkaS','default','catch','658448xepTLM','split','42132PcueXc','register','packname','emojimix','help','48yYQCIp','author','results','110187nLahHI','435AcmTKf','828109oXJpSQ'];_0x56ca=function(){return _0x1b9c16;};return _0x56ca();}let handler=async(_0x1f453c,{conn:_0x504258,text:_0x4dc880,args:_0x14f44e,usedPrefix:_0x58f8c1,command:_0x8435a5})=>{const _0x171148=_0x2a6ec4;if(!_0x14f44e[0x0])throw'👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬\x20𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\x0a🚀𝐕𝐮𝐞𝐥𝐯𝐞\x20𝐚\x20𝐮𝐬𝐚𝐫\x20𝐞𝐥\x20𝐜𝐨𝐦𝐚𝐧𝐝𝐨\x20𝐩𝐞𝐫𝐨\x20𝐜𝐨𝐧\x20𝐞𝐥\x20𝐮𝐬𝐨\x20𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\x0a✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨:\x20.𝐞𝐦𝐨𝐣𝐢𝐦𝐢𝐱\x20😆+😠';let [_0x5aef9e,_0x24e7ca]=_0x4dc880[_0x171148(0x8f)]`+`,_0x15f615=await fetchJson('https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q='+encodeURIComponent(_0x5aef9e)+'_'+encodeURIComponent(_0x24e7ca));for(let _0x3bd211 of _0x15f615[_0x171148(0x97)]){let _0x43f25a=await sticker(![],_0x3bd211[_0x171148(0x9c)],global[_0x171148(0x92)],global[_0x171148(0x96)]);_0x504258['sendFile'](_0x1f453c[_0x171148(0x9d)],_0x43f25a,null,{'asSticker':!![]});}};handler[_0x2a6ec4(0x94)]=[_0x2a6ec4(0x93)][_0x2a6ec4(0x87)](_0x194124=>_0x194124+'\x20emot1|emot2>'),handler[_0x2a6ec4(0x9e)]=[_0x2a6ec4(0x83)],handler[_0x2a6ec4(0x85)]=/^(emojimix|emogimix|combinaremojis|crearemoji|emojismix|emogismix)$/i,handler[_0x2a6ec4(0x91)]=!![];export default handler;function _0x4cf5(_0x19b0e7,_0x5ba29f){const _0x56ca8c=_0x56ca();return _0x4cf5=function(_0x4cf5da,_0xf65e83){_0x4cf5da=_0x4cf5da-0x82;let _0x5ba361=_0x56ca8c[_0x4cf5da];return _0x5ba361;},_0x4cf5(_0x19b0e7,_0x5ba29f);}const fetchJson=(_0x79b6f0,_0x172678)=>new Promise(async(_0x348c89,_0x391df9)=>{const _0x596ac7=_0x2a6ec4;_0x36c5a0(_0x79b6f0,_0x172678)[_0x596ac7(0x9b)](_0x303030=>_0x303030[_0x596ac7(0x89)]())[_0x596ac7(0x9b)](_0x267f86=>{_0x348c89(_0x267f86);})[_0x596ac7(0x8d)](_0x456c36=>{_0x391df9(_0x456c36);});});
