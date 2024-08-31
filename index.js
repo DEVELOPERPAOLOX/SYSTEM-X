@@ -78,18 +78,13 @@ const packageJsonObj = JSON.parse(packageJsonData)
 const currentTime = new Date().toLocaleString()
 let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
 console.log(chalk.yellow(`╭${lineM}
-┊${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
-┊${chalk.blueBright('┊')} ${chalk.blue.bold(`🌟 INFORMACIÓN :`)}
-┊${chalk.blueBright('┊')} ${chalk.blueBright('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
-┊${chalk.blueBright('┊')}${chalk.cyan(`🟢 Nombre: ${packageJsonObj.name}`)}
-┊${chalk.blueBright('┊')}${chalk.cyan(`𓃠 Versión: ${packageJsonObj.version}`)}
-┊${chalk.blueBright('┊')}${chalk.cyan(`🟣 Descripción: ${packageJsonObj.description}`)}
-┊${chalk.blueBright('┊')}${chalk.cyan(`🌻 Project Author: DanielDiod (@daniel)`)}
-┊${chalk.blueBright('┊')}${chalk.blueBright('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
-┊${chalk.blueBright('┊')}${chalk.yellow(`🔴 Colaboradores:`)}
-┊${chalk.blueBright('┊')}${chalk.yellow(`• Diego-YL-177 (Ofc Diego)`)}
-┊${chalk.blueBright('┊')}${chalk.yellow(`• AzamiJs (Alexis)`)}
-┊${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.blueBright('╭━')} ${chalk.red(`〔 ＤＥＶＥＬＯＰＥＲ Ｘ 〕━╮`)}
+┊${chalk.blueBright('┃')} ${chalk.red('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.blueBright('┃➔')}${chalk.blue(`𝐏𝐀𝐎𝐋𝐎 𝐗`)}
+┊${chalk.blueBright('┃')}${chalk.red('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.blueBright('┃')}${chalk.red(`〔 ＡＧＲＡＤＥＣＩＭＩＥＮＴＯ 〕`)}
+┊${chalk.blueBright('┃➔')}${chalk.blue(`𝐆𝐀𝐓𝐀 𝐃𝐈𝐎𝐒`)}
+┊${chalk.blueBright('╰━━━━━━━━━━━━━━╯')} 
 ╰${lineM}`));
 setInterval(() => {}, 1000)
 } catch (err) {
