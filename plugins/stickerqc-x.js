@@ -1,28 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-import { sticker } from '../lib/sticker.js';
-import axios from 'axios';
-const handler = async (m, {conn, args, usedPrefix, command}) => {
-let text
-    if (args.length >= 1) {
-        text = args.slice(0).join(" ");
-    } else if (m.quoted && m.quoted.text) {
-        text = m.quoted.text;
-    } else throw "👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐪𝐜 + 𝐭𝐞𝐱𝐭𝐨";
-   if (!text) return m.reply('👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\n🚀𝐕𝐮𝐞𝐥𝐯𝐞 𝐚 𝐮𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐩𝐞𝐫𝐨 𝐜𝐨𝐧 𝐞𝐥 𝐮𝐬𝐨 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐪𝐜 + 𝐭𝐞𝐱𝐭𝐨');
-    const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; 
-    const mentionRegex = new RegExp(`@${who.split('@')[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*`, 'g');
-    const mishi = text.replace(mentionRegex, '');
-   if (mishi.length > 30) return m.reply('❎𝐈𝐧𝐭𝐞𝐧𝐭𝐚 𝐝𝐞 𝐧𝐮𝐞𝐯𝐨. 𝐄𝐥 𝐭𝐞𝐱𝐭𝐨 𝐧𝐨 𝐩𝐮𝐞𝐝𝐞 𝐭𝐞𝐧𝐞𝐫 +𝟑𝟎 𝐜𝐚𝐫𝐚𝐜𝐭𝐞𝐫𝐞𝐬.');
-    const pp = await conn.profilePictureUrl(who).catch((_) => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
-    const nombre = await conn.getName(who)
-    const obj = {"type": "quote", "format": "png", "backgroundColor": "#000000", "width": 512, "height": 768, "scale": 2, "messages": [{"entities": [], "avatar": true, "from": {"id": 1, "name": `${who?.name || nombre}`, "photo": {url: `${pp}`}}, "text": mishi, "replyMessage": {}}]};
-    const json = await axios.post('https://bot.lyo.su/quote/generate', obj, {headers: {'Content-Type': 'application/json'}});
-    const buffer = Buffer.from(json.data.result.image, 'base64');
-   let stiker = await sticker(buffer, false, global.packname, global.author);
-   if (stiker) return conn.sendFile(m.chat, stiker, 'error.webp', '', m);
-}
-handler.help = ['qc'];
-handler.tags = ['sticker'];
-handler.command = /^(qc)$/i;
-export default handler;
+function _0xa503(_0x312d90,_0x2fc2a9){const _0x10b184=_0x10b1();return _0xa503=function(_0xa50393,_0x3458de){_0xa50393=_0xa50393-0x1ba;let _0x337e03=_0x10b184[_0xa50393];return _0x337e03;},_0xa503(_0x312d90,_0x2fc2a9);}const _0x33f000=_0xa503;(function(_0x35dc7c,_0x1dcd50){const _0x5528d8=_0xa503,_0x4eea56=_0x35dc7c();while(!![]){try{const _0x16f66f=-parseInt(_0x5528d8(0x1d2))/0x1+parseInt(_0x5528d8(0x1bb))/0x2*(parseInt(_0x5528d8(0x1dc))/0x3)+parseInt(_0x5528d8(0x1d8))/0x4+-parseInt(_0x5528d8(0x1e0))/0x5+-parseInt(_0x5528d8(0x1c5))/0x6*(-parseInt(_0x5528d8(0x1e2))/0x7)+parseInt(_0x5528d8(0x1d7))/0x8+-parseInt(_0x5528d8(0x1ce))/0x9;if(_0x16f66f===_0x1dcd50)break;else _0x4eea56['push'](_0x4eea56['shift']());}catch(_0x50e02c){_0x4eea56['push'](_0x4eea56['shift']());}}}(_0x10b1,0xc2e3b));import{sticker}from'../lib/sticker.js';import _0x157096 from'axios';const handler=async(_0xe8bc26,{conn:_0x59ec6b,args:_0x3e6b95,usedPrefix:_0x5d9c02,command:_0x3eb147})=>{const _0x3250ba=_0xa503;let _0x2b66e5;if(_0x3e6b95[_0x3250ba(0x1c2)]>=0x1)_0x2b66e5=_0x3e6b95[_0x3250ba(0x1c3)](0x0)[_0x3250ba(0x1dd)]('\x20');else{if(_0xe8bc26[_0x3250ba(0x1d1)]&&_0xe8bc26[_0x3250ba(0x1d1)]['text'])_0x2b66e5=_0xe8bc26[_0x3250ba(0x1d1)][_0x3250ba(0x1d9)];else throw _0x3250ba(0x1c1);}if(!_0x2b66e5)return _0xe8bc26['reply'](_0x3250ba(0x1c1));const _0x4edb38=_0xe8bc26['mentionedJid']&&_0xe8bc26[_0x3250ba(0x1bf)][0x0]?_0xe8bc26['mentionedJid'][0x0]:_0xe8bc26[_0x3250ba(0x1bd)]?_0x59ec6b[_0x3250ba(0x1e3)][_0x3250ba(0x1c9)]:_0xe8bc26[_0x3250ba(0x1e5)],_0x54d69f=new RegExp('@'+_0x4edb38[_0x3250ba(0x1cb)]('@')[0x0][_0x3250ba(0x1cf)](/[.*+?^${}()|[\]\\]/g,'\x5c$&')+'\x5cs*','g'),_0x7ac0f9=_0x2b66e5[_0x3250ba(0x1cf)](_0x54d69f,'');if(_0x7ac0f9['length']>0x1e)return _0xe8bc26[_0x3250ba(0x1cd)](_0x3250ba(0x1d3));const _0x23ac03=await _0x59ec6b[_0x3250ba(0x1cc)](_0x4edb38)[_0x3250ba(0x1db)](_0x521824=>_0x3250ba(0x1ca)),_0x1be03c=await _0x59ec6b[_0x3250ba(0x1c8)](_0x4edb38),_0xf5309b={'type':_0x3250ba(0x1e4),'format':_0x3250ba(0x1e1),'backgroundColor':_0x3250ba(0x1d6),'width':0x200,'height':0x300,'scale':0x2,'messages':[{'entities':[],'avatar':!![],'from':{'id':0x1,'name':''+(_0x4edb38?.[_0x3250ba(0x1d4)]||_0x1be03c),'photo':{'url':''+_0x23ac03}},'text':_0x7ac0f9,'replyMessage':{}}]},_0x431cbc=await _0x157096[_0x3250ba(0x1d5)](_0x3250ba(0x1be),_0xf5309b,{'headers':{'Content-Type':_0x3250ba(0x1de)}}),_0x221fe9=Buffer[_0x3250ba(0x1df)](_0x431cbc['data'][_0x3250ba(0x1da)][_0x3250ba(0x1ba)],_0x3250ba(0x1d0));let _0x5ac8d0=await sticker(_0x221fe9,![],global[_0x3250ba(0x1c0)],global['author']);if(_0x5ac8d0)return _0x59ec6b[_0x3250ba(0x1c4)](_0xe8bc26[_0x3250ba(0x1c6)],_0x5ac8d0,'error.webp','',_0xe8bc26);};handler[_0x33f000(0x1bc)]=['qc'],handler['tags']=[_0x33f000(0x1c7)],handler['command']=/^(qc)$/i;function _0x10b1(){const _0x31fd83=['catch','3SpVrYl','join','application/json','from','5713355wgxmhD','png','56sJVnpx','user','quote','sender','image','2326046EDaxKc','help','fromMe','https://bot.lyo.su/quote/generate','mentionedJid','packname','👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬\x20𝐮𝐬𝐮𝐚𝐫𝐢𝐨!\x0a🚀𝐕𝐮𝐞𝐥𝐯𝐞\x20𝐚\x20𝐮𝐬𝐚𝐫\x20𝐞𝐥\x20𝐜𝐨𝐦𝐚𝐧𝐝𝐨\x20𝐩𝐞𝐫𝐨\x20𝐜𝐨𝐧\x20𝐞𝐥\x20𝐮𝐬𝐨\x20𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐨𝐬𝐨.\x0a✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨:\x20.𝐪𝐜\x20+\x20𝐭𝐞𝐱𝐭𝐨','length','slice','sendFile','1148394uqHilI','chat','sticker','getName','jid','https://telegra.ph/file/24fa902ead26340f3df2c.png','split','profilePictureUrl','reply','17885493SxJfaf','replace','base64','quoted','686665CkzFJs','❎𝐈𝐧𝐭𝐞𝐧𝐭𝐚\x20𝐝𝐞\x20𝐧𝐮𝐞𝐯𝐨.\x20𝐄𝐥\x20𝐭𝐞𝐱𝐭𝐨\x20𝐧𝐨\x20𝐩𝐮𝐞𝐝𝐞\x20𝐭𝐞𝐧𝐞𝐫\x20+𝟑𝟎\x20𝐜𝐚𝐫𝐚𝐜𝐭𝐞𝐫𝐞𝐬.','name','post','#000000','9147104OvKjdK','3109108NbKPrd','text','result'];_0x10b1=function(){return _0x31fd83;};return _0x10b1();}export default handler;
