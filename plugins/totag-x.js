@@ -1,23 +1,2 @@
 // Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ   Ａ Ｄ Ａ Ｐ Ｔ Ａ Ｄ Ｏ   Ｐ Ｏ Ｒ   Ｄ Ｅ Ｖ Ｅ Ｌ Ｏ Ｐ Ｅ Ｒ   Ｐ Ａ Ｏ Ｌ Ｏ   Ｘ
-
-let handleTag = async (message, { conn, text, participants }) => {
-  // Obtén los IDs de los participantes, excluyendo el ID del bot
-  let participantIds = participants.map(user => user.id).filter(id => id !== conn.user.jid);
-
-  // Verifica si el mensaje es una cita
-  if (!message.quoted) {
-    return message.reply(`𝑽𝒖𝒆𝒍𝒗𝒆 𝒂 𝒖𝒔𝒂𝒓 𝒆𝒍 𝒄𝒐𝒎𝒂𝒏𝒅𝒐 𝒓𝒆𝒔𝒑𝒐𝒏𝒅𝒊𝒆𝒏𝒅𝒐 𝒂𝒍 𝒎𝒆𝒏𝒔𝒂𝒋𝒆 𝒒𝒖𝒆 𝒅𝒆𝒔𝒆𝒂𝒔 𝒏𝒐𝒕𝒊𝒇𝒊𝒄𝒂𝒓.`);
-  }
-
-  // Envía el mensaje citado a los participantes mencionados
-  conn.sendMessage(message.chat, { forward: message.quoted.fakeObj, mentions: participantIds });
-}
-
-// Configuración del comando
-handleTag.help = ['tag']
-handleTag.tags = ['group']
-handleTag.command = /^(totag|tag)$/i
-handleTag.admin = true
-handleTag.group = true
-
-export default handleTag
+function _0x1cdd(){const _0x4863de=['15053AvbahC','1077396VlIevo','quoted','map','164961cJRyrN','tag','help','command','2932sKfIGS','chat','group','user','jid','14GLfGFZ','2222559lnuJUW','4193aHzBLE','sendMessage','3768AjTjxB','355xpMqAL','reply','6001460hQVWxB','tags'];_0x1cdd=function(){return _0x4863de;};return _0x1cdd();}const _0x92aca8=_0x465f;(function(_0x493646,_0x18498d){const _0x151549=_0x465f,_0x40e9d8=_0x493646();while(!![]){try{const _0x29e717=parseInt(_0x151549(0x19d))/0x1*(-parseInt(_0x151549(0x194))/0x2)+parseInt(_0x151549(0x1a1))/0x3+parseInt(_0x151549(0x18f))/0x4*(parseInt(_0x151549(0x199))/0x5)+-parseInt(_0x151549(0x19e))/0x6+parseInt(_0x151549(0x196))/0x7*(-parseInt(_0x151549(0x198))/0x8)+parseInt(_0x151549(0x195))/0x9+parseInt(_0x151549(0x19b))/0xa;if(_0x29e717===_0x18498d)break;else _0x40e9d8['push'](_0x40e9d8['shift']());}catch(_0x4201f6){_0x40e9d8['push'](_0x40e9d8['shift']());}}}(_0x1cdd,0x5e7f5));function _0x465f(_0x155de3,_0x4c771e){const _0x1cddc6=_0x1cdd();return _0x465f=function(_0x465fff,_0x2c0adc){_0x465fff=_0x465fff-0x18c;let _0x504abd=_0x1cddc6[_0x465fff];return _0x504abd;},_0x465f(_0x155de3,_0x4c771e);}let handleTag=async(_0x4491f7,{conn:_0xa781b6,text:_0x45a1e4,participants:_0x3f4d99})=>{const _0x41a0d8=_0x465f;let _0x344387=_0x3f4d99[_0x41a0d8(0x1a0)](_0x5915c3=>_0x5915c3['id'])['filter'](_0x5d466f=>_0x5d466f!==_0xa781b6[_0x41a0d8(0x192)][_0x41a0d8(0x193)]);if(!_0x4491f7[_0x41a0d8(0x19f)])return _0x4491f7[_0x41a0d8(0x19a)]('𝑽𝒖𝒆𝒍𝒗𝒆\x20𝒂\x20𝒖𝒔𝒂𝒓\x20𝒆𝒍\x20𝒄𝒐𝒎𝒂𝒏𝒅𝒐\x20𝒓𝒆𝒔𝒑𝒐𝒏𝒅𝒊𝒆𝒏𝒅𝒐\x20𝒂𝒍\x20𝒎𝒆𝒏𝒔𝒂𝒋𝒆\x20𝒒𝒖𝒆\x20𝒅𝒆𝒔𝒆𝒂𝒔\x20𝒏𝒐𝒕𝒊𝒇𝒊𝒄𝒂𝒓.');_0xa781b6[_0x41a0d8(0x197)](_0x4491f7[_0x41a0d8(0x190)],{'forward':_0x4491f7[_0x41a0d8(0x19f)]['fakeObj'],'mentions':_0x344387});};handleTag[_0x92aca8(0x18d)]=[_0x92aca8(0x18c)],handleTag[_0x92aca8(0x19c)]=[_0x92aca8(0x191)],handleTag[_0x92aca8(0x18e)]=/^(totag|tag)$/i,handleTag['admin']=!![],handleTag[_0x92aca8(0x191)]=!![];export default handleTag;
