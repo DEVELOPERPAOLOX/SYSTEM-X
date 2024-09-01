@@ -1,7 +1,7 @@
 {
-"name": "SystemX",
+"name": "SYSTEM-X",
 "version": "1.0.0",
-"description": "Super Bot WhatsApp",
+"description": "Software WhatsApp",
 "main": "index.js",
 "type": "module",
     
@@ -17,16 +17,16 @@
 "test": "node test.js",
 "test2": "nodemon index.js" },
     
-"homepage": "https://github.com/DanielDiod/DokiBot",
+"homepage": "https://github.com/DEVELOPERPAOLOX/SYSTEM-X",
 "author": {
-"name": "DanielDiod" },
+"name": "DEVELOPERPAOLOX" },
     
 "repository": {
 "type": "git",
-"url": "git+https://github.com/DanielDiod/DokiBot.git" },
+"url": "git+https://github.com/DEVELOPERPAOLOX/SYSTEM-X.git" },
 
 "bugs": {
-"url": "https://github.com/DanielDiod/DokiBot/issues" },
+"url": "https://github.com/DEVELOPERPAOLOX/SYSTEM-X/issues" },
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@whiskeysockets/baileys": "npm:@whiskeysockets/baileys@6.7.2",
