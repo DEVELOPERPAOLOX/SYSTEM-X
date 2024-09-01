@@ -1,3 +1,5 @@
+// Ｎ Ｏ   Ｓ Ｅ   Ｐ Ｅ Ｒ Ｍ Ｉ Ｔ Ｅ   Ｅ Ｄ Ｉ Ｔ Ａ Ｒ   Ｌ Ｏ Ｓ   Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ Ｓ   Ｄ Ｅ   Ｅ Ｓ Ｔ Ｅ   Ａ Ｒ Ｃ Ｈ Ｉ Ｖ Ｏ
+
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
@@ -7,8 +9,6 @@ import fetch from 'node-fetch'
 import axios from 'axios' 
 import moment from 'moment-timezone'
 import { es } from './lib/idiomas/total-idiomas.js'
-
-//⊱ ━━━━━.⋅ Añada los numeros a ser Propietario/a ⋅.━━━━ ⊰
 
 global.owner = [ 
 ['51936732723', '𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑 𝐏𝐀𝐎𝐋𝐎', true],
@@ -26,28 +26,18 @@ global.owner = [
 ['51936732723'],
 ['51936732723']]
 
-global.mods = ['56986838842']
-global.prems = ['56986838842'],
-global.suittag = ['56986838842']
+global.mods = ['51936732723']
+global.prems = ['51936732723'],
+global.suittag = ['51936732723']
 
-//BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
-//Sólo aplica para opción 2 (ser bot con código de texto de 8 digitos)
-global.botNumberCode = "" //Ejemplo: +59309090909
+global.botNumberCode = "" 
 global.confirmCode = "" 
 
-//⊱ ━━━━━.⋅ IDIOMA : LENGUAJE ⋅.━━━━ ⊰
-//Agrega el Idioma que quieres que tenga DokiBot
-//  es = Español         id = Bahasa Indonesia
-//  en = English         pt = Português
-//  ar = عرب 
+global.lenguajeGB = es 
 
-global.lenguajeGB = es  //Idioma de DokiBot, Ejemplo: es | en | pt...
-
-//━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
-
-global.openai_key = 'sk-...OzYy' /* Consigue tu ApiKey en este enlace: https://platform.openai.com/account/api-keys */
-global.openai_org_id = 'HITjoN7H8pCwoncEB9e3fSyW' /* Consigue tu ID de organizacion en este enlace: https://platform.openai.com/account/org-settings */
-global.Key360 = ['964f-0c75-7afc']//key de violetics
+global.openai_key = 'sk-...OzYy' 
+global.openai_org_id = 'HITjoN7H8pCwoncEB9e3fSyW' 
+global.Key360 = ['964f-0c75-7afc']
 global.keysZens = ['LuOlangNgentot', 'c2459db922', '37CC845916', '6fb0eff124', 'hdiiofficial', 'fiktod', 'BF39D349845E', '675e34de8a', '0b917b905e6f']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -98,13 +88,9 @@ global.fetch = fetch
 global.axios = axios
 global.moment = moment	
 
-//⊱ ━━━━━.⋅ Sticker WM ⋅.━━━━ ⊰
-
 global.packname = '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'
 global.author = ''
 
-
-//* *******Tiempo***************
 global.d = new Date(new Date + 3600000);
 global.locale = 'es';
 global.dia = d.toLocaleDateString(locale, {weekday: 'long'});
@@ -116,8 +102,6 @@ global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', s
 var ase = new Date(); var hour = ase.getHours(); switch(hour){ case 0: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 1: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 2: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 3: hour = 'Lɪɴᴅᴀ Mᴀɴ̃ᴀɴᴀ 🌄'; break; case 4: hour = 'Lɪɴᴅᴀ Mᴀɴ̃ᴀɴᴀ 🌄'; break; case 5: hour = 'Lɪɴᴅᴀ Mᴀɴ̃ᴀɴᴀ 🌄'; break; case 6: hour = 'Lɪɴᴅᴀ Mᴀɴ̃ᴀɴᴀ 🌄'; break; case 7: hour = 'Lɪɴᴅᴀ Mᴀɴ̃ᴀɴᴀ 🌅'; break; case 8: hour = 'Lɪɴᴅᴀ Mᴀɴ̃ᴀɴᴀ 🌄'; break; case 9: hour = 'Lɪɴᴅᴀ Mᴀɴ̃ᴀɴᴀ 🌄'; break; case 10: hour = 'Lɪɴᴅᴏ Dɪᴀ 🌤'; break; case 11: hour = 'Lɪɴᴅᴏ Dɪᴀ 🌤'; break; case 12: hour = 'Lɪɴᴅᴏ Dɪᴀ 🌤'; break; case 13: hour = 'Lɪɴᴅᴏ Dɪᴀ 🌤'; break; case 14: hour = 'Lɪɴᴅᴀ Tᴀʀᴅᴇ 🌆'; break; case 15: hour = 'Lɪɴᴅᴀ Tᴀʀᴅᴇ 🌆'; break; case 16: hour = 'Lɪɴᴅᴀ Tᴀʀᴅᴇ 🌆'; break; case 17: hour = 'Lɪɴᴅᴀ Tᴀʀᴅᴇ 🌆'; break; case 18: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 19: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 20: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 21: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 22: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break; case 23: hour = 'Lɪɴᴅᴀ Nᴏᴄʜᴇ 🌃'; break;}
 global.saludo = "" + hour;
 
-//⊱ ━━━━━.⋅ Versión | Nombre | cuentas ⋅.━━━━ ⊰
-
 global.lb = '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'
 global.vs = '1.5.7'
 global.vsJB = '1.5.0'
@@ -126,34 +110,30 @@ global.ig = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
 global.md = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
 global.fb = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
 
-global.nna = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' //Actualización, información sobre el bot
-global.nn = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' //Grupo 1
-global.nnn = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' //Grupo 2
-global.nnnt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' //Grupo del Colaboracion
-global.nnnt2 = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' // Grupo COL 2
-global.nnntt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' //Grupo COL 3
-global.nnnttt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' //Canal MonkiBot
-global.nnntttt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u' //Grupo ayuda sobre el bot
-global.asistencia = 'wa.me/51936732723' //Dudas? escríbeme...
+global.nna = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.nn = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.nnn = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.nnnt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.nnnt2 = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.nnntt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.nnnttt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.nnntttt = 'https://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u'
+global.asistencia = 'wa.me/51936732723'
 
-//⊱ ━━━━━━━━━━━━━.⋅ Datos ⋅.━━━━━━━━━━━━━━ ⊰
-
-global.rg = '*[🛑 INFORMATION 🛑]*\n\n'
+global.rg = '*[ ＩＮＦＯＲＭＡＴＩＯＮ ]*\n\n'
 global.resultado = rg
-global.ag = '*[🛑 INFORMATION 🛑]*\n\n'
+global.ag = '*[ ＩＮＦＯＲＭＡＴＩＯＮ ]*\n\n'
 global.advertencia = ag
-global.iig = '*[🛑 INFORMATION 🛑]*\n\n'
+global.iig = '*[ ＩＮＦＯＲＭＡＴＩＯＮ ]*\n\n'
 global.informacion = iig
-global.fg = '*[🛑 INFORMATION 🛑]*\n\n'
+global.fg = '*[ ＩＮＦＯＲＭＡＴＩＯＮ ]*\n\n'
 global.fallo = fg
-global.mg = '*[🛑 INFORMATION 🛑]*\n\n'
+global.mg = '*[ ＩＮＦＯＲＭＡＴＩＯＮ ]*\n\n'
 global.mal = mg
-global.eeg = '*[🛑 INFORMATION 🛑]*\n\n'
+global.eeg = '*[ ＩＮＦＯＲＭＡＴＩＯＮ ]*\n\n'
 global.envio = eeg
-global.eg = '*[🛑 INFORMATION 🛑]*\n\n'
+global.eg = '*[ ＩＮＦＯＲＭＡＴＩＯＮ ]*\n\n'
 global.exito = eg
-
-//⊱ ━━━━━.⋅ Información ⋅.━━━━ ⊰
 
 global.wm = 'ＳＹＳＴＥＭ Ｘ'
 global.igfg = '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'
@@ -164,20 +144,16 @@ global.waitttt = '*⌛ _Cargando..._ ▬▬▬▬▬▬▭*'
 global.nomorown = 'ꜱʏꜱᴛᴇᴍ x'
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf']
 
-//⊱ ━━━━━.⋅ IMG ⋅.━━━━ ⊰
-
 global.imagen1 = fs.readFileSync('./media/menus/Menu3.jpg')
 global.imagen2 = fs.readFileSync('./media/menus/img1.jpg')
 global.imagen3 = fs.readFileSync('./media/menus/img2.jpg')
-global.img = 'https://i.imgur.com/H6AofpJl.jpg'
-global.img2 = 'https://i.imgur.com/R1uVUId.jpeg'
+global.img = 'https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn'
+global.img2 = 'https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn'
 
 global.redesMenu = [nna, nn, nnn, nnnt, nnntt, nnnttt, nnntttt, md, ig, lb, fb, yt]
 global.gataMenu = [img, img2]
 global.gataVidMenu = ['https://a.uguu.se/RqbiXfNg.mp4', 'https://a.uguu.se/uoZBfOyV.mp4', './media/menus/Menuvid1.mp4']
 global.gataImg = [imagen1, imagen2, imagen3]
-
-//⊱ ━━━━━.⋅ RPG ⋅.━━━━ ⊰
 
 global.flaaa = [
 'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
@@ -199,8 +175,8 @@ global.htki = '*⭑•̩̩͙⊱•••• ☪*'
 global.htka = '*☪ ••••̩̩͙⊰•⭑*'
 global.comienzo = '• • ◕◕════'
 global.fin = '════◕◕ • •'
-global.botdate = `${moment.tz('America/Los_Angeles').format('DD/MM/YY')}` //Asia/Jakarta
-global.bottime = `${moment.tz('America/Los_Angeles').format('HH:mm:ss')}`//America/Los_Angeles
+global.botdate = `${moment.tz('America/Los_Angeles').format('DD/MM/YY')}`
+global.bottime = `${moment.tz('America/Los_Angeles').format('HH:mm:ss')}`
 global.fgif = {
 key: {
 participant : '0@s.whatsapp.net'},
@@ -214,9 +190,7 @@ message: {
 'jpegThumbnail': fs.readFileSync('./media/menus/Menu3.jpg')
 }}}
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
-
-global.multiplier = 90 // Cuanto más alto, más difícil subir de nivel
+global.multiplier = 90
 global.rpg = {
 emoticon(string) {
 string = string.toLowerCase()
@@ -307,7 +281,7 @@ if (!results.length) return ''
 else return emot[results[0][0]]
 }}
 
-global.rpgg = { //Solo emojis 
+global.rpgg = {
 emoticon(string) {
 string = string.toLowerCase()
 let emott = {
@@ -335,7 +309,7 @@ if (!results.length) return ''
 else return emott[results[0][0]]
 }}
 
-global.rpgshop = { //Tienda
+global.rpgshop = {
 emoticon(string) {
 string = string.toLowerCase()
 let emottt = {
@@ -367,7 +341,7 @@ if (!results.length) return ''
 else return emottt[results[0][0]]
 }}
 
-global.rpgshopp = { //Tienda
+global.rpgshopp = {
 emoticon(string) {
 string = string.toLowerCase()
 let emotttt = {
