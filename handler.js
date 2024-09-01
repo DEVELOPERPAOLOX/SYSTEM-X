@@ -1,3 +1,5 @@
+// Ｎ Ｏ   Ｓ Ｅ   Ｐ Ｅ Ｒ Ｍ Ｉ Ｔ Ｅ   Ｅ Ｄ Ｉ Ｔ Ａ Ｒ   Ｌ Ｏ Ｓ   Ｃ Ｏ Ｄ Ｉ Ｇ Ｏ Ｓ   Ｄ Ｅ   Ｅ Ｓ Ｔ Ｅ   Ａ Ｒ Ｃ Ｈ Ｉ Ｖ Ｏ
+
 import {generateWAMessageFromContent} from '@whiskeysockets/baileys';
 import { smsg } from './lib/simple.js'
 import { format } from 'util'
