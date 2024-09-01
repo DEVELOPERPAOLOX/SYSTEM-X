@@ -1501,10 +1501,10 @@ global.dfail = (type, m, conn) => {
         private: `Hola @${m.sender.split`@`[0]}, este comando solo puede ser utilizado en mi Chat *Privado*.`,
         admin: `Hola @${m.sender.split`@`[0]}, este comando solo puede ser utilizado por los *Administradores* del Grupo.`,
         botAdmin: `Hola @${m.sender.split`@`[0]}, la bot debe ser *Administradora* para ejecutar este Comando.`,
-        unreg: `> ❗ @${m.sender.split`@`[0]} 𝐏𝐀𝐑𝐀 𝐄𝐋 𝐔𝐒𝐎 𝐃𝐄 𝐄𝐒𝐓𝐄 𝐂𝐎𝐌𝐀𝐍𝐃𝐎, 𝐒𝐈𝐆𝐔𝐄 𝐋𝐎𝐒 𝐒𝐈𝐆𝐔𝐈𝐄𝐍𝐓𝐄 𝐏𝐀𝐒𝐎𝐒:\n\n\`1️⃣𝘜𝘯𝘦𝘵𝘦 𝘢𝘭 𝘤𝘢𝘯𝘢𝘭 𝘰𝘧𝘪𝘤𝘪𝘢𝘭 𝘥𝘦 𝐒𝐘𝐒𝐓𝐄𝐌 𝐗:\`\nhttps://whatsapp.com/channel/0029VajUEsCB4hdNTg04zh1u\n\`2️⃣𝘙𝘦𝘨í𝘴𝘵𝘳𝘢𝘵𝘦 𝘦𝘯 𝘮𝘪 𝘣𝘢𝘴𝘦 𝘥𝘦 𝘥𝘢𝘵𝘰𝘴 𝘤𝘰𝘯 𝘦𝘭 𝘴𝘪𝘨𝘶𝘪𝘦𝘯𝘵𝘦 𝘤𝘰𝘮𝘢𝘯𝘥𝘰:\`\n*𝘜𝘵𝘪𝘭𝘪𝘻𝘢:* /reg nombre.edad\n*𝘌𝘫𝘦𝘮𝘱𝘭𝘰:* /reg SystemX.18`,
+        unreg: `👋🏻𝐒𝐚𝐥𝐮𝐝𝐨𝐬 𝐮𝐬𝐮𝐚𝐫𝐢𝐨 @${m.sender.split`@`[0]}\n𝐏𝐚𝐫𝐚 𝐮𝐬𝐚𝐫 𝐞𝐬𝐭𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐧𝐞𝐜𝐞𝐬𝐢𝐭𝐚𝐬 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐫𝐭𝐞 𝐩𝐚𝐫𝐚 𝐭𝐞𝐧𝐞𝐫𝐭𝐞 𝐞𝐧 𝐦𝐢 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐚𝐭𝐨𝐬.\n\n✅𝐄𝐣𝐞𝐦𝐩𝐥𝐨:\n.𝐫𝐞𝐠 𝐒𝐲𝐬𝐭𝐞𝐦𝐗.𝟏𝟖`,
         restrict: `Hola @${m.sender.split`@`[0]}, esta caracterÃ­stica estÃ¡ *deshabilitada*`  
     }[type]
-    if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { title: 'ＳＹＳＴＥＭ Ｘ', body: [wm, 'ＳＹＳＴＥＭ Ｘ' + lb + 'ＳＹＳＴＥＭ Ｘ', 'ＳＹＳＴＥＭ Ｘ'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, yt, nnn, nn, fb, ig].getRandom(), mediaType: 1}}}, { quoted: m }).then(_ => m.react('❌'))
+    if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { title: 'ＳＹＳＴＥＭ Ｘ', body: [wm, '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗' + lb + '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗', '𝐒𝐘𝐒𝐓𝐄𝐌 𝐗'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, yt, nnn, nn, fb, ig].getRandom(), mediaType: 1}}}, { quoted: m }).then(_ => m.react('❌'))
 }
 
 let file = global.__filename(import.meta.url, true)
