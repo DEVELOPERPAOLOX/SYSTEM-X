@@ -1,8 +1,8 @@
 {
-  "name": "DokiBot",  
-  "description": "Super Bot WhatsApp",
-  "repository": "https://github.com/DanielDiod/DokiBot",
-  "logo": "https://i.imgur.com/8fK4h6F.jpg",
+  "name": "SYSTEM-X",  
+  "description": "Software WhatsApp",
+  "repository": "https://github.com/DEVELOPERPAOLOX/SYSTEM-X",
+  "logo": "https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn",
   "keywords": ["java", "bot", "whatsapp-bot", "whatsapp-automation"],
   "buildpacks": [
     {
