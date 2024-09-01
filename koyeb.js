@@ -5,11 +5,11 @@ RUN sudo dnf -y update &&\
     sudo dnf install -y git ffmpeg ImageMagick nodejs yarnpkg libwebp &&\
     sudo dnf clean all -y
 
-RUN git clone https://github.com/DanielDiod/DokiBot
+RUN git clone https://github.com/DEVELOPERPAOLOX/SYSTEM-X
 
-WORKDIR /root/DokiBot
+WORKDIR /root/SYSTEM-X
 
-COPY ./root/DokiBot
+COPY ./root/SYSTEM-X
 
 RUN yarn install
 
