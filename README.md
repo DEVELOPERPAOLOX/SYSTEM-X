@@ -26,7 +26,7 @@ Próximamente...
 ```
 
 ### 🌟 CREADORA 
-[![GataNina-Li](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li) 
+[![PAOLO X]([https://github.com/GataNina-Li](https://github.com/DEVELOPERPAOLOX).png?size=100)](https://github.com/DEVELOPERPAOLOX) 
 
 ### 🌟 AGRADECIMIENTOS
 [![GataNina-Li](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li) 
