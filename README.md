@@ -25,8 +25,8 @@ npm start
 Próximamente...
 ```
 
-### 🌟 CREADORA 
-[![PAOLO X](https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn.png?size=100)](https://github.com/DEVELOPERPAOLOX) 
+### **DEVELOPER:** 
+[![PAOLO X](https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn)](https://github.com/DEVELOPERPAOLOX) 
 
-### 🌟 AGRADECIMIENTOS
+### **AGRADECIMIENTO:**
 [![GataNina-Li](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li) 
