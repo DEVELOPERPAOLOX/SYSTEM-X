@@ -23,3 +23,11 @@ npm start
 ### **2DA INSTALACIÓN GRATUITA MEDIANTE EL HOST CORINPLUS**
 ```bash
 Próximamente...
+
+
+### 🌟 AGRADECIMIENTOS
+[![TheShadowBrokers1](https://github.com/BrunoSobrino.png?size=60)](https://github.com/BrunoSobrino) 
+
+### 🌟 CREADORA 
+[![GataNina-Li](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li) 
+> Copyright (c) 2024 **[GataNina-Li](https://github.com/GataNina-Li/GataBot-MD/blob/master/LICENSE)**.
