@@ -8,7 +8,7 @@ termux-setup-storage
 apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 ```bash
-git clone https://github.com/GataNina-Li/GataBot-MD && cd GataBot-MD
+git clone https://github.com/DEVELOPERPAOLOX/SYSTEM-X && cd SYSTEM-X
 ```
 ```bash
 yarn install && npm install
@@ -16,4 +16,4 @@ yarn install && npm install
 ```bash
 npm start
 ```
-> **Warning** Si aparece (Y/I/N/O/D/Z) [default=N] ? use la letra "y" + "ENTER" para continuar con la instalación 
+> PDT: SI AL MOMENTO DE LA INSTALACIÓN APARECE (Y/I/N/O/D/Z) [default=N] ? POR FAVOR USA LA LETRA "y" + "ENTER" PARA QUE PUEDAS CONTINUAR CON LA INSTALACIÓN CON TOTAL ÉXITO. 
