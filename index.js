@@ -1,1 +1,101 @@
-const _0x1e7c71=_0x3686;(function(_0x5df8ce,_0x3ece01){const _0x51453b=_0x3686,_0x97d313=_0x5df8ce();while(!![]){try{const _0x3b0c75=-parseInt(_0x51453b(0xd7))/0x1+parseInt(_0x51453b(0xc1))/0x2+parseInt(_0x51453b(0xd0))/0x3+-parseInt(_0x51453b(0xd1))/0x4+parseInt(_0x51453b(0xc9))/0x5+parseInt(_0x51453b(0xc2))/0x6+-parseInt(_0x51453b(0xb7))/0x7*(-parseInt(_0x51453b(0xdd))/0x8);if(_0x3b0c75===_0x3ece01)break;else _0x97d313['push'](_0x97d313['shift']());}catch(_0xdb46e7){_0x97d313['push'](_0x97d313['shift']());}}}(_0x3975,0x1cbbe));import{join,dirname}from'path';import{createRequire}from'module';import{fileURLToPath}from'url';import{setupMaster,fork}from'cluster';import{watchFile,unwatchFile}from'fs';import _0x7608f0 from'cfonts';import{createInterface}from'readline';import _0x5bf5d0 from'yargs';import _0x3711e5 from'express';import _0x4891a8 from'chalk';import _0x5015b4 from'path';import _0xa06c0e from'os';import{promises as _0xbbc114}from'fs';const __dirname=dirname(fileURLToPath(import.meta[_0x1e7c71(0xcf)])),require=createRequire(__dirname),{name,author}=require(join(__dirname,_0x1e7c71(0xc7))),{say}=_0x7608f0,rl=createInterface(process['stdin'],process[_0x1e7c71(0xba)]);function _0x3686(_0x1bb255,_0x16596b){const _0x3975a7=_0x3975();return _0x3686=function(_0x3686b0,_0x4466af){_0x3686b0=_0x3686b0-0xb7;let _0x300d81=_0x3975a7[_0x3686b0];return _0x300d81;},_0x3686(_0x1bb255,_0x16596b);}function _0x3975(){const _0x517d3a=['red','376985kcdQzh','⚠️\x20ERROR\x20⚠️\x20>>\x20','kill','ㅤＤＥＶＥＬＯＰＥＲ','toLocaleString','line','url','153378mxvbYi','49680RxYMCd','blueBright','dirname','emit','join','parse','210633mfhNTU','\x20\x0a┊','test','⋯\x20⋯\x20⋯\x20⋯\x20⋯\x20⋯\x20⋯\x20⋯\x20⋯\x20⋯\x20⋯\x20》','magenta','apply','64UdLfHi','log','╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅','message','S\x20Y\x20S\x20T\x20E\x20M\x0aX','yellow','main.js','ＡＧＲＡＤＥＣＩＭＩＥＮＴＯ','\x20ㅤ\x20┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅','chrome','\x20\x0a╰','process','send','argv','12362RrasjT','ㅤ\x20ㅤＰＡＯＬＯ\x20Ｘ','reset','stdout','error','cyan','uptime','listenerCount','slice','blue','85582tpYsmA','943830fVzUsR','❌\x20No\x20se\x20pudo\x20leer\x20el\x20archivo\x20package.json:\x20','exitProcess','╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅','center','./package.json'];_0x3975=function(){return _0x517d3a;};return _0x3975();}say(_0x1e7c71(0xe1),{'font':_0x1e7c71(0xe6),'align':_0x1e7c71(0xc6),'gradient':[_0x1e7c71(0xc8),_0x1e7c71(0xdb)]}),say('+51\x20936732723',{'font':'console','align':_0x1e7c71(0xc6),'gradient':[_0x1e7c71(0xc8),_0x1e7c71(0xdb)]});var isRunning=![];async function start(_0x172789){const _0x1e94e7=_0x1e7c71;if(isRunning)return;isRunning=!![];const _0x30c5cd=new URL(import.meta['url'])['pathname'];let _0x371f37=[join(__dirname,_0x172789),...process[_0x1e94e7(0xea)]['slice'](0x2)];say([process[_0x1e94e7(0xea)][0x0],..._0x371f37][_0x1e94e7(0xd5)]('\x20'),{'font':'console','align':'center','gradient':[_0x1e94e7(0xc8),_0x1e94e7(0xdb)]}),setupMaster({'exec':_0x371f37[0x0],'args':_0x371f37[_0x1e94e7(0xbf)](0x1)});let _0x984db=fork();_0x984db['on'](_0x1e94e7(0xe0),_0xef1826=>{const _0x37c147=_0x1e94e7;switch(_0xef1826){case _0x37c147(0xb9):_0x984db[_0x37c147(0xe8)][_0x37c147(0xcb)](),isRunning=![],start[_0x37c147(0xdc)](this,arguments);break;case _0x37c147(0xbd):_0x984db[_0x37c147(0xe9)](process[_0x37c147(0xbd)]());break;}}),_0x984db['on']('exit',(_0x527a70,_0x18ee73)=>{const _0x352642=_0x1e94e7;isRunning=![],console[_0x352642(0xbb)](_0x352642(0xca),_0x18ee73),start(_0x352642(0xe3));if(_0x18ee73===0x0)return;watchFile(_0x371f37[0x0],()=>{unwatchFile(_0x371f37[0x0]),start(_0x172789);});});const _0x4cddc2=_0x5015b4[_0x1e94e7(0xd5)](_0x5015b4[_0x1e94e7(0xd3)](_0x30c5cd),_0x1e94e7(0xc7));try{const _0x133406=await _0xbbc114['readFile'](_0x4cddc2,'utf-8'),_0x775faa=JSON[_0x1e94e7(0xd6)](_0x133406),_0x2720b2=new Date()[_0x1e94e7(0xcd)]();let _0x5cd218=_0x1e94e7(0xda);console[_0x1e94e7(0xde)](_0x4891a8[_0x1e94e7(0xe2)]('╭'+_0x5cd218+'\x0a┊'+_0x4891a8[_0x1e94e7(0xd2)](_0x1e94e7(0xc5))+'\x0a┊'+_0x4891a8[_0x1e94e7(0xd2)]('┊')+'\x20'+_0x4891a8[_0x1e94e7(0xc0)]['bold'](_0x1e94e7(0xcc))+'\x0a┊'+_0x4891a8['blueBright']('┊')+'\x20'+_0x4891a8[_0x1e94e7(0xd2)]('ㅤ\x20┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')+_0x1e94e7(0xd8)+_0x4891a8['blueBright']('┊')+_0x4891a8[_0x1e94e7(0xbc)](_0x1e94e7(0xb8))+'\x0a┊'+_0x4891a8[_0x1e94e7(0xd2)]('┊')+_0x4891a8[_0x1e94e7(0xd2)](_0x1e94e7(0xe5))+'\x20\x0a┊'+_0x4891a8[_0x1e94e7(0xd2)]('┊')+_0x4891a8[_0x1e94e7(0xe2)](_0x1e94e7(0xe4))+'\x0a┊'+_0x4891a8['blueBright']('┊')+_0x4891a8[_0x1e94e7(0xe2)]('ㅤㅤㅤＧＡＴＡ\x20ＤＩＯＳ')+'\x0a┊'+_0x4891a8[_0x1e94e7(0xd2)](_0x1e94e7(0xdf))+_0x1e94e7(0xe7)+_0x5cd218)),setInterval(()=>{},0x3e8);}catch(_0x499a8a){console['error'](_0x4891a8[_0x1e94e7(0xc8)](_0x1e94e7(0xc3)+_0x499a8a));}let _0x373e66=new Object(_0x5bf5d0(process[_0x1e94e7(0xea)][_0x1e94e7(0xbf)](0x2))[_0x1e94e7(0xc4)](![])['parse']());if(!_0x373e66[_0x1e94e7(0xd9)]){if(!rl[_0x1e94e7(0xbe)]())rl['on'](_0x1e94e7(0xce),_0x5a88d5=>{const _0x4c5ee3=_0x1e94e7;_0x984db[_0x4c5ee3(0xd4)](_0x4c5ee3(0xe0),_0x5a88d5['trim']());});}}start('main.js');
+import { join, dirname } from 'path'
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url'
+import { setupMaster, fork } from 'cluster'
+import { watchFile, unwatchFile } from 'fs'
+import cfonts from 'cfonts';
+import { createInterface } from 'readline'
+import yargs from 'yargs'
+import express from 'express'
+import chalk from 'chalk'
+import path from 'path'
+import os from 'os'
+import { promises as fsPromises } from 'fs'
+
+// https://stackoverflow.com/a/50052194
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const require = createRequire(__dirname) //Incorpora la capacidad de crear el método 'requerir'
+const { name, author } = require(join(__dirname, './package.json')) //https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
+const { say } = cfonts
+const rl = createInterface(process.stdin, process.stdout)
+
+//const app = express()
+//const port = process.env.PORT || 8080;
+
+say('S Y S T E M\nX', {
+font: 'chrome',
+align: 'center',
+gradient: ['red', 'magenta']})
+say(`+51 936732723`, {
+font: 'console',
+align: 'center',
+gradient: ['red', 'magenta']});
+
+var isRunning = false
+
+async function start(file) {
+if (isRunning) return
+isRunning = true
+const currentFilePath = new URL(import.meta.url).pathname
+let args = [join(__dirname, file), ...process.argv.slice(2)]
+say([process.argv[0], ...args].join(' '), {
+font: 'console',
+align: 'center',
+gradient: ['red', 'magenta']
+})
+setupMaster({exec: args[0], args: args.slice(1),
+})
+let p = fork()
+p.on('message', data => {
+switch (data) {
+case 'reset':
+p.process.kill()
+isRunning = false
+start.apply(this, arguments)
+break
+case 'uptime':
+p.send(process.uptime())
+break
+}})
+
+p.on('exit', (_, code) => {
+isRunning = false
+console.error('⚠️ ERROR ⚠️ >> ', code)
+start('main.js'); //
+
+if (code === 0) return
+watchFile(args[0], () => {
+unwatchFile(args[0])
+start(file)
+})})
+
+//const ramInYL = os.totalmem() / (1024 * 1024 * 1024)
+//const freeRamInYL = os.freemem() / (1024 * 1024 * 1024)
+const packageJsonPath = path.join(path.dirname(currentFilePath), './package.json')
+try {
+const packageJsonData = await fsPromises.readFile(packageJsonPath, 'utf-8')
+const packageJsonObj = JSON.parse(packageJsonData)
+const currentTime = new Date().toLocaleString()
+let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
+console.log(chalk.yellow(`╭${lineM}
+┊${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
+┊${chalk.blueBright('┊')} ${chalk.blue.bold(`ㅤＤＥＶＥＬＯＰＥＲ`)}
+┊${chalk.blueBright('┊')} ${chalk.blueBright('ㅤ ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.blueBright('┊')}${chalk.cyan(`ㅤ ㅤＰＡＯＬＯ Ｘ`)}
+┊${chalk.blueBright('┊')}${chalk.blueBright(' ㅤ ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+┊${chalk.blueBright('┊')}${chalk.yellow(`ＡＧＲＡＤＥＣＩＭＩＥＮＴＯ`)}
+┊${chalk.blueBright('┊')}${chalk.yellow(`ㅤㅤㅤＧＡＴＡ ＤＩＯＳ`)}
+┊${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
+╰${lineM}`));
+setInterval(() => {}, 1000)
+} catch (err) {
+console.error(chalk.red(`❌ No se pudo leer el archivo package.json: ${err}`))
+}
+
+let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+if (!opts['test'])
+if (!rl.listenerCount()) rl.on('line', line => {
+p.emit('message', line.trim())
+})}
+
+start('main.js')
