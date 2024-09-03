@@ -26,7 +26,7 @@ Próximamente...
 ```
 
 ### **✅DEVELOPER:** 
-[![PAOLO X](https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn)](https://github.com/DEVELOPERPAOLOX) 
+[![PAOLO X](https://th.bing.com/th/id/OIG4.34IzHuqY_dhekIPWpvQX?pid=ImgGn)](https://github.com/DEVELOPERPAOLOX) 
 
 ### **AGRADECIMIENTO:**
 [![GataNina-Li](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li) 
