@@ -25,7 +25,7 @@ npm start
 Próximamente...
 ```
 
-### **DEVELOPER:** 
+### **✅DEVELOPER:** 
 [![PAOLO X](https://th.bing.com/th/id/OIG3.jwPDO4yo5ZZLK43hab43?cb=13&pid=ImgGn)](https://github.com/DEVELOPERPAOLOX) 
 
 ### **AGRADECIMIENTO:**
